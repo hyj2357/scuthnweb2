@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<!DOCTYPE struts  PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd" >
+
+
+<struts>
+   
+
+    <include file="struts-part1.xml"/>
+	
+    <constant name="struts.devMode" value="true"/>
+    
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
+    
+    <package name="scuthnweb" extends="struts-default" namespace="/">
+    
+<!-- WEB-INF下界面转发Action -->
+       <action name="pfs" class="pfs">
+       </action>
+       
+    </package>
+   
+</struts>
