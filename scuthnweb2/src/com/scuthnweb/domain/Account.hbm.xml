@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!-- 指定Hiberante3映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--上面四行对所有的hibernate映射文件都相同 -->
+
+<!-- hibernate-mapping是映射文件的根元素 -->
+<hibernate-mapping package="com.scuthnweb.domain">
+   <class name="Account" table="account">
+      <id name="account" type="string"/>
+      <property name="register_time" type="java.sql.Timestamp"/>
+              
+      <set name="users" inverse="true" cascade="all">
+            <key column="account"/>
+            <one-to-many class="User"/>
+      </set> 
+      <set name="roles" inverse="true" cascade="all">
+            <key column="account"/>
+            <one-to-many class="Role"/>
+      </set> 
+      <set name="news" inverse="true" cascade="all">
+            <key column="poster_account"/>
+            <one-to-many class="New"/>
+      </set> 
+      <set name="actions" inverse="true" cascade="all">
+            <key column="creator_account"/>
+            <one-to-many class="Account"/>
+      </set> 
+      <set name="albums" inverse="true" cascade="all">
+            <key column="creator_account"/>
+            <one-to-many class="Account"/>
+      </set> 
+      <set name="receive_messages" inverse="true" cascade="all">
+            <key column="receiver_account"/>
+            <one-to-many class="Account"/>
+      </set> 
+      <set name="send_messages" inverse="true" cascade="all">
+            <key column="sender_account"/>
+            <one-to-many class="Account"/>
+      </set>
+      <set name="share_link" inverse="true" cascade="all">
+            <key column="poster_account "/>
+            <one-to-many class="Account"/>
+      </set>   
+      <set name="note" inverse="true" cascade="all">
+            <key column="poster_account"/>
+            <one-to-many class="Account"/>
+      </set>                 
+   </class>     
+</hibernate-mapping>
