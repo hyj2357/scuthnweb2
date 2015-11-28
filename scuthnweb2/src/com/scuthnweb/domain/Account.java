@@ -6,14 +6,14 @@ import java.util.Set;
 public class Account {
     private String account;
     private Timestamp register_time;
-    private Set<User> users;
+    private Set<Sy_user> users;
     private Set<Role> roles;
     private Set<New> news;
     private Set<Share_link> share_links;
     private Set<Action> actions;
-    private Set<Action_summary> join_action;
+    private Set<Action_summary> join_actions;
     private Set<Album> albums;
-    private Set<Message> receive_messages,send_message;
+    private Set<Message> receive_messages,send_messages;
     private Set<Note> notes;
     
 	public String getAccount() {
@@ -28,10 +28,10 @@ public class Account {
 	public void setRegister_time(Timestamp register_time) {
 		this.register_time = register_time;
 	}
-	public Set<User> getUsers() {
+	public Set<Sy_user> getUsers() {
 		return users;
 	}
-	public void setUsers(Set<User> users) {
+	public void setUsers(Set<Sy_user> users) {
 		this.users = users;
 	}
 	public Set<Role> getRoles() {
@@ -58,12 +58,6 @@ public class Account {
 	public void setActions(Set<Action> actions) {
 		this.actions = actions;
 	}
-	public Set<Action_summary> getJoin_action() {
-		return join_action;
-	}
-	public void setJoin_action(Set<Action_summary> join_action) {
-		this.join_action = join_action;
-	}
 	public Set<Album> getAlbums() {
 		return albums;
 	}
@@ -76,17 +70,23 @@ public class Account {
 	public void setReceive_messages(Set<Message> receive_messages) {
 		this.receive_messages = receive_messages;
 	}
-	public Set<Message> getSend_message() {
-		return send_message;
-	}
-	public void setSend_message(Set<Message> send_message) {
-		this.send_message = send_message;
-	}
 	public Set<Note> getNotes() {
 		return notes;
 	}
 	public void setNotes(Set<Note> notes) {
 		this.notes = notes;
+	}
+	public Set<Action_summary> getJoin_actions() {
+		return join_actions;
+	}
+	public void setJoin_actions(Set<Action_summary> join_actions) {
+		this.join_actions = join_actions;
+	}
+	public Set<Message> getSend_messages() {
+		return send_messages;
+	}
+	public void setSend_messages(Set<Message> send_messages) {
+		this.send_messages = send_messages;
 	}
 
 }

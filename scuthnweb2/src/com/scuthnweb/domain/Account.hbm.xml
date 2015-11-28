@@ -13,7 +13,7 @@
               
       <set name="users" inverse="true" cascade="all">
             <key column="account"/>
-            <one-to-many class="User"/>
+            <one-to-many class="Sy_user"/>
       </set> 
       <set name="roles" inverse="true" cascade="all">
             <key column="account"/>
@@ -25,27 +25,31 @@
       </set> 
       <set name="actions" inverse="true" cascade="all">
             <key column="creator_account"/>
-            <one-to-many class="Account"/>
+            <one-to-many class="Action"/>
       </set> 
       <set name="albums" inverse="true" cascade="all">
             <key column="creator_account"/>
-            <one-to-many class="Account"/>
+            <one-to-many class="Album"/>
       </set> 
       <set name="receive_messages" inverse="true" cascade="all">
             <key column="receiver_account"/>
-            <one-to-many class="Account"/>
+            <one-to-many class="Message"/>
       </set> 
       <set name="send_messages" inverse="true" cascade="all">
             <key column="sender_account"/>
-            <one-to-many class="Account"/>
+            <one-to-many class="Message"/>
       </set>
-      <set name="share_link" inverse="true" cascade="all">
+      <set name="join_actions" inverse="true" cascade="all">
             <key column="poster_account "/>
-            <one-to-many class="Account"/>
+            <one-to-many class="Action_summary"/>
+      </set>         
+      <set name="share_links" inverse="true" cascade="all">
+            <key column="poster_account "/>
+            <one-to-many class="Share_link"/>
       </set>   
-      <set name="note" inverse="true" cascade="all">
+      <set name="notes" inverse="true" cascade="all">
             <key column="poster_account"/>
-            <one-to-many class="Account"/>
+            <one-to-many class="Note"/>
       </set>                 
    </class>     
 </hibernate-mapping>

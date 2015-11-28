@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="gb2312"?>
+<!-- 指定Hiberante3映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--上面四行对所有的hibernate映射文件都相同 -->
+
+<!-- hibernate-mapping是映射文件的根元素 -->
+<hibernate-mapping package="com.scuthnweb.domain">
+   <class name="Sy_user_pic" table="sy_user_pic">
+      <id name="id" type="int" length="10">
+            <generator class="identity"/>
+      </id>  
+      <property name="url" type="string">
+          <column  name="url" sql-type="text" />
+      </property>
+      <many-to-one name="account" class="Account" column="account"/>                     
+   </class>     
+</hibernate-mapping>
