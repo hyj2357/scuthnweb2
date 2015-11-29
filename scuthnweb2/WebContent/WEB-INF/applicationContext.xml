@@ -31,21 +31,21 @@
 		<property name="mappingResources">
 			<list>
 				<!-- 以下用来列出Hibernate映射文件 -->
-				<mapping resource="com/scuthnweb/domain/Account.hbm.xml"/>			
-				<mapping resource="com/scuthnweb/domain/Action_join_info.hbm.xml"/>			
-				<mapping resource="com/scuthnweb/domain/Action_pic.hbm.xml"/>			
-				<mapping resource="com/scuthnweb/domain/Action_summary.hbm.xml"/>			
-				<mapping resource="com/scuthnweb/domain/Action.hbm.xml"/>			
-				<mapping resource="com/scuthnweb/domain/Album_pic.hbm.xml"/>			
-				<mapping resource="com/scuthnweb/domain/Album.hbm.xml"/>			
-				<mapping resource="com/scuthnweb/domain/Message.hbm.xml"/>			
-				<mapping resource="com/scuthnweb/domain/New_pic.hbm.xml"/>			
-				<mapping resource="com/scuthnweb/domain/New.hbm.xml"/>			
-				<mapping resource="com/scuthnweb/domain/Note.hbm.xml"/>			
-				<mapping resource="com/scuthnweb/domain/Role.hbm.xml"/>			
-				<mapping resource="com/scuthnweb/domain/Share_link.hbm.xml"/>			
-				<mapping resource="com/scuthnweb/domain/Sy_user_pic.hbm.xml"/>			
-				<mapping resource="com/scuthnweb/domain/Sy_user.hbm.xml"/>				
+				<value>com/scuthnweb/domain/Account.hbm.xml</value>		
+				<value>com/scuthnweb/domain/Action_join_info.hbm.xml</value>			
+				<value>com/scuthnweb/domain/Action_pic.hbm.xml</value>				
+				<value>com/scuthnweb/domain/Action_summary.hbm.xml</value>				
+				<value>com/scuthnweb/domain/Action.hbm.xml</value>				
+				<value>com/scuthnweb/domain/Album_pic.hbm.xml</value>				
+				<value>com/scuthnweb/domain/Album.hbm.xml</value>				
+				<value>com/scuthnweb/domain/Message.hbm.xml</value>				
+				<value>com/scuthnweb/domain/New_pic.hbm.xml</value>				
+				<value>com/scuthnweb/domain/New.hbm.xml</value>			
+				<value>com/scuthnweb/domain/Note.hbm.xml</value>				
+				<value>com/scuthnweb/domain/Role.hbm.xml</value>				
+				<value>com/scuthnweb/domain/Share_link.hbm.xml</value>				
+				<value>com/scuthnweb/domain/Sy_user_pic.hbm.xml</value>				
+				<value>com/scuthnweb/domain/Sy_user.hbm.xml</value>				
 			</list>
 		</property>
 		<!-- 定义Hibernate的SessionFactory的属性 -->
@@ -60,10 +60,6 @@
 				<prop key="hibernate.show_sql">true</prop>
 				<!-- 将SQL脚本进行格式化后再输出 -->
 				<prop key="hibernate.format_sql">true</prop>
-				<!-- 开启二级缓存 -->
-			    <prop key="hibernate.cache.use_second_level_cache">true</prop>
-			    <!-- 设置二级缓存的提供者 -->
-			    <prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop>			
 			</props>
 		</property>
 	</bean>	    
