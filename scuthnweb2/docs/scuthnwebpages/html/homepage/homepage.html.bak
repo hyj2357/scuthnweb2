@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html  style="text-align:center;">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+  <title>华工xx同乡会</title>
+  <link rel="stylesheet" type="text/css" href="../../css/homepage/style.css" />
+  <script src="../../js/public/jquery-2.1.4.min.js"></script>
+  <script src="../../js/homepage/script.js"></script>
+  
+  <script type="text/javascript">
+     window.onresize=function(){  
+                 ctop();  
+     } 
+	 window.onload=function(){
+		 var w=window.innerWidth
+         || document.documentElement.clientWidth
+         || document.body.clientWidth;
+         var _w = parseInt(w);
+         
+		 if(_w>1200){
+		   var v = (_w -1200)/2;
+		   _w = 1200;
+		   $("#wrap").css("margin-left",v+"px");
+           $("#wrap").css("margin-right",v+"px");
+		 }
+		 $(".top").css("width",_w);
+		 $(".top").css("height",_w*0.5);
+
+         $(".blackC_t").css("width",_w);
+         $(".blackC_t").css("height",_w*0.1);
+		 $(".topbar").css("width",_w);		 
+		 $(".topbar").css("height",_w*0.1);
+		 
+		 $("#v").css("top",_w*0.5);
+		 $("#v").css("height",_w*1);
+         $("#v").css("width",_w);
+
+         var _w_foot = _w*1+_w*0.5;
+		 $("#foot").css("top",_w_foot);
+		 $("#foot").css("width",_w);		 
+		 $("#foot").css("height",_w/4);
+		 
+	 }
+  </script>    
+
+</head>
+
+<body style="text-align:center;">
+ <div id="wrap" style="border-radius:8px;left:0px;top:0px;position:absolute;">
+  <div class="top">
+    <div class="fillContent" style="background-size: 100% auto;background-repeat: no-repeat;">
+	   <!--<img  style="max-width:100%;" class="fillContent" src="http://images.macx.cn/forum/201410/23/091432yk20q1qbko04xy94.jpg"/>-->
+	</div>
+	<div class="blackC">
+	</div>
+	<div class="blackC_t">
+	</div>
+	<div class="topbar">
+	  <div style="display:inline;">
+	     <img style="max-width:8.296%;max-height:80%;vertical-align: middle;width:8.296%;height:80%;" src="../../image/homepage/u6.png"/>
+	  </div>
+	  <div style="font-family:微软雅黑;color:#00CCFF;display:inline;">
+	     <div style="display:inline;">
+		   <span>
+	          <strong>华工xx同乡会</strong>
+	       </span>
+		 </div>
+		 <div style="padding-left:18%;display:inline;">
+		   <div class="barEl" onmouseover="cc($(this))" onmouseout="ccb($(this))">首页</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccg($(this))"style="color:#CCFF00;">活动中心</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccr($(this))"style="color:#FF9900;">资讯</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccb($(this))">登录</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccg($(this))"style="color:#CCFF00;">注册</div>&nbsp;&nbsp;&nbsp;
+		 </div>
+	  </div>
+    </div>
+    
+	<div id="content" style="position:absolute;Z-index:99;margin-top:15%;left:18%;color:#00CCFF;font-size:2.5em;font-family:华文楷体;">
+	       <img style="max-width:10.37%;max-height:100%;vertical-align: middle;width:10.37%;height:100%;" src="../../image/homepage/u6.png"/>
+		   <span class="xbi">
+		     <strong>华南理工大学XX同乡会</strong>
+		   </span><br/></br>
+		   <span class="xsi" style="font-family:微软雅黑;color:#E4E4E4;">
+		     <strong>加入华工XX同乡会,和我们一起成长吧!</strong>
+		   </span>
+		   <div id="topBtn" style="height:3em;width:30%;border-width:0.1em;cursor:pointer;border-color:#00CCFF;border-style:solid;border-radius:19px;font-size:0.5em;color:#00CCFF;margin-left:auto;margin-right:auto;margin-top:2%;" onmousemove="cover();" onmouseout="cout();">
+		     <div style="padding-top:8%;">
+		        <span class="xsi" style="font-family:微软雅黑;">
+			      <strong>进入主题看看</strong>
+			    </span>
+			 </div>
+		   </div>
+	</div>
+
+  </div>
+
+  <div id="v" style="position:absolute;left:0px;top:72%;width:100%;height:100%;background-color:#FFFFFF;">
+     <div class="intro">
+	    <img style="max-width:100%;" src="../../image/homepage/u28.png"/>
+		<div style="font-family:微软雅黑;color:#00CCFF;" onmouseover="addMediaf($(this));" onmouseout="removeMedia($(this));">
+		   <span class="bi"><strong>同乡会活动</strong></span><br/>
+           <span class="si">查看并加入近期同乡会开启的各种活动
+		</div>
+	 </div>
+	 <hr style="width:60%;">
+	 <div class="intro">
+	    <img style="max-width:100%;" src="../../image/homepage/u34.png"/>
+		<div style="font-family:微软雅黑;color:#CCFF00;" onmouseover="addMedias($(this));" onmouseout="removeMedia($(this));">
+		   <span class="bi"><strong>同乡会资讯</strong></span><br/>
+           <span class="si">开启查看同乡会近期各种资讯
+		</div>
+	 </div>
+	 <hr style="width:60%;">
+	 <div class="intro">
+	    <img style="max-width:100%;" src="../../image/homepage/u40.png"/>
+		<div style="font-family:微软雅黑;color:#FF9900;" onmouseover="addMediat($(this));" onmouseout="removeMedia($(this));">
+		   <span class="bi"><strong>资源共享</strong></span><br/>
+           <span class="si">开启查看各种资源链接
+		</div>
+	 </div>
+
+  </div><br/><br/>
+  <div id="foot" style="font-family:微软雅黑;border-radius:6px;box-shadow: 0px 0px 18px 0px;position:absolute;width:100%;height:30%;background-color:#CCCCCC;left:0px;bottom:0px;">   
+    <div style="font-family:微软雅黑;margin-top:5%;">  
+	  <div>
+	     <a href="#"><span class="si">联系我们</span></a>
+	  </div><br/>
+	  <div style="font-family:微软雅黑;display:inline;">
+		   <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">首页</span></div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">活动</span></div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">资讯</span></div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">管理员中心</span></div>&nbsp;&nbsp;&nbsp;
+	  </div><br/><br/>
+	  <div>
+	       <a href="http://www.scut.edu.cn/"><span style="color:#999999;" class="xsi">友情链接:华南理工大学官网</span></a>
+	  </div><br/>
+	  <div>
+	     <span class="xsi">备案信息:xxxxxxxxxxxxxxxxxxxxxx</span>
+	  </div>
+	</div>
+  </div>
+ </div>
+</body>
+
+</html>
