@@ -16,6 +16,6 @@
          <column name="authority" sql-type="bit"/>
       </property>
    
-      <many-to-one name="account" class="Account" column="account"/>                     
+      <many-to-one name="account" cascade="all" unique="true" class="Account" column="uid"/>                     
    </class>     
 </hibernate-mapping>

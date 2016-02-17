@@ -11,45 +11,50 @@
       <id name="account" type="string"/>
       <property name="register_time" type="java.sql.Timestamp"/>
               
-      <set name="users" inverse="true" cascade="all">
-            <key column="account"/>
-            <one-to-many class="Sy_user"/>
-      </set> 
-      <set name="roles" inverse="true" cascade="all">
-            <key column="account"/>
-            <one-to-many class="Role"/>
-      </set> 
+              
       <set name="news" inverse="true" cascade="all">
-            <key column="poster_account"/>
+            <key column="uid"/>
             <one-to-many class="New"/>
       </set> 
       <set name="actions" inverse="true" cascade="all">
-            <key column="creator_account"/>
+            <key column="uid"/>
             <one-to-many class="Action"/>
       </set> 
       <set name="albums" inverse="true" cascade="all">
-            <key column="creator_account"/>
+            <key column="uid"/>
             <one-to-many class="Album"/>
       </set> 
       <set name="receive_messages" inverse="true" cascade="all">
-            <key column="receiver_account"/>
+            <key column="ruid"/>
             <one-to-many class="Message"/>
       </set> 
       <set name="send_messages" inverse="true" cascade="all">
-            <key column="sender_account"/>
+            <key column="suid"/>
             <one-to-many class="Message"/>
       </set>
       <set name="join_actions" inverse="true" cascade="all">
-            <key column="poster_account "/>
+            <key column="uid"/>
             <one-to-many class="Action_summary"/>
       </set>         
       <set name="share_links" inverse="true" cascade="all">
-            <key column="poster_account "/>
+            <key column="uid "/>
             <one-to-many class="Share_link"/>
       </set>   
       <set name="notes" inverse="true" cascade="all">
-            <key column="poster_account"/>
+            <key column="uid"/>
             <one-to-many class="Note"/>
-      </set>                 
+      </set>
+      <set name="user_req_deals" inverse="true" cascade="all">
+            <key column="uid"/>
+            <one-to-many class="User_req_deal"/>
+      </set>
+      <set name="invite_codes" inverse="true" cascade="all">
+            <key column="uid"/>
+            <one-to-many class="Invite_code"/>
+      </set>
+      <set name="share_link_comments" inverse="true" cascade="all">
+            <key column="uid"/>
+            <one-to-many class="Share_link_comment"/>
+      </set>                       
    </class>     
 </hibernate-mapping>

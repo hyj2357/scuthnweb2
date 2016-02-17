@@ -8,7 +8,8 @@ public class Sy_user {
 	               grade,
 	               phone_number,
 	               qq_number,
-	               wechat_number;
+	               wechat_number,
+	               mail;
 	
 	private Account account;
 	
@@ -66,5 +67,11 @@ public class Sy_user {
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	public String getMail() {
+		return mail;
+	}
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
 }

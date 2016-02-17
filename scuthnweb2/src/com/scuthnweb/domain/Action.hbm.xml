@@ -14,11 +14,13 @@
           <column  name="introduction" sql-type="text" />
       </property>
       
+      <property name="position" type="string"/>
+      
       <property name="obj_status" type="int">
            <column name="obj_status" sql-type="bit"/>
       </property>
-   
-      <many-to-one name="account" class="Account" column="creator_account"/>                     
+      
+      <many-to-one name="account" class="Account" column="uid"/>                     
       <set name="action_pics" inverse="true" cascade="all">
             <key column="action_id"/>
             <one-to-many class="Action_pic"/>

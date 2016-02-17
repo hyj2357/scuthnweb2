@@ -2,8 +2,8 @@ package com.scuthnweb.domain;
 
 public class Album_pic {   
 	private Integer id;
-	 private String url;
-     private Album album;
+	private String url;
+    private Album album;
 	public String getUrl() {
 		return url;
 	}

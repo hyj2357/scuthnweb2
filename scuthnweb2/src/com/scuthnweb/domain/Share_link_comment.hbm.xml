@@ -7,21 +7,16 @@
 
 <!-- hibernate-mapping是映射文件的根元素 -->
 <hibernate-mapping package="com.scuthnweb.domain">
-   <class name="New" table="new">
-      <id name="id" type="int" length="10"><generator class="identity"/></id>   
-      <property name="title" type="string"/>
+   <class name="Share_link_comment" table="share_link_comment">
+      <id name="id" type="int" length="10">
+      	<generator class="identity"/>
+      </id>   
       <property name="content" type="string">
           <column  name="content" sql-type="text" />
       </property>      
       <property name="add_time" type="java.sql.Timestamp"/>
-      <property name="obj_status" type="int">
-          <column name="obj_status" sql-type="bit"/>
-      </property>
    
-      <many-to-one name="poster_account" class="Account" column="uid"/>                     
-      <set name="new_pics" inverse="true" cascade="all">
-            <key column="new_id"/>
-            <one-to-many class="New_pic"/>
-      </set>
+      <many-to-one name="account" class="Account" column="uid"/>
+      <many-to-one name="share_link" class="Share_link" column="link_id"/>                     
    </class>     
 </hibernate-mapping>

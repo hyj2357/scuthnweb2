@@ -18,7 +18,8 @@
       <property name="phone_number" type="string"/>
       <property name="qq_number" type="string"/>
       <property name="wechat_number" type="string"/>
+      <property name="mail" type="string"/>
       
-      <many-to-one name="account" class="Account" column="account"/>                     
+      <many-to-one name="account" cascade="all" unique="true" class="Account" column="uid"/>                     
    </class>     
 </hibernate-mapping>

@@ -7,13 +7,14 @@
 
 <!-- hibernate-mapping是映射文件的根元素 -->
 <hibernate-mapping package="com.scuthnweb.domain">
-   <class name="Sy_user_pic" table="sy_user_pic">
+   <class name="Invite_code" table="invite_code">
       <id name="id" type="int" length="10">
-            <generator class="identity"/>
-      </id>  
-      <property name="url" type="string">
-          <column  name="url" sql-type="text" />
-      </property>
-      <many-to-one name="account" class="Account" column="uid"/>                     
+      	<generator class="identity"/>
+      </id>   
+      <property name="code" type="string"/>
+      <property name="valid_time" type="java.sql.Timestamp"/>
+         
+      <many-to-one name="admin" class="Account" column="aid"/>                     
+      <many-to-one name="user" class="Account" column="uid"/>                     
    </class>     
 </hibernate-mapping>

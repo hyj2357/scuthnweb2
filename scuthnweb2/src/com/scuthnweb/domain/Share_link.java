@@ -1,5 +1,7 @@
 package com.scuthnweb.domain;
 
+import java.util.Set;
+
 public class Share_link {
     private Integer id;
     private String link_name;
@@ -7,6 +9,15 @@ public class Share_link {
     private java.sql.Timestamp add_time;
     
     private Account poster_account;
+    private Set<Share_link_comment> share_link_comments;
+    
+	public Set<Share_link_comment> getShare_link_comments() {
+		return share_link_comments;
+	}
+
+	public void setShare_link_comments(Set<Share_link_comment> share_link_comments) {
+		this.share_link_comments = share_link_comments;
+	}
 
 	public Integer getId() {
 		return id;

@@ -6,8 +6,6 @@ import java.util.Set;
 public class Account {
     private String account;
     private Timestamp register_time;
-    private Set<Sy_user> users;
-    private Set<Role> roles;
     private Set<New> news;
     private Set<Share_link> share_links;
     private Set<Action> actions;
@@ -15,7 +13,28 @@ public class Account {
     private Set<Album> albums;
     private Set<Message> receive_messages,send_messages;
     private Set<Note> notes;
+    private Set<User_req_deal> user_req_deals;
+    private Set<Invite_code> invite_codes;
+    private Set<Share_link_comment> share_link_comments;
     
+	public Set<User_req_deal> getUser_req_deals() {
+		return user_req_deals;
+	}
+	public void setUser_req_deals(Set<User_req_deal> user_req_deals) {
+		this.user_req_deals = user_req_deals;
+	}
+	public Set<Invite_code> getInvite_codes() {
+		return invite_codes;
+	}
+	public void setInvite_codes(Set<Invite_code> invite_codes) {
+		this.invite_codes = invite_codes;
+	}
+	public Set<Share_link_comment> getShare_link_comments() {
+		return share_link_comments;
+	}
+	public void setShare_link_comments(Set<Share_link_comment> share_link_comments) {
+		this.share_link_comments = share_link_comments;
+	}
 	public String getAccount() {
 		return account;
 	}
@@ -27,18 +46,6 @@ public class Account {
 	}
 	public void setRegister_time(Timestamp register_time) {
 		this.register_time = register_time;
-	}
-	public Set<Sy_user> getUsers() {
-		return users;
-	}
-	public void setUsers(Set<Sy_user> users) {
-		this.users = users;
-	}
-	public Set<Role> getRoles() {
-		return roles;
-	}
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
 	}
 	public Set<New> getNews() {
 		return news;

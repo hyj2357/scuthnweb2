@@ -7,6 +7,7 @@ public class Action {
 	private String action_name;
 	private String introduction;
 	private Integer obj_status;
+	private String position;
 	
 	private Account account;
 	private Set<Action_pic> action_pics;
@@ -64,6 +65,12 @@ public class Action {
 	}
 	public void setAction_summaries(Set<Action_summary> action_summaries) {
 		this.action_summaries = action_summaries;
+	}
+	public String getPosition() {
+		return position;
+	}
+	public void setPosition(String position) {
+		this.position = position;
 	}
 	
 }

@@ -14,6 +14,6 @@
       </property>      
       <property name="add_time" type="java.sql.Timestamp"/>
    
-      <many-to-one name="poster_account" class="Account" column="poster_account"/>                     
+      <many-to-one name="poster_account" class="Account" column="uid"/>                     
    </class>     
 </hibernate-mapping>
