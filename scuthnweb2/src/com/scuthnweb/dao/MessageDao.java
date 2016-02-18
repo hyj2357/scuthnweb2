@@ -1,5 +1,5 @@
 package com.scuthnweb.dao;
 
-public class CustomerDao {
+public class MessageDao {
 
 }

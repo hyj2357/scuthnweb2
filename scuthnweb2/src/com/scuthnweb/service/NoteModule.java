@@ -1,5 +1,5 @@
 package com.scuthnweb.service;
 
-public class NoteModule {
+public interface NoteModule {
 
 }
