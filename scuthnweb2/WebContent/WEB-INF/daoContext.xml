@@ -8,5 +8,10 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
     
-    <!-- 配置Dao层组件  -->        
+    <!-- 配置Dao层组件  -->
+    <bean id="accountDao" class="com.scuthnweb.dao.impl.AccountDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="roleDao" class="com.scuthnweb.dao.impl.RoleDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="sy_userDao" class="com.scuthnweb.dao.impl.Sy_userDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="valid_codeDao" class="com.scuthnweb.dao.impl.Valid_codeDaoImpl" parent="daoConfigTemplate"/>
+            
 </beans>

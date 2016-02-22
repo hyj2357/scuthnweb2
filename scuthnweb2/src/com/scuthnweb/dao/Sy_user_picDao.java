@@ -1,5 +1,5 @@
 package com.scuthnweb.dao;
 
-public class Sy_user_picDao {
+public interface Sy_user_picDao {
 
 }

@@ -1,0 +1,28 @@
+@import "../public/font.css";
+
+.barEl{
+   cursor:pointer;
+   display:inline;
+}
+
+.inputTxt:focus{
+    transition:border linear .2s,box-shadow linear .2s;
+    -moz-transition:border linear .2s,-moz-box-shadow linear .2s;
+    -webkit-transition:border linear .2s,-webkit-box-shadow linear .2s;
+    -o-transition:border linear .2s,-webkit-box-shadow linear .2s;
+    outline:none;
+	border-color:rgba(255,153,0,.75);
+    box-shadow:0px 0px 6px 2px rgba(255,153,0,.5);
+    -moz-box-shadow:0px 0px 6px 2px rgba(255,153,0,.5);
+    -webkit-box-shadow:0px 0px 6px 2px rgba(255,153,0,3);
+    -o-transition:0px 0px 6px 2px rgba(255,153,0,3);
+}
+
+.inputTxt{
+   border:none;
+   border-width: 2px;
+   border-style: solid;
+   border-color: #FF9900;
+   width:55%;
+   border-radius:3px;
+}

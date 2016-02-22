@@ -15,9 +15,25 @@
     <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
     
     <package name="scuthnweb" extends="struts-default" namespace="/">
-    
+       <!-- userAdModule -->
+       <action name="Register" class="RegisterAction">
+	      <result name="error">/WEB-INF/jsp/register/register.jsp</result>
+	      <result name="success">/WEB-INF/jsp/homepage/homepage.jsp</result>
+       </action>
+       <action name="Login" class="LoginAction">
+	      <result name="error">/WEB-INF/jsp/login/login.jsp</result>
+	      <result name="success">/WEB-INF/jsp/homepage/homepage.jsp</result>
+       </action>
+       <action name="LoginOut" class="LoginOutAction">
+	      <result name="error">/WEB-INF/jsp/homepage/homepage.jsp</result>
+	      <result name="success">/WEB-INF/jsp/homepage/homepage.jsp</result>
+       </action>
+       
+       <!-- end -->
+       
 <!-- WEB-INF下界面转发Action -->
        <action name="pfs" class="pfs">
+	      <result name="/WEB-INF/jsp/homepage/homepage.jsp">/WEB-INF/jsp/homepage/homepage.jsp</result>
        </action>
        
     </package>

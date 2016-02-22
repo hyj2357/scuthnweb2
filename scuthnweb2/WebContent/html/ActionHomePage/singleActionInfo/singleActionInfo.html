@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html  style="text-align:center;">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.4, user-scalable=no" />  <!-- 移动端用户不可缩放页面 -->
+  <title>华工xx同乡会</title>
+  <link rel="stylesheet" type="text/css" href="../../../css/ActionHomePage/style.css" />
+  <script src="../../../js/public/jquery-2.1.4.min.js"></script>
+  <script src="../../../js/ActionHomePage/singleActionInfo/singleActionInfoScript.js"></script>
+  <script src="../../../js/ActionHomePage/script.js"></script>  
+  <script type="text/javascript">
+  
+  window.onresize=function(){
+ 	 var w=window.innerWidth
+      || document.documentElement.clientWidth
+      || document.body.clientWidth;
+      var _w = parseInt(w);   //获取屏幕宽度
+      if(_w>1200){
+ 		 var v = (_w -1200)/2;
+ 		 _w = 1200;
+ 		 $("#wrap").css("width","1200px");
+ 		 $("#wrap").css("margin-left",(v-8)+"px");
+         $("#wrap").css("margin-right",(_w+v-8)+"px");
+         
+         $(".blackC_t").css("width","1200px");
+         $(".blackC_t").css("height","120px");         
+         $("#tbar").css("width","1200px"); 
+         $("#tbar").css("height","120px"); 
+         
+      }else{
+ 		 $("#wrap").css("width","100%");
+ 		 $("#wrap").css("margin-left",-8+"px");
+         //$("#wrap").css("margin-right",-8+"px");
+         
+         $(".blackC_t").css("width",_w+"px");
+         $(".blackC_t").css("height",(_w*0.1)+"px");
+         $("#tbar").css("width",_w+"px");
+         $("#tbar").css("height",(_w*0.1)+"px");
+      }
+  }
+  </script>
+</head>
+
+<body style="width:100%;height:100%;background-color:#FF9900;">
+   <div id="wrap" style="width:100%;margin-top:-8px;margin-left:-8px;height:100%;">
+   	 <div class="blackC_t">
+	 </div>
+     <div id="tbar" class="topbar">
+	  <div style="display:inline;">
+	     <img style="max-width:8.296%;max-height:80%;vertical-align: middle;width:8.296%;height:80%;" src="../../../image/homepage/u6.png"/>
+	  </div>
+	  <div style="font-family:微软雅黑;color:#FF9900;display:inline;">
+	     <div style="display:inline;">
+		   <span>
+	          <strong>华工xx同乡会</strong>
+	       </span>
+		 </div>
+		 <div style="padding-left:18%;display:inline;">
+		   <div class="barEl" onmouseover="cc($(this))" onmouseout="ccb($(this))"style="color:#00CCFF;" onclick="window.location = 'http://139.129.24.81:8082/scuthnhtml/html/homepage/homepage.html';">首页</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccg($(this))"style="color:#CCFF00;" onclick="window.location = 'http://139.129.24.81:8082/scuthnhtml/html/ActionHomePage/actionHomePage.html';">活动中心</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccr($(this))">资讯</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccb($(this))"style="color:#00CCFF;">登录</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccg($(this))"style="color:#CCFF00;">注册</div>&nbsp;&nbsp;&nbsp;
+		 </div>
+	  </div>
+     </div>
+     <div id="top" style="background-color:#FF9900;text-align:left;width:100%;">
+       <div>
+       </div>
+       <div style="padding:10% 0% 10% 0%;color:#FFFFFF;">
+         <div style="cursor:pointer;display:inline;padding" onclick="window.location='../actionHomePage.html';">
+            <img style="vertical-align:middle;" src="../../../image/ActionHomePage/u70.png"/>
+            <span style="font-family:微软雅黑;font-size:1em;">
+               <strong>返回活动中心主页</strong>
+            </span>
+         </div>
+         <div style="display:inline;margin-left:30%;">
+            <span style="font-family:微软雅黑;font-size:3em;">
+               <strong>活动中心</strong>
+            </span>
+         </div>
+       </div>
+     </div>
+     <div id="v" style="background-color:#FFFFFF;width:100%;">
+       <div id="content">
+           <div id="title">
+              <span style="color:#00CCFF;font-family:微软雅黑;font-size:2em;">
+                 <strong>2015冬季出游活动</strong>
+              </span>
+           </div>
+           <div>            		   
+              <div style="cursor:pointer;padding-top:2%;">
+                 <span>活动发起人:马老板</span>
+		         <img style="width:2.5%;max-width:20%;vertical-align:middle;" src="../../../image/ActionHomePage/stare_1.png">
+		         <span class="si" style="color:#00CCFF;font-family:微软雅黑;">
+		             <strong>关注该活动</strong>
+		         </span>
+		      </div>
+           </div><br/>
+           <div style="font-family:微软雅黑;">
+              <img style="box-shadow:0px 0px 8px 0px;width:80%;max-width:80%;" src="../../../image/ActionHomePage/u66.jpg"/><br/>
+              <span>
+              出游啦！小伙伴们是否还在为考试发愁?复习呢？<br/>
+       放松一下！
+       和同乡会的小伙伴们一起出游吧！
+              </span>
+           </div><br/><br/><br/>
+           <div id="actionInfo" style="font-family:微软雅黑;">
+              <ul style="list-style:none;">
+                <li>
+                   <div>
+                     <span><strong>活动开始时间:2015-12-15 08:00</strong></span>&nbsp;&nbsp;
+                     <span><strong>活动结束时间:2015-12-15 18:00</strong></span>
+                   </div>
+                </li><br/>
+                <li>
+                   <div>
+                     <span><strong>活动报名开始时间:2015-12-01 00:00</strong></span>&nbsp;&nbsp;
+                     <span><strong>活动报名结束时间:2015-12-15 08:00</strong></span>
+                   </div>               
+                </li><br/>
+                <li>
+                   <div>
+                     <span><strong>活动地点:大夫山</strong></span>&nbsp;&nbsp;
+                     <span><strong>活动当前状态:<span style="color:#FF9900;">报名中<span></strong></span>
+                   </div>
+                </li><br/>
+              </ul>
+           </div>
+           <div style="cursor:pointer;background-color:#CCFF00;color:#666666;width:15%;border-radius:8px;margin-left:42.5%;" onmouseover="cbc($(this));ccg($(this));" onmouseout="cbcg($(this));ccG($(this));" onclick="window.location='joinInfoPage.html';">
+              <span style="font-size:1.5em;font-family:微软雅黑;">
+                <strong>我要参加！</strong>
+              </span>
+           </div><br/><br/><br/>
+       </div>      
+     </div>
+     <div id="foot" style="font-family:微软雅黑;border-radius:6px;margin-top:-5%;box-shadow: 0px 0px 18px 0px;width:100%;height:30%;background-color:#CCCCCC;left:0px;bottom:0px;">   
+       <div style="font-family:微软雅黑;margin-top:5%;">  
+	     <div>
+	        <a target="_blank" href="#"><span class="si">联系我们</span></a>
+	     </div><br/>
+	     <div style="font-family:微软雅黑;display:inline;">
+		      <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">首页</span></div>&nbsp;&nbsp;&nbsp;
+              <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">活动</span></div>&nbsp;&nbsp;&nbsp;
+              <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">资讯</span></div>&nbsp;&nbsp;&nbsp;
+              <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">管理员中心</span></div>&nbsp;&nbsp;&nbsp;
+	     </div><br/>
+	     <div>
+	          <a target="_blank" href="http://www.scut.edu.cn/"><span style="color:#999999;" class="xsi">友情链接:华南理工大学官网</span></a>
+	     </div><br/>
+	     <div>
+	        <span class="xsi">备案信息:xxxxxxxxxxxxxxxxxxxxxx</span>
+	     </div>
+	   </div>
+     </div>
+   </div>   
+</body>
+
+<script type="text/javascript">
+	 var w=window.innerWidth
+     || document.documentElement.clientWidth
+     || document.body.clientWidth;
+     var _w = parseInt(w);   //获取屏幕宽度
+     
+	 if(_w>1200){
+		 var v = (_w -1200)/2;
+		 _w = 1200;
+		 $("#wrap").css("width","1200px");
+		 $("#wrap").css("margin-left",(v-8)+"px");
+         $("#wrap").css("margin-right",(_w+v-8)+"px");
+         $(".blackC_t").css("width","1200px");
+         $(".blackC_t").css("height",_w*0.1);
+         $("#tbar").css("width","1200px"); 
+         $("#tbar").css("height",_w*0.1);
+	 }else{
+		 $("#wrap").css("width","100%");
+		 $("#wrap").css("margin-left",-8+"px");
+         //$("#wrap").css("margin-right",_w+"px");
+         
+         $(".blackC_t").css("width",_w+"px");
+         $(".blackC_t").css("height",_w*0.1);
+         $("#tbar").css("width",_w+"px");  
+         $(".blackC_t").css("height",_w*0.1);
+	 }
+</script>
+</html>

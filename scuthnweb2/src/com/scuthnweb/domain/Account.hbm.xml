@@ -8,8 +8,12 @@
 <!-- hibernate-mapping是映射文件的根元素 -->
 <hibernate-mapping package="com.scuthnweb.domain">
    <class name="Account" table="account">
-      <id name="account" type="string"/>
+   	  <id name="id" type="int" length="10">
+            <generator class="identity"/>
+      </id> 
+      <property name="account" type="string"/>
       <property name="register_time" type="java.sql.Timestamp"/>
+      <property name="password" type="string"/>
               
               
       <set name="news" inverse="true" cascade="all">

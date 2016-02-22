@@ -1,5 +1,5 @@
 package com.scuthnweb.dao;
 
-public class NewDao {
+public interface NewDao {
 
 }

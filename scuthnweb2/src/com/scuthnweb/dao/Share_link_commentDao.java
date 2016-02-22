@@ -1,5 +1,5 @@
 package com.scuthnweb.dao;
 
-public class Share_link_commentDao {
+public interface Share_link_commentDao {
 
 }

@@ -6,12 +6,34 @@
     
 	<!-- 使用静态工厂方法实例化 ActionContext -->
 	<bean id="actionContext" class="com.opensymphony.xwork2.ActionContext" factory-method="getContext"/>
+	
+	<!-- 跨层查询验证模块-->
+	<bean id="queryValidateModule" class="com.scuthnweb.tool.QueryValidateModule">
+       <property name="accountDao" ref="accountDao"/>
+       <property name="sy_userDao" ref="sy_userDao"/>
+	</bean> 	
 	  	  
     <!-- 配置业务逻辑层组件  -->
-	
+	<bean id="userAdModule" class="com.scuthnweb.service.impl.UserAdModuleImpl">
+       <property name="accountDao" ref="accountDao"/>
+       <property name="sy_userDao" ref="sy_userDao"/>
+       <property name="roleDao" ref="roleDao"/>
+       <property name="valid_codeDao" ref="valid_codeDao"/>
+	</bean> 
 	
 	<!-- 配置action -->
-	
+
+<!--  UserAdModule -->
+    <!-- 配置 UserAdModule 的 action 配置模板 -->
+     <bean id="UserAdModuleTemplate" abstract="true" lazy-init="true">
+        <property name="userAdModule" ref="userAdModule"/>
+     </bean>
+	 <bean id="RegisterAction" class="com.scuthnweb.action.useradmodule.RegisterAction" parent="UserAdModuleTemplate">
+        <property name="queryValidateModule" ref="queryValidateModule"/>
+	 </bean> 		
+	 <bean id="LoginAction" class="com.scuthnweb.action.useradmodule.LoginAction" parent="UserAdModuleTemplate"/>		
+	 <bean id="LoginOutAction" class="com.scuthnweb.action.useradmodule.LoginOutAction"/>	 
+    	
 <!--  actModule -->
     <!-- 配置 actModule 的 action 配置模板 -->
 	

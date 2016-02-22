@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html  style="text-align:center;">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.4, user-scalable=no" />  <!-- 移动端用户不可缩放页面 -->
+  <title>myStareLinks</title>
+  <link rel="stylesheet" type="text/css" href="../../css/ActionHomePage/style.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/UserManage/UserManage.css" />
+  <script src="../../js/public/jquery-2.1.4.min.js"></script>
+  <script src="../../js/ActionHomePage/singleActionInfo/singleActionInfoScript.js"></script>
+  <script src="../../js/UserManage/UserManage.js"></script>
+  <script src="../../js/ActionHomePage/script.js"></script>  
+  <script type="text/javascript">
+  
+  window.onresize=function(){
+ 	 var w=window.innerWidth
+      || document.documentElement.clientWidth
+      || document.body.clientWidth;
+      var _w = parseInt(w);   //获取屏幕宽度
+      if(_w>1200){
+ 		 var v = (_w -1200)/2;
+ 		 _w = 1200;
+ 		 $("#wrap").css("width","1200px");
+ 		 $("#wrap").css("margin-left",(v-8)+"px");
+         $("#wrap").css("margin-right",(_w+v-8)+"px");
+         
+         $(".blackC_t").css("width","1200px");
+         $(".blackC_t").css("height","120px");         
+         $("#tbar").css("width","1200px"); 
+         $("#tbar").css("height","120px"); 
+         
+      }else{
+ 		 $("#wrap").css("width","100%");
+ 		 $("#wrap").css("margin-left",-8+"px");
+         //$("#wrap").css("margin-right",-8+"px");
+         
+         $(".blackC_t").css("width",_w+"px");
+         $(".blackC_t").css("height",(_w*0.1)+"px");
+         $("#tbar").css("width",_w+"px");
+         $("#tbar").css("height",(_w*0.1)+"px");
+      }
+  }
+  </script>
+</head>
+
+<body style="width:100%;height:100%;background-color:#00CCFF;">
+   <div id="wrap" style="width:100%;margin-top:-8px;margin-left:-8px;height:100%;">
+   	 <div class="blackC_t">
+	 </div>
+     <div id="tbar" class="topbar">
+	  <div style="display:inline;">
+	     <img style="max-width:8.296%;max-height:80%;vertical-align: middle;width:8.296%;height:80%;" src="../../image/homepage/u6.png"/>
+	  </div>
+	  <div style="font-family:微软雅黑;color:#00CCFF;display:inline;">
+	     <div style="display:inline;">
+		   <span>
+	          <strong>华工xx同乡会</strong>
+	       </span>
+		 </div>
+		 <div style="padding-left:18%;display:inline;">
+		   <div class="barEl" onmouseover="cc($(this))" onmouseout="ccb($(this))"style="color:#00CCFF;" onclick="window.location = 'http://139.129.24.81:8082/scuthnhtml/html/homepage/homepage.html';">首页</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccg($(this))"style="color:#CCFF00;" onclick="window.location = 'http://139.129.24.81:8082/scuthnhtml/html/ActionHomePage/actionHomePage.html';">活动中心</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccr($(this))"style="color:#FF9900;">资讯</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccb($(this))"style="color:#00CCFF;">注册</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccg($(this))"style="color:#CCFF00;" onclick="window.location = 'UserManage.html';">马云</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccr($(this))"style="color:#FF9900;">退出</div>&nbsp;&nbsp;&nbsp;          
+		 </div>
+	  </div>
+     </div>
+     <div id="top" style="background-color:#00CCFF;text-align:left;width:100%;">
+       <div>
+       </div>
+       <div style="padding:10% 0% 10% 0%;color:#FFFFFF;">
+	     <div style="cursor:pointer;display:inline;padding" onclick="window.location='../homepage/homepage.html';">
+            <img style="vertical-align:middle;" src="../../image/ActionHomePage/u70.png"/>
+            <span style="font-family:微软雅黑;font-size:1em;">
+               <strong>返回首页</strong>
+            </span>
+         </div>
+         <div style="display:inline;margin-left:30%;">
+            <span style="font-family:微软雅黑;font-size:3em;">
+               <strong>用户中心</strong>
+            </span>
+         </div>
+       </div>
+     </div>
+     <div id="v" style="font-family:微软雅黑;background-color:#FFFFFF;width:100%;">
+        <br/>
+        <span style="color:#00CCFF;font-family:微软雅黑;font-size:2em;">
+           <strong>我收藏的资源</strong>
+        </span><br/><br/><br/>
+        <div>
+           <div style="background-color:#FFFFFF;width:60%;display:inline-block;vertical-align:top;">
+               <div style="display:inline-block;width:90%">
+	               <table style="border:1px solid gray;width:100%">
+						<tr><td>1</td><td>2015冬季出游活动</td><td>退出该活动</td></tr>
+						<tr><td>2</td><td>四叶草运动会</td><td>退出该活动</td></tr>
+				   </table>
+				   	<p class="xsi"><span>共<span>2<span>条消息<span>1</span>页</span>&nbsp;&nbsp;&nbsp;<span>第一页</span>&nbsp;&nbsp;&nbsp;<span>前往该页</span>&nbsp;&nbsp;&nbsp;<input/><span style="cursor:pointer;">上一页</span>&nbsp;&nbsp;&nbsp;<span style="cursor:pointer;">下一页</span></p>
+               </div>
+           </div>
+           <div style="box-shadow:0px 0px 8px 0px;border-radius:6px;background-color:#CCFF00;width:20%;display:inline-block;">
+           	   <div class="si">
+           	   	   <span style="color:#666666;">
+           	   	      <strong>个人信息查看</strong>
+           	   	   </span>
+           	   	   <ul class="xbi" style="list-style:none;margin-left:-40px;">
+           	   	   	  <li>
+           	   	   	  	<div class="ncBoard" onmouseover="mouseOverNcboard($(this));" onmouseout="mouseOutNcboard($(this));">
+           	   	   	  		<span>
+           	   	   	  			个人资料
+           	   	   	  		</span>
+           	   	   	  	</div>
+           	   	   	  </li>
+           	   	   	  <li>
+           	   	   	  	<div class="ncBoard" onmouseover="mouseOverNcboard($(this));" onmouseout="mouseOutNcboard($(this));">
+           	   	   	  		<span>
+           	   	   	  			活动中心
+           	   	   	  		</span>
+           	   	   	  	</div>
+           	   	   	  </li>
+           	   	   	  <li>
+           	   	   	  	<div class="clickBoard">
+           	   	   	  		<span>
+           	   	   	  			资源共享中心
+           	   	   	  		</span>
+           	   	   	  	</div>
+           	   	   	  </li>
+           	   	   	  <li>
+           	   	   	  	<div class="ncBoard" onmouseover="mouseOverNcboard($(this));" onmouseout="mouseOutNcboard($(this));">
+           	   	   	  		<span>
+           	   	   	  			我发布的资源
+           	   	   	  		</span>
+           	   	   	  	</div>
+           	   	   	  </li>
+					  <li>
+           	   	   	  	<div class="clickBoard">
+           	   	   	  		<span>
+           	   	   	  			我收藏的资源
+           	   	   	  		</span>
+           	   	   	  	</div>
+           	   	   	  </li>
+					  <li>
+           	   	   	  	<div class="ncBoard" onmouseover="mouseOverNcboard($(this));" onmouseout="mouseOutNcboard($(this));">
+           	   	   	  		<span>
+           	   	   	  			咨讯中心
+           	   	   	  		</span>
+           	   	   	  	</div>
+           	   	   	  </li>
+					  <li>
+           	   	   	  	<div class="ncBoard" onmouseover="mouseOverNcboard($(this));" onmouseout="mouseOutNcboard($(this));">
+           	   	   	  		<span>
+           	   	   	  			通知中心
+           	   	   	  		</span>
+           	   	   	  	</div>
+           	   	   	  </li>
+           	   	   </ul>
+           	   </div>
+           </div>
+        </div>
+        <br/><br/>    
+     </div>
+     <div id="foot" style="font-family:微软雅黑;border-radius:6px;margin-top:-5%;box-shadow: 0px 0px 18px 0px;width:100%;height:30%;background-color:#CCCCCC;left:0px;bottom:0px;">   
+       <div style="font-family:微软雅黑;margin-top:5%;">  
+	     <div>
+	        <a target="_blank" style="text-decoration:none;" href="#"><span class="si">联系我们</span></a>
+	     </div><br/>
+	     <div style="font-family:微软雅黑;display:inline;">
+		      <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">首页</span></div>&nbsp;&nbsp;&nbsp;
+              <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">活动</span></div>&nbsp;&nbsp;&nbsp;
+              <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">资讯</span></div>&nbsp;&nbsp;&nbsp;
+              <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">管理员中心</span></div>&nbsp;&nbsp;&nbsp;
+	     </div><br/>
+	     <div>
+	          <a target="_blank" style="text-decoration:none;" href="http://www.scut.edu.cn/"><span style="color:#999999;" class="xsi">友情链接:华南理工大学官网</span></a>
+	     </div><br/>
+	     <div>
+	        <span class="xsi">备案信息:xxxxxxxxxxxxxxxxxxxxxx</span>
+	     </div>
+	   </div>
+     </div>
+   </div>   
+</body>
+
+<script type="text/javascript">
+	 var w=window.innerWidth
+     || document.documentElement.clientWidth
+     || document.body.clientWidth;
+     var _w = parseInt(w);   //获取屏幕宽度
+     
+	 if(_w>1200){
+		 var v = (_w -1200)/2;
+		 _w = 1200;
+		 $("#wrap").css("width","1200px");
+		 $("#wrap").css("margin-left",(v-8)+"px");
+         $("#wrap").css("margin-right",(_w+v-8)+"px");
+         $(".blackC_t").css("width","1200px");
+         $(".blackC_t").css("height",_w*0.1);
+         $("#tbar").css("width","1200px"); 
+         $("#tbar").css("height",_w*0.1);
+	 }else{
+		 $("#wrap").css("width","100%");
+		 $("#wrap").css("margin-left",-8+"px");
+         //$("#wrap").css("margin-right",_w+"px");
+         
+         $(".blackC_t").css("width",_w+"px");
+         $(".blackC_t").css("height",_w*0.1);
+         $("#tbar").css("width",_w+"px");  
+         $(".blackC_t").css("height",_w*0.1);
+	 }
+</script>
+</html> 

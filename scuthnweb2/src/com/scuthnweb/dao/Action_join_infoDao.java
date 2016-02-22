@@ -1,5 +1,5 @@
 package com.scuthnweb.dao;
 
-public class Action_join_infoDao {
+public interface Action_join_infoDao {
 
 }

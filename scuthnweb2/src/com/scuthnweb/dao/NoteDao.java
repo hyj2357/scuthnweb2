@@ -1,5 +1,5 @@
 package com.scuthnweb.dao;
 
-public class NoteDao {
+public interface NoteDao {
 
 }

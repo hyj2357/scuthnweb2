@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html  style="text-align:center;">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />  <!-- 移动端用户不可缩放页面 -->
+  <title>华工xx同乡会</title>
+  <link rel="stylesheet" type="text/css" href="../../css/ActionHomePage/style.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/public/grid-slider.css" />
+  <script src="../../js/public/jquery-2.1.4.min.js"></script>
+  <script src="../../js/ActionHomePage/script.js"></script>
+  
+  <script type="text/javascript">
+     //var w=window.innerWidth|| document.documentElement.clientWidth|| document.body.clientWidth;
+     //if(parseFloat(w)>768){
+        window.onresize=function(){  
+                 window.setTimeout("ctop();",200);
+        } 
+	 //}
+	 /**
+	 window.onload=function(){
+		 var w=window.innerWidth
+         || document.documentElement.clientWidth
+         || document.body.clientWidth;
+         var _w = parseInt(w);
+         
+            var userAgentInfo = navigator.userAgent; 
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"); 
+            var flag = true; 
+            for (var v = 0; v < Agents.length; v++) { 
+                if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; } 
+            }      
+
+		 if(_w>1200 && flag){
+		   var v = (_w -1200)/2;
+		   _w = 1200;
+		   $("#wrap").css("margin-left",v+"px");
+           $("#wrap").css("margin-right",v+"px");
+		 }else if(_w<786 && flag){
+			$("#topLogo").css("display","block");
+		   	$("#topBtn").css("visibility","hidden");    //尺寸过低隐藏按钮
+	        $("#otherContent").css("visibility","hidden");   //尺寸过低隐藏内容
+		 }else if(_w<400 && flag){
+			//$("body").css("background-color","#FFFFFF");
+            $(".blackC_t").css("visibility","hidden");			
+            $(".topbar").css("visibility","hidden");
+			//$(".fillContent").css("background-image","url()");
+			$("#topLogo").css("display","block");
+		   	$("#topBtn").css("visibility","hidden");    //尺寸过低隐藏按钮
+	        $("#otherContent").css("visibility","hidden");   //尺寸过低隐藏内容
+		 }else{                                             //移动端访问页面格局自适应
+			$(".top").css("box-shadow","0px 0px 0px 0px");
+            $("#introimgf").css("width","15%");
+            $("#introimgs").css("width","15%");
+            $("#introimgt").css("width","15%");
+            $("#logoimg").css("height","25%");
+
+			$("#content").css("left","5%");
+            $("#content").css("margin-top","10%");
+			$(".xbi").css("font-size","0.6em");
+			$("body").css("background-color","#FFFFFF");
+            $(".blackC_t").css("visibility","hidden");			
+            $(".topbar").css("visibility","hidden");
+
+			$(".floatInfo").css("display","none");     //移动端隐藏浮动微信二维码
+
+			//$(".fillContent").css("background-image","url()");
+			$("#topLogo").css("display","block");
+		   	$("#topBtn").css("visibility","hidden");    //尺寸过低隐藏按钮
+	        $("#otherContent").css("visibility","hidden");   //尺寸过低隐藏内容
+			$("#foot").css("visibility","hidden");
+			$("hr").css("visibility","hidden");
+            $(".floatInfo").css("display","none");    //隐藏浮动微信二维码
+            
+            $("#sp").css("display","block");
+            $("#wechat").css("display","block");
+		 }
+
+		 $(".top").css("width",_w);
+		 $(".top").css("height",_w*0.5);
+
+         $(".blackC_t").css("width",_w);
+         $(".blackC_t").css("height",_w*0.1);
+		 $(".topbar").css("width",_w);		 
+		 $(".topbar").css("height",_w*0.1);
+		 
+		 $("#v").css("top",_w*0.5);
+		 $("#v").css("height",_w*2);
+         $("#v").css("width",_w);
+
+         var _w_foot = _w*2+_w*0.5;
+		 $("#foot").css("top",_w_foot);
+		 $("#foot").css("width",_w);		 
+		 $("#foot").css("height",_w/4);
+		 
+	 }**/
+  </script>    
+
+</head>
+
+<body style="text-align:center;">
+ <div id="wrap" style="border-radius:8px;left:0px;top:0px;position:absolute;">
+  <div class="floatInfo" onclick="clickFI($(this));" onmouseover="ccg($(this));" onmouseout="cc_1($(this));">
+  </div>
+  <div class="top">
+    <div class="fillContent" style="background-size: 100% auto;background-repeat: no-repeat;">
+	   <!--<img  style="max-width:100%;" class="fillContent" src="http://images.macx.cn/forum/201410/23/091432yk20q1qbko04xy94.jpg"/>-->
+	</div>
+	<div class="blackC">
+	</div>
+	<div class="blackC_t">
+	</div>
+	<div id="tbar" class="topbar">
+	  <div style="display:inline;">
+	     <img style="max-width:8.296%;max-height:80%;vertical-align: middle;width:8.296%;height:80%;" src="../../image/homepage/u6.png"/>
+	  </div>
+	  <div style="font-family:微软雅黑;color:#FF9900;display:inline;">
+	     <div style="display:inline;">
+		   <span>
+	          <strong>华工xx同乡会</strong>
+	       </span>
+		 </div>
+		 <div style="padding-left:18%;display:inline;">
+		   <div class="barEl" onmouseover="cc($(this))" onmouseout="ccb($(this))"style="color:#00CCFF;" onclick="window.location = 'http://139.129.24.81:8082/scuthnhtml/html/homepage/homepage.html';">首页</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccg($(this))"style="color:#CCFF00;" onclick="window.location = 'http://139.129.24.81:8082/scuthnhtml/html/ActionHomePage/actionHomePage.html';">活动中心</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccr($(this))">资讯</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccb($(this))"style="color:#00CCFF;">登录</div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccg($(this))"style="color:#CCFF00;">注册</div>&nbsp;&nbsp;&nbsp;
+		 </div>
+	  </div>
+    </div>
+    
+	<div id="content" style="position:absolute;Z-index:99;margin-top:15%;left:21%;color:#FF9900;font-size:2.5em;font-family:华文楷体;">
+	       <div id="topLogo" style="display:inline;">
+		     <img id="logoimg" style="max-width:100%;max-height:100%;vertical-align:middle;width:20%;height:20%;" src="../../image/ActionHomePage/u64.png"/>
+		   </div>
+		   <span class="xbi">
+		     <strong>活动中心</strong>
+		   </span><br/></br>
+		   <span id="otherContent" class="xsi" style="font-family:微软雅黑;color:#E4E4E4;">
+		     <strong>加入华工XX同乡会,和我们一起成长吧!</strong>
+		   </span>
+		   <div id="topBtn" style="height:3em;width:30%;border-width:0.1em;cursor:pointer;border-color:#FF9900;color:#FF9900;border-style:solid;border-radius:19px;font-size:0.5em;margin-left:auto;margin-right:auto;margin-top:2%;" onmousemove="cover();" onmouseout="cout();">
+		     <div style="padding-top:8%;">
+		        <span class="xsi" style="font-family:微软雅黑;">
+			      <strong>进入主题看看</strong>
+			    </span>
+			 </div>
+		   </div>
+	</div>
+
+  </div>
+
+  <div id="v" style="position:absolute;left:0px;top:72%;width:100%;height:100%;background-color:#FFFFFF;">
+     <div id="title1" style="border-style:solid;border-color:#FFFFFF;border-width:15px 0px 0px 0px;width:100%;height:5%;background-color:#FF9900;">
+	     <img src="http://139.129.24.81:8082/scuthnhtml/image/ActionHomePage/relax1.jpg" style="width:10%;height:100%;max-width:10%;vertical-align:middle;"/>
+		 <span class="si" style="font-family:微软雅黑;color:#FFFFFF;padding: 0% 10% 0% 10%;">
+		     <strong>近期活动</strong>
+		 </span>
+         <img src="http://139.129.24.81:8082/scuthnhtml/image/ActionHomePage/swim.jpg" style="width:8%;height:60%;max-width:8%;vertical-align:middle;"/>
+	 </div>
+	 <div id="actions" style="text-align:center;padding:10% 0% 3% 0%;">
+	       <img style="border-radius:6px;box-shadow:0px 0px 8px 0px;width:80%;max-width:80%;"src="../../image/ActionHomePage/u66.jpg"/>
+	 </div>
+	 <div id="actsList" style="text-align:center;padding:0% 0% 5% 0%;font-family:微软雅黑;">
+	    <div class="si" style="margin-left: 45%;width:10%;color:#FFFFFF;background-color:#FF9900;border-radius:6px 6px 0px 0px;">
+		   <strong>全部活动</strong>
+		</div>
+		<hr style="margin-top:-1px;border:3px solid #FF9900;width:60%;"/>
+		<div id="actsListsContent">
+	      <ul style="list-style:none;">
+		     <li>
+			    <div style="padding:0px 0px 5px 0px;box-shadow: 0px 0px 8px 0px;border-radius: 4px;">
+				    同乡会出游活动&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报名中...
+				</div>
+			 </li>
+             <li>
+			 	<div style="padding:0px 0px 5px 0px;">
+                   清补凉DIY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报名中...
+				</div>
+			 </li>
+             <li>
+			    <div style="padding:0px 0px 5px 0px;">
+   			       创新创业&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报名中...
+				</div>
+			 </li>
+             <li>
+			 	<div style="padding:0px 0px 5px 0px;">
+   			       考研经验专题会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报名中...
+				</div>
+			 </li>
+             <li>
+			    <div style="padding:0px 0px 5px 0px;">
+   			       ACM经验专题会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报名中...
+				</div>
+			 </li>
+		     <li>
+			    <div style="padding:0px 0px 5px 0px;">
+   			       四叶草运动会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报名中...
+				</div>
+			 </li>
+             <li>
+			 	<div style="padding:0px 0px 5px 0px;">
+   			       同乡会实习经验专题会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报名中...
+				</div>
+			 </li>
+             <li>
+			 	<div style="padding:0px 0px 5px 0px;">
+   			       同乡会科技竞赛组队沙龙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报名中...
+				</div>
+			 </li>
+             <li>
+			 	<div style="padding:0px 0px 5px 0px;">
+   			       同乡会技术团队招新&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报名中...
+				</div>
+			 </li>
+             <li>
+			 	<div style="padding:0px 0px 5px 0px;">
+   			       阿拉阿拉阿拉阿拉阿拉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报名中...
+				</div>
+			 </li>
+		  </ul>
+		  <div>
+		    <span style="width:5%;border-radius:3px;background-color:#FF9900;color:#FFFFFF;">
+		      上一页
+		    </span>
+            <span style="margin-left:10%;width:5%;border-radius:3px;background-color:#FF9900;color:#FFFFFF;">
+		      下一页
+		    </span>
+		  </div>
+	   </div>
+	   <hr style="border:3px solid #FF9900;width:60%;"/>
+	 </div>
+	 <div id="title2" style="border-style:solid;border-color:#FFFFFF;border-width:15px 0px 0px 0px;width:100%;height:5%;background-color:#FF9900;">
+	     <img src="../../image/ActionHomePage/dopin.jpg" style="width:10%;height:70%;max-width:10%;vertical-align:middle;"/>
+		 <span class="si" style="font-family:微软雅黑;color:#FFFFFF;padding: 0% 10% 0% 10%;">
+		     <strong>活动相册</strong>
+		 </span>
+         <img src="../../image/ActionHomePage/shark.jpg" style="width:8%;height:60%;max-width:8%;vertical-align:middle;"/>
+	 </div>
+	 <hr id="sp" style="display:none;width:60%;">
+     <div id="wechat" style="display:none;">
+        <div>
+	       <img src="http://139.129.24.81:8082/scuthnhtml/image/homepage/w3.jpeg">
+	    </div>
+		<div style="font-family:微软雅黑;width:100%;height:30%;background-color:#CCCCCC;">
+		   <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">首页</span></div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">活动</span></div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">资讯</span></div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">管理员中心</span></div>&nbsp;&nbsp;&nbsp;
+		   <div>
+	         <span class="xsi">备案信息:xxxxxxxxxxxxxxxxxxxxxx</span>
+	       </div>
+		</div>
+     </div>
+  </div>
+  <div id="foot" style="font-family:微软雅黑;border-radius:6px;box-shadow: 0px 0px 18px 0px;position:absolute;width:100%;height:30%;background-color:#CCCCCC;left:0px;bottom:0px;">   
+    <div style="font-family:微软雅黑;margin-top:5%;">  
+	  <div>
+	     <a target="_blank" href="#"><span class="si">联系我们</span></a>
+	  </div>
+	  <div style="font-family:微软雅黑;display:inline;">
+		   <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">首页</span></div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">活动</span></div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">资讯</span></div>&nbsp;&nbsp;&nbsp;
+           <div class="barEl" onmouseover="cc($(this))" onmouseout="ccB($(this))"><span class="si">管理员中心</span></div>&nbsp;&nbsp;&nbsp;
+	  </div>
+	  <div>
+	       <a target="_blank" href="http://www.scut.edu.cn/"><span style="color:#999999;" class="xsi">友情链接:华南理工大学官网</span></a>
+	  </div>
+	  <div>
+	     <span class="xsi">备案信息:xxxxxxxxxxxxxxxxxxxxxx</span>
+	  </div>
+	</div>
+  </div>
+ </div>
+</body>
+
+<script type="text/javascript">
+   		 var w=window.innerWidth
+         || document.documentElement.clientWidth
+         || document.body.clientWidth;
+         var _w = parseInt(w);
+         
+            var userAgentInfo = navigator.userAgent; 
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"); 
+            var flag = true; 
+            for (var v = 0; v < Agents.length; v++) { 
+                if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; } 
+            }      
+
+		 if(_w>1200 && flag){
+		   var v = (_w -1200)/2;
+		   _w = 1200;
+		   $("#wrap").css("margin-left",v+"px");
+           $("#wrap").css("margin-right",v+"px");
+		 }else if(_w<786 && flag){
+			$("#topLogo").css("display","block");
+		   	$("#topBtn").css("visibility","hidden");    //尺寸过低隐藏按钮
+	        $("#otherContent").css("visibility","hidden");   //尺寸过低隐藏内容
+		 }else if(_w<400 && flag){
+			//$("body").css("background-color","#FFFFFF");
+            $(".blackC_t").css("visibility","hidden");			
+            $(".topbar").css("visibility","hidden");
+			//$(".fillContent").css("background-image","url()");
+			$("#topLogo").css("display","block");
+		   	$("#topBtn").css("visibility","hidden");    //尺寸过低隐藏按钮
+	        $("#otherContent").css("visibility","hidden");   //尺寸过低隐藏内容
+		 }else{                                             //移动端访问页面格局自适应
+			$(".top").css("box-shadow","0px 0px 0px 0px");
+            $("#introimgf").css("width","15%");
+            $("#introimgs").css("width","15%");
+            $("#introimgt").css("width","15%");
+            $("#logoimg").css("height","25%");
+
+			$("#content").css("left","5%");
+            $("#content").css("margin-top","10%");
+			$(".xbi").css("font-size","0.6em");
+			$("body").css("background-color","#FFFFFF");
+            $(".blackC_t").css("visibility","hidden");			
+            $(".topbar").css("visibility","hidden");
+
+			$(".floatInfo").css("display","none");     //移动端隐藏浮动微信二维码
+
+			//$(".fillContent").css("background-image","url()");
+			$("#topLogo").css("display","block");
+		   	$("#topBtn").css("visibility","hidden");    //尺寸过低隐藏按钮
+	        $("#otherContent").css("visibility","hidden");   //尺寸过低隐藏内容
+			$("#foot").css("visibility","hidden");
+			$("hr").css("visibility","hidden");
+            $(".floatInfo").css("display","none");    //隐藏浮动微信二维码
+            
+            $("#sp").css("display","block");
+            $("#wechat").css("display","block");
+		 }
+
+		 $(".top").css("width",_w);
+		 $(".top").css("height",_w*0.5);
+
+         $(".blackC_t").css("width",_w);
+         $(".blackC_t").css("height",_w*0.1);
+		 $(".topbar").css("width",_w);		 
+		 $(".topbar").css("height",_w*0.1);
+		 
+		 $("#v").css("top",_w*0.5);
+		 $("#v").css("height",_w*2);
+         $("#v").css("width",_w);
+
+         var _w_foot = _w*2+_w*0.5;
+		 $("#foot").css("top",_w_foot);
+		 $("#foot").css("width",_w);		 
+		 $("#foot").css("height",_w/4);
+</script>
+</html>

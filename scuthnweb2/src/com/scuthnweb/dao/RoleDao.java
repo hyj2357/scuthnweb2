@@ -1,5 +1,5 @@
 package com.scuthnweb.dao;
 
-public class RoleDao {
+public interface RoleDao {
 
 }

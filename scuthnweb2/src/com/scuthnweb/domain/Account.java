@@ -4,8 +4,11 @@ import java.sql.Timestamp;
 import java.util.Set;
 
 public class Account {
+	private Integer id;
     private String account;
     private Timestamp register_time;
+    private String password;
+    
     private Set<New> news;
     private Set<Share_link> share_links;
     private Set<Action> actions;
@@ -94,6 +97,18 @@ public class Account {
 	}
 	public void setSend_messages(Set<Message> send_messages) {
 		this.send_messages = send_messages;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 }

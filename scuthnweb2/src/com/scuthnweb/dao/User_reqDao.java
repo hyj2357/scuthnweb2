@@ -1,5 +1,5 @@
 package com.scuthnweb.dao;
 
-public class User_reqDao {
+public interface User_reqDao {
 
 }

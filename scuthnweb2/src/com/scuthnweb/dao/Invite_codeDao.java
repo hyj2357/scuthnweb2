@@ -1,5 +1,5 @@
 package com.scuthnweb.dao;
 
-public class Invite_codeDao {
+public interface Invite_codeDao {
 
 }

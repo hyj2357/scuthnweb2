@@ -1,0 +1,225 @@
+@import "../public/font.css";
+
+.blackC{
+  position:absolute;
+  z-index:3;
+  background-color:#000000;
+  opacity:.5;
+  width:100%;
+  height:100%;
+}
+
+.blackC_t{
+  position:fixed;
+  z-index:4;
+  background-color:#000000;
+  opacity:.2;
+  width:100%;
+  height:10%;
+}
+
+
+
+body{
+  width:100%;
+  height:100%;
+  background-color:#00CCFF; 
+}
+
+.top{
+  position:absolute;
+  z-index:1;
+  /*background-image:url(file:///images.macx.cn/forum/201410/23/091432yk20q1qbko04xy94.jpg);*/
+  background-size:100% 100%;
+  height:20%;
+  width:100%;
+  top: 0px;
+  left: 0px;
+  box-shadow: 0px 0px 18px 0px;
+}
+
+
+.fillContent{
+  position:absolute;
+  z-index:2;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  max-height:100%;
+  background-image:url(../../image/homepage/u2.jpg);
+  background-size:100% 100%;
+}
+
+.floatInfo{
+    z-index:999;
+    position:fixed;
+	top:30%;
+	background:url("../../image/homepage/u71.jpg") center no-repeat;
+    background-size:100% 100%;
+    background-position:50% 0%;
+    width:204px;
+	height:288px;
+	left:0%;
+	box-shadow: 2px 0px 10px 2px;
+	border-radius: 12px;
+	cursor:pointer;
+}
+
+.floatInfo:hover{
+}
+
+@media screen and (min-width:0px){
+  .topbar{
+  Z-index:100;
+  position:fixed;
+  color:#FF9900;
+  width:100%;
+  height:10%;
+  font-size:0.5em;
+  line-height: 50%;
+  }
+}
+ 
+@media screen and (min-width:320px){
+  .topbar{
+  Z-index:100;
+  position:fixed;
+  color:#FF9900;
+  width:100%;
+  height:10%;
+  font-size:1em;
+  line-height: 50%;
+}
+}
+
+
+@media screen and (min-width:786px){
+  .topbar{
+  Z-index:100;
+  position:fixed;
+  color:#FF9900;
+  width:100%;
+  height:10%;
+  font-size:1.5em;
+  line-height: 50%;
+}
+}
+
+.barEl{
+  display:inline;
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+}
+
+.intro{
+  margin:10% 0% 10% 0%;
+  text-align:center;
+  cursor:pointer;
+  transition:box-shadow 0.2s,text-shadow 0.2s,font-size 0.2s;
+  -moz-transition:box-shadow 0.2s,text-shadow 0.2s,font-size 0.2s; /* Firefox 4 */
+  -webkit-transition:box-shadow 0.2s,text-shadow 0.2s,font-size 0.2s; /* Safari and Chrome */
+  -o-transition:box-shadow 0.2s,text-shadow 0.2s,font-size 0.2s; /* Opera */  
+}
+
+.intro:hover{
+  box-shadow:0px 0px 18px 0px;
+  text-shadow: 0px 0px 9px;
+  border-radius:6px;
+}
+}
+
+
+@keyframes myf
+{
+0%   {color:#00CCFF;text-shadow:0px 0px 9px #00CCFF;}
+50%  {color:#CCFF00;text-shadow:0px 0px 9px #CCFF00;}
+100% {color:#FF9900;text-shadow:0px 0px 9px #FF9900;}
+}
+
+@-moz-keyframes myf /* Firefox */
+{
+0%   {color:#00CCFF;text-shadow:0px 0px 9px #00CCFF;}
+50%  {color:#CCFF00;text-shadow:0px 0px 9px #CCFF00;}
+100% {color:#FF9900;text-shadow:0px 0px 9px #FF9900;}
+}
+
+@-webkit-keyframes myf /* Safari and Chrome */
+{
+0%   {color:#00CCFF;text-shadow:0px 0px 9px #00CCFF;}
+50%  {color:#CCFF00;text-shadow:0px 0px 9px #CCFF00;}
+100% {color:#FF9900;text-shadow:0px 0px 9px #FF9900;}
+}
+
+@-o-keyframes myf /* Opera */
+{
+0%   {color:#00CCFF;text-shadow:0px 0px 9px #00CCFF;}
+50%  {color:#CCFF00;text-shadow:0px 0px 9px #CCFF00;}
+100% {color:#FF9900;text-shadow:0px 0px 9px #FF9900;}
+}
+
+
+
+@keyframes mys
+{
+0%   {color:#CCFF00;text-shadow:0px 0px 9px #CCFF00;}
+50%  {color:#FF9900;text-shadow:0px 0px 9px #FF9900;}
+100% {color:#00CCFF;text-shadow:0px 0px 9px #00CCFF;}
+}
+
+@-moz-keyframes mys /* Firefox */
+{
+0%   {color:#CCFF00;text-shadow:0px 0px 9px #CCFF00;}
+50%  {color:#FF9900;text-shadow:0px 0px 9px #FF9900;}
+100% {color:#00CCFF;text-shadow:0px 0px 9px #00CCFF;}
+}
+
+@-webkit-keyframes mys /* Safari and Chrome */
+{
+0%   {color:#CCFF00;text-shadow:0px 0px 9px #CCFF00;}
+50%  {color:#FF9900;text-shadow:0px 0px 9px #FF9900;}
+100% {color:#00CCFF;text-shadow:0px 0px 9px #00CCFF;}
+}
+
+@-o-keyframes mys /* Opera */
+{
+0%   {color:#CCFF00;text-shadow:0px 0px 9px #CCFF00;}
+50%  {color:#FF9900;text-shadow:0px 0px 9px #FF9900;}
+100% {color:#00CCFF;text-shadow:0px 0px 9px #00CCFF;}
+}
+
+
+
+
+@keyframes myt
+{
+0%   {color:#FF9900;text-shadow:0px 0px 9px #FF9900;}
+50%  {color:#00CCFF;text-shadow:0px 0px 9px #00CCFF;}
+100% {color:#CCFF00;text-shadow:0px 0px 9px #CCFF00;}
+}
+
+@-moz-keyframes myt /* Firefox */
+{
+0%   {color:#FF9900;text-shadow:0px 0px 9px #FF9900;}
+50%  {color:#00CCFF;text-shadow:0px 0px 9px #00CCFF;}
+100% {color:#CCFF00;text-shadow:0px 0px 9px #CCFF00;}
+}
+
+@-webkit-keyframes myt /* Safari and Chrome */
+{
+0%   {color:#FF9900;text-shadow:0px 0px 9px #FF9900;}
+50%  {color:#00CCFF;text-shadow:0px 0px 9px #00CCFF;}
+100% {color:#CCFF00;text-shadow:0px 0px 9px #CCFF00;}
+}
+
+@-o-keyframes myt /* Opera */
+{
+0%   {color:#FF9900;text-shadow:0px 0px 9px #FF9900;}
+50%  {color:#00CCFF;text-shadow:0px 0px 9px #00CCFF;}
+100% {color:#CCFF00;text-shadow:0px 0px 9px #CCFF00;}
+}
+
+
+

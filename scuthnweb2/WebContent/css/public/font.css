@@ -1,0 +1,82 @@
+@media screen and (min-width:0px){
+  .xbi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:0.5em;
+  }
+  .xsi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:0.2em;
+  }
+
+  .bi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:1em;
+  }
+  .si{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:0.5em;
+  }
+  .xsbi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:1.5em;
+  }
+  .sbi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:2em;
+  }
+}
+ 
+@media screen and (min-width:320px){
+  .xbi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:0.8em;
+  }
+  .xsi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:0.5em;
+  }
+  .bi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:1.5em;
+  }
+  .si{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:1em;
+  }
+  .xsbi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:2em;
+  }
+  .sbi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:3em;
+  }
+}
+
+
+@media screen and (min-width:786px){
+  .xbi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:1.2em;
+  }
+  .xsi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:0.8em;
+  }
+  .bi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:2em;
+  }
+  .si{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:1.5em;
+  }
+  .xsbi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:3em;
+  }
+  .sbi{
+  font-family:Î¢ÈíÑÅºÚ;
+  font-size:4em;
+  }
+}

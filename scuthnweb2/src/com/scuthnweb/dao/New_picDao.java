@@ -1,5 +1,5 @@
 package com.scuthnweb.dao;
 
-public class New_picDao {
+public interface New_picDao {
 
 }

@@ -1,5 +1,5 @@
 package com.scuthnweb.dao;
 
-public class ActionDao {
+public interface ActionDao {
 
 }

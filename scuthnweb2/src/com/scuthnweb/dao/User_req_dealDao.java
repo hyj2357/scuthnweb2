@@ -1,5 +1,5 @@
 package com.scuthnweb.dao;
 
-public class User_req_dealDao {
+public interface User_req_dealDao {
 
 }
