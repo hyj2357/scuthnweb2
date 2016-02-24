@@ -9,6 +9,7 @@ import com.scuthnweb.dao.RoleDao;
 import com.scuthnweb.dao.Sy_userDao;
 import com.scuthnweb.dao.Valid_codeDao;
 import com.scuthnweb.domain.Account;
+import com.scuthnweb.domain.Role;
 import com.scuthnweb.domain.Sy_user;
 import com.scuthnweb.domain.Valid_code;
 import com.scuthnweb.service.UserAdModule;
@@ -22,7 +23,7 @@ public class UserAdModuleImpl implements UserAdModule{
 	private Valid_codeDao valid_codeDao;
 	
 	@Override
-	public Sy_user register(String account, String name, String grade, String major, String mail, String password) {
+	public Sy_user register(String account, String name, String gender, String grade, String major, String mail, String password) {
 		/** 创建Account **/
 		Account _account = new Account();
 	    _account.setAccount(account);
@@ -31,9 +32,10 @@ public class UserAdModuleImpl implements UserAdModule{
 	    _account.setPassword(password);	    
 	    this.accountDao.create(_account);
 	    
-	    /** 创建Sy_user **/
+	    /** 创建Sy_user 用户资料 **/
 	    Sy_user sy_user = new Sy_user();
 	    sy_user.setUser_name(name);
+	    sy_user.setGender(gender);
 	    sy_user.setMajor(major);
 	    sy_user.setMail(mail);
 	    sy_user.setGrade(grade);
@@ -50,7 +52,7 @@ public class UserAdModuleImpl implements UserAdModule{
 	    /******************
 	                     发送激活邮件
 	     ******************/
-	    SMTPUtil.sendMail("smtp.163.com", "hyj23575651", "18976445506qwe", "hyj23575651@163.com", mail, "华南理工大学海南同乡会平台用户激活.", "欢迎你加入华工海南同乡会,点击链接来完成你的注册:http://localhost/scuthnweb2/activateUser?validcode="+valid_code.getCode());
+	    SMTPUtil.sendMail("smtp.163.com", "hyj23575651", "18976445506qwe", "hyj23575651@163.com", mail, "华南理工大学海南同乡会平台用户激活.", "欢迎你加入华工海南同乡会,点击链接来完成你的注册:http://localhost/scuthnweb2/ActivateUser?code="+valid_code.getCode());
 		return sy_user;
 	}
 
@@ -60,8 +62,21 @@ public class UserAdModuleImpl implements UserAdModule{
 	}
 
 	@Override
-	public Sy_user activateUser(String valid_code) {
-		return null;
+	public Account activateUser(String valid_code) {
+		List ls = this.valid_codeDao.findIdByValid_code(valid_code);
+		if(ls.size()==0)
+			return null;
+		else{
+			Valid_code _valid_code = this.valid_codeDao.get((int)(ls.get(0)));
+			Account _account = _valid_code.getAccount();
+			this.valid_codeDao.delete(_valid_code);
+			Role role = new Role();
+			role.setRole_name("normal_user");
+			role.setAuthority(0);
+			role.setAccount(_account);
+			this.roleDao.create(role);
+			return _account;
+		}
 	}
 
 	@Override
@@ -76,6 +91,13 @@ public class UserAdModuleImpl implements UserAdModule{
 			return _account;
 		}	
 	}
+	
+
+	@Override
+	public Sy_user checkUserInfo(Integer id) {
+		return (Sy_user)this.sy_userDao.findByUid(id).get(0);
+	}
+	
 	
 	public AccountDao getAccountDao() {
 		return accountDao;
@@ -108,5 +130,4 @@ public class UserAdModuleImpl implements UserAdModule{
 	public void setValid_codeDao(Valid_codeDao valid_codeDao) {
 		this.valid_codeDao = valid_codeDao;
 	}
-	
 }

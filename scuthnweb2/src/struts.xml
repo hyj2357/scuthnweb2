@@ -17,16 +17,24 @@
     <package name="scuthnweb" extends="struts-default" namespace="/">
        <!-- userAdModule -->
        <action name="Register" class="RegisterAction">
-	      <result name="error">/WEB-INF/jsp/register/register.jsp</result>
-	      <result name="success">/WEB-INF/jsp/homepage/homepage.jsp</result>
+	      <result name="error" type="redirect">pfs?p=register/register.jsp</result>
+	      <result name="success" type="redirect">pfs?p=homepage/homepage.jsp</result>
        </action>
        <action name="Login" class="LoginAction">
-	      <result name="error">/WEB-INF/jsp/login/login.jsp</result>
-	      <result name="success">/WEB-INF/jsp/homepage/homepage.jsp</result>
+	      <result name="error" type="redirect">pfs?p=login/login.jsp</result>
+	      <result name="success" type="redirect">pfs?p=homepage/homepage.jsp</result>
        </action>
        <action name="LoginOut" class="LoginOutAction">
-	      <result name="error">/WEB-INF/jsp/homepage/homepage.jsp</result>
-	      <result name="success">/WEB-INF/jsp/homepage/homepage.jsp</result>
+	      <result name="error" type="redirect">pfs?p=homepage/homepage.jsp</result>
+	      <result name="success" type="redirect">pfs?p=homepage/homepage.jsp</result>
+       </action>
+       <action name="ActivateUser" class="ActivateUserAction">
+	      <result name="error" type="redirect">pfs?p=homepage/homepage.jsp</result>
+	      <result name="success" type="redirect">pfs?p=homepage/homepage.jsp</result>
+       </action>
+       <action name="CheckUserInfo" class="CheckUserInfoAction">
+	      <result name="error" type="redirect">pfs?p=login/login.jsp</result>
+	      <result name="success">/WEB-INF/jsp/UserManage/UserManage.jsp</result>
        </action>
        
        <!-- end -->
@@ -34,6 +42,8 @@
 <!-- WEB-INF下界面转发Action -->
        <action name="pfs" class="pfs">
 	      <result name="/WEB-INF/jsp/homepage/homepage.jsp">/WEB-INF/jsp/homepage/homepage.jsp</result>
+	      <result name="/WEB-INF/jsp/register/register.jsp">/WEB-INF/jsp/register/register.jsp</result>
+	      <result name="/WEB-INF/jsp/login/login.jsp">/WEB-INF/jsp/login/login.jsp</result>
        </action>
        
     </package>

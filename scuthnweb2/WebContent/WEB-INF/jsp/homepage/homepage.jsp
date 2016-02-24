@@ -3,9 +3,10 @@
 <html  style="text-align:center;">
 
 	<head>
+	  <link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon"/> 
 	  <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-	  <title>华工xx同乡会</title>
+	  <title>华工海南同乡会</title>
 	  <link rel="stylesheet" type="text/css" href="css/homepage/style.css" />
 	  <script src="js/public/jquery-2.1.4.min.js"></script>
 	  <script src="js/homepage/script.js"></script>
@@ -126,11 +127,11 @@
 	           <%
 		            String i = (String)session.getAttribute("user_account");
 		           	if(i==null)
-		           		out.print("<div class=\"barEl\" onmouseover=\"cc($(this))\" onmouseout=\"ccb($(this))\">登录</div>&nbsp;&nbsp;&nbsp;"+
-		 	                      "<div class=\"barEl\" onmouseover=\"cc($(this))\" onmouseout=\"ccg($(this))\" style=\"color:#CCFF00;\">注册</div>&nbsp;&nbsp;&nbsp;");
+		           		out.print("<div class=\"barEl\" onmouseover=\"cc($(this))\" onmouseout=\"ccb($(this))\" onclick=\"window.location='pfs?p=login/login.jsp';\">登录</div>&nbsp;&nbsp;&nbsp;"+
+		 	                      "<div class=\"barEl\" onmouseover=\"cc($(this))\" onmouseout=\"ccg($(this))\" onclick=\"window.location='pfs?p=register/register.jsp';\" style=\"color:#CCFF00;\">注册</div>&nbsp;&nbsp;&nbsp;");
 		           	else
-		           		out.print("<div class=\"barEl\" onmouseover=\"cc($(this))\" onmouseout=\"ccb($(this))\">"+i+"</div>&nbsp;&nbsp;&nbsp;"+
-		 	                      "<div class=\"barEl\" onmouseover=\"cc($(this))\" onmouseout=\"ccg($(this))\" style=\"color:#CCFF00;\">退出</div>&nbsp;&nbsp;&nbsp;");	            
+		           		out.print("<div class=\"barEl\" onmouseover=\"cc($(this))\" onmouseout=\"ccb($(this))\" onclick=\"window.location='CheckUserInfo';\" >"+i+"</div>&nbsp;&nbsp;&nbsp;"+
+		 	                      "<div class=\"barEl\" onmouseover=\"cc($(this))\" onmouseout=\"ccg($(this))\" onclick=\"window.location='LoginOut';\" style=\"color:#CCFF00;\">退出</div>&nbsp;&nbsp;&nbsp;");	            
 		 	    %>
 			 </div>
 		  </div>
@@ -141,7 +142,7 @@
 			     <img id="logoimg" style="max-width:100%;max-height:100%;vertical-align:middle;width:20%;height:20%;" src="image/homepage/u6.png"/>
 			   </div>
 			   <span class="xbi">
-			     <strong>华南理工大学XX同乡会</strong>
+			     <strong>华南理工大学海南同乡会</strong>
 			   </span><br/></br>
 			   <span id="otherContent" class="xsi" style="font-family:微软雅黑;color:#E4E4E4;">
 			     <strong>加入华工XX同乡会,和我们一起成长吧!</strong>

@@ -11,6 +11,7 @@ import com.scuthnweb.tool.QueryValidateModule;
 public class RegisterAction extends ActionSupport{
 	private String account;
 	private String name;
+	private String gender;
 	private String grade;
 	private String college;
 	private String major;
@@ -29,7 +30,7 @@ public class RegisterAction extends ActionSupport{
 			return ERROR;
 		}
 		else{
-			Sy_user sy_user = this.userAdModule.register(account, name, grade,major, mail, password);
+			Sy_user sy_user = this.userAdModule.register(account, name, gender, grade, major, mail, password);
 			ctx.getSession().put("user_id", sy_user.getAccount().getId().intValue());
 			ctx.getSession().put("user_account", sy_user.getAccount().getAccount());
 			return SUCCESS;
@@ -52,11 +53,15 @@ public class RegisterAction extends ActionSupport{
 			this.errMsg += "真实姓名格式有误，应为2-6位中文字符<br/>";
 			wrong = true;
 		}
+		if((!this.gender.equals("boy"))&&(!this.gender.equals("girl"))){
+			this.errMsg+= "非法的性别值.请在注册页面进行选择.";
+			wrong = true;
+		}
 		if(!Pattern.matches("^([A-Z]|[a-z]|[0-9]|_)+@([A-Z]|[a-z]|[0-9]|_)+.(com|cn)$",this.mail)){
 			this.errMsg += "邮箱格式有误，应为xxx@xx.com或者xxx@xx.cn，暂不支持教育网邮箱.<br/>";
 			wrong = true;
 		}
-		if(!Pattern.matches("^([A-Z|[a-z]|[0-9]]){6-24}$",this.password)){
+		if(!Pattern.matches("^([A-Z|[a-z]|[0-9]]){6,24}$",this.password)){
 			this.errMsg += "密码格式有误，应为6-24位英文或数字字符.<br/>";
 			wrong = true;			
 		}
@@ -64,7 +69,7 @@ public class RegisterAction extends ActionSupport{
 			this.errMsg += "重输密码与原密码不匹配.<br/>";
 			wrong = true;	
 		}
-		if(!this.queryValidateModule.nameAndGradeAndMajorMultiple(name, grade, major)){
+		if(this.queryValidateModule.nameAndGradeAndMajorMultiple(name, grade, major)){
 			this.errMsg += "相同年级与专业中已存在该姓名...<br/>";
 			wrong = true;
 		}
@@ -161,6 +166,14 @@ public class RegisterAction extends ActionSupport{
 
 	public void setQueryValidateModule(QueryValidateModule queryValidateModule) {
 		this.queryValidateModule = queryValidateModule;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	
 	
