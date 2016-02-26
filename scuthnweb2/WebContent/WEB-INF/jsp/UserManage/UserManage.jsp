@@ -274,8 +274,12 @@
            	   	   </ul>
            	   </div>
            </div>
-        </div>
-        <br/><br/>    
+        </div>  
+        <div style="cursor:pointer;background-color:#CCFF00;color:#666666;width:15%;border-radius:8px;margin-left:42.5%;" onmouseover="cbc($(this));ccg($(this));" onmouseout="cbcg($(this));ccG($(this));" onclick="window.location='joinInfoPage.html';">
+           <span style="font-size:1.5em;font-family:微软雅黑;">
+             <strong>修改信息</strong>
+           </span>
+        </div><br/><br/><br/><br/>  
      </div>
      <div id="foot" style="font-family:微软雅黑;border-radius:6px;margin-top:-5%;box-shadow: 0px 0px 18px 0px;width:100%;height:30%;background-color:#CCCCCC;left:0px;bottom:0px;">   
        <div style="font-family:微软雅黑;margin-top:5%;">  

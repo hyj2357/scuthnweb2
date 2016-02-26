@@ -21,51 +21,96 @@
 	     			<strong>新用户注册</strong><br/>
 	     			<a style="text-decoration:none;color:#FF9900;font-size:0.5em;" href="inviteRegister.html">我有邀请码</a>
 	     		</span>
-     		</div><br/>   		
-     		<div>
-     			<div  class="si" style="vertical-align:top;text-align:left;display:inline-block;">
-		     		<span style="color:#CCFF00;">
+     		</div><br/>       		 
+			<table  style="vertical-align:top;text-align:left;display:inline-block;font-family:微软雅黑;font-size:24px;" border="0">
+			  <tr>
+			    <td>
+			        <span style="color:#CCFF00;">
 		     			<strong>用户名</strong>
 		     		</span><br/><br/>
-		     		<span style="color:#CCFF00;">
+			    </td>
+			    <td>
+		     		<input name="account" class="inputTxt" type="text"/><br/><br/>			    
+		     	</td>
+			  </tr>
+			  <tr>
+			    <td>
+			        <span style="color:#CCFF00;">
 		     			<strong>真实姓名</strong>
 		     		</span><br/><br/>
-		     		<span style="color:#CCFF00;">
+			    </td>
+			    <td>
+		     		<input name="name" class="inputTxt" type="text"/><br/><br/>			    
+		     	</td>
+			  </tr>
+			  <tr>
+			    <td>
+			        <span style="color:#CCFF00;">
 		     			<strong>性别</strong>
-		     		</span><br/><br/>		     		
-		     		<span style="color:#CCFF00;">
-		     			<strong>专业</strong>
 		     		</span><br/><br/>
-		     		<span style="color:#CCFF00;">
-		     			<strong>年级(如'2011')</strong>
-		     		</span><br/><br/>
-		     		<span style="color:#CCFF00;">
-		     			<strong>验证邮箱</strong>
-		     		</span><br/><br/>	
-		     		<span style="color:#CCFF00;">
-		     			<strong>密码</strong>
-		     		</span><br/><br/>	
-		     		<span style="color:#CCFF00;">
-		     			<strong>确认密码</strong>
-		     		</span><br/><br/>  		
-     			</div>		
-     			<div class="si" style="display:inline-block;width:25%;">
-		     		<input name="account" class="inputTxt" type="text"/><br/><br/>
-		     		<input name="name" class="inputTxt" type="text"/><br/><br/>
+			    </td>
+			    <td>
 		     		<select name="gender" style="width:45px;" class="inputTxt">
   						<option value ="boy" selected = "selected">男</option>
   						<option value ="girl">女</option>
-					</select><br/><br/>
-		     		<input name="major" class="inputTxt" type="text"/><br/><br/>
-		     		<input name="grade" class="inputTxt" type="text"/><br/><br/>
-		     		<input name="mail" class="inputTxt" type="text"/><br/><br/>
-		     		<input name="password" class="inputTxt" type="password"/><br/><br/>
-		     		<input name="cpassword" class="inputTxt" type="password"/><br/><br/>
-     			</div>
+					</select><br/><br/>		     	
+				</td>
+			  </tr>	
+			  <tr>
+			    <td>
+			        <span style="color:#CCFF00;">
+		     			<strong>专业</strong>
+		     		</span><br/><br/>
+			    </td>
+			    <td>
+		     		<input name="major" class="inputTxt" type="text"/><br/><br/>			         	
+				</td>
+			  </tr>
+			  <tr>
+			    <td>
+			        <span style="color:#CCFF00;">
+		     			<strong>年级(如'2011')</strong>
+		     		</span><br/><br/>
+			    </td>
+			    <td>
+		     		<input name="grade" class="inputTxt" type="text"/><br/><br/>			         	
+				</td>
+			  </tr>
+			  <tr>
+			    <td>
+			        <span style="color:#CCFF00;">
+		     			<strong>验证邮箱</strong>
+		     		</span><br/><br/>
+			    </td>
+			    <td>
+		     		<input name="mail" class="inputTxt" type="text"/><br/><br/>			         	
+				</td>
+			  </tr>
+			  <tr>
+			    <td>
+			        <span style="color:#CCFF00;">
+		     			<strong>密码</strong>
+		     		</span><br/><br/>
+			    </td>
+			    <td>
+		     		<input name="password" class="inputTxt" type="password"/><br/><br/>			         	
+				</td>
+			  </tr>	
+			  <tr>
+			    <td>
+			        <span style="color:#CCFF00;">
+		     			<strong>确认密码</strong>
+		     		</span><br/><br/>
+			    </td>
+			    <td>
+		     		<input name="cpassword" class="inputTxt" type="password"/><br/><br/>			         	
+				</td>
+			  </tr>			  
+			</table>	
      			<%
      				String errMsg = (String)session.getAttribute("errMsg");
      				if(errMsg!=null){
-     					out.print("<div style=\"color:#FF0000;font-family:微软雅黑;margin-left:40%;width:20%;background:#FF9900;border-radius:5px;\">"+
+     					out.print("<div style=\"color:#FF0000;font-family:微软雅黑;margin-left:25%;width:50%;background:#FF9900;border-radius:5px;\">"+
      					            "<span>"+
     					              "<strong>"+errMsg+"<br/></strong>"+
     				              	"</span>"+
@@ -73,7 +118,7 @@
      					session.removeAttribute("errMsg");
      				}
      			 %>
-     		</div>
+     	    <br/>
             <input class="bi" style="cursor:pointer;background-color:#FF9900;color:#FFFFFF;border-radius:6px;border:none;" onmouseover="cbc($(this));ccr($(this));" onmouseout="cbcr($(this));cc($(this));" type="submit" value="注册"/>     		  		
      	</form>
      </div><br/><br/><br/>

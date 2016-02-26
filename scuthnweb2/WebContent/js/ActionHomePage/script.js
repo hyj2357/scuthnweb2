@@ -71,6 +71,36 @@ var _w_content = $("#content").css("width");
 var _w_topf = parseFloat(_w_top.substring(0,_w_top.length-2));
 var _w_contentf = parseFloat(_w_content.substring(0,_w_content.length-2));
 $("#content").css("left",((_w_topf-_w_contentf)/2)+"px");
+
+/**
+		//设置活动相册大小
+         _w_album = w>1200?1200:w;
+		 var _h_album = _w_album/2.1;
+		 $("#featured").css("width",_w_album);
+         $("#featured").css("height",_h_album);
+         $(".orbit-wrapper").css("width",_w_album);
+         $(".orbit-wrapper").css("height",_h_album);
+         
+         $("#album1").css("width",_w_album);
+         $("#album1").css("height",_h_album);         
+		 $("#album2").css("width",_w_album);
+         $("#album2").css("height",_h_album);
+		 $("#album3").css("width",_w_album);
+         $("#album3").css("height",_h_album);
+		 $("#album4").css("width",_w_album);
+         $("#album4").css("height",_h_album);
+         
+		 //设置相册位置
+		 if(w<=1200)
+		   $("#real_album").css("left",(w-_w_album)/2);		 
+		 $("#real_album").css("top",ef*2*0.4+df);
+**/
+		 //屏幕过小隐藏相册列表
+		 if(parseInt(w)<830)
+		  $("#albumsList").css("display","none");
+		 else
+		  $("#albumsList").css("display","block");
+
 }
 
 

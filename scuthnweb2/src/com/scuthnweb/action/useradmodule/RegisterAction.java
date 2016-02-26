@@ -40,7 +40,7 @@ public class RegisterAction extends ActionSupport{
 	private boolean validate_(){
 		boolean wrong = false;
 		this.errMsg = "";
-		if(!Pattern.matches("^([\u4e00-\u9fa5]|[a-z]|[A-Z]|[0-9]|_){2,24}$", this.account)){
+		if(this.account==null||!Pattern.matches("^([\u4e00-\u9fa5]|[a-z]|[A-Z]|[0-9]|_){2,24}$", this.account)){
 			this.errMsg  += "用户名为2-24位的中文英文数字或下划线组成的字符串<br/>";
 			wrong = true;
 		}else{
@@ -49,23 +49,23 @@ public class RegisterAction extends ActionSupport{
 				wrong = true;
 			};
 		}
-		if(!Pattern.matches("^[\u4e00-\u9fa5]{2,6}$", this.name)){
+		if(this.name==null||!Pattern.matches("^[\u4e00-\u9fa5]{2,6}$", this.name)){
 			this.errMsg += "真实姓名格式有误，应为2-6位中文字符<br/>";
 			wrong = true;
 		}
-		if((!this.gender.equals("boy"))&&(!this.gender.equals("girl"))){
+		if(this.gender==null||(!this.gender.equals("boy"))&&(!this.gender.equals("girl"))){
 			this.errMsg+= "非法的性别值.请在注册页面进行选择.";
 			wrong = true;
 		}
-		if(!Pattern.matches("^([A-Z]|[a-z]|[0-9]|_)+@([A-Z]|[a-z]|[0-9]|_)+.(com|cn)$",this.mail)){
+		if(this.mail==null||!Pattern.matches("^([A-Z]|[a-z]|[0-9]|_)+@([A-Z]|[a-z]|[0-9]|_)+.(com|cn)$",this.mail)){
 			this.errMsg += "邮箱格式有误，应为xxx@xx.com或者xxx@xx.cn，暂不支持教育网邮箱.<br/>";
 			wrong = true;
 		}
-		if(!Pattern.matches("^([A-Z|[a-z]|[0-9]]){6,24}$",this.password)){
+		if(this.password==null||!Pattern.matches("^([A-Z|[a-z]|[0-9]]){6,24}$",this.password)){
 			this.errMsg += "密码格式有误，应为6-24位英文或数字字符.<br/>";
 			wrong = true;			
 		}
-		if(!this.password.equals(this.cpassword)){
+		if(this.password==null||this.cpassword==null||!this.password.equals(this.cpassword)){
 			this.errMsg += "重输密码与原密码不匹配.<br/>";
 			wrong = true;	
 		}
