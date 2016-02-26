@@ -3,6 +3,7 @@
 <html  style="text-align:center;">
 
 <head>
+  <link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon"/> 
   <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.4, user-scalable=no" />  <!-- 移动端用户不可缩放页面 -->
   <title>登录</title>
