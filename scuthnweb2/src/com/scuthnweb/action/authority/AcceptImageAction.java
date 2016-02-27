@@ -7,10 +7,11 @@ public class AcceptImageAction extends ActionSupport{
 	private Integer uid;
 	private String path;
 	
-	private boolean succ=false;
+	private String accept;
 	
 	public String execute(){
 		System.out.println(type+" "+uid+" "+path+"\n");
+		this.accept = "true";
 		return SUCCESS;
 	}
 
@@ -38,11 +39,11 @@ public class AcceptImageAction extends ActionSupport{
 		this.path = path;
 	}
 
-	public boolean isSucc() {
-		return succ;
+	public String getAccept() {
+		return accept;
 	}
 
-	public void setSucc(boolean succ) {
-		this.succ = succ;
+	public void setAccept(String accept) {
+		this.accept = accept;
 	}	
 }

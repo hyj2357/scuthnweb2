@@ -14,7 +14,7 @@
     
     <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
     
-    <package name="scuthnweb"  extends="json-default"  namespace="/">
+    <package name="scuthnweb"  extends="struts-default,json-default"  namespace="/">
        <!-- userAdModule -->
        <action name="Register" class="RegisterAction">
 	      <result name="error" type="redirect">pfs?p=register/register.jsp</result>
@@ -58,14 +58,14 @@
        
        <action name="AcceptImage" class="AcceptImageAction">
       	<result name="success" type="json">
-		 	<param name="includeProperties">
-			 	^succ
-		 	</param>
+		 <param name="includeProperties">
+			 ^accept
+		 </param>
 	  	</result>
 	  	<result name="error" type="json">
-		 	<param name="includeProperties">
-			 	^succ
-		 	</param>
+		 <param name="includeProperties">
+			 ^accept
+		 </param>
 	  	</result>
        </action>
     </package>
