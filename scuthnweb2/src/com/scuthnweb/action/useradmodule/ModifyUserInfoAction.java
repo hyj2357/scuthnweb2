@@ -38,6 +38,7 @@ public class ModifyUserInfoAction extends ActionSupport{
 		else{
 			Sy_user s = this.userAdModule.modifyUserInfo(uid, account, gender, grade, college, major, phone_number, qq_number, wechat_number);
 			ctx.getSession().put("user_info", s);
+			ctx.getSession().put("user_account", this.account);
 			return SUCCESS;
 		}
 	}
@@ -49,7 +50,7 @@ public class ModifyUserInfoAction extends ActionSupport{
 			this.errMsg  += "用户名为2-24位的中文英文数字或下划线组成的字符串<br/>";
 			wrong = true;
 		}else{
-			if(this.queryValidateModule.accountMultiple(account)&&!account.equals(this.account)){
+			if(this.queryValidateModule.accountMultiple(this.account)&&!account.equals(this.account)){
 				this.errMsg += "用户名已存在...<br/>";
 				wrong = true;
 			};

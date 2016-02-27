@@ -162,7 +162,7 @@
 		   <span id="otherContent" class="xsi" style="font-family:微软雅黑;color:#E4E4E4;">
 		     <strong>加入华工XX同乡会,和我们一起成长吧!</strong>
 		   </span>
-		   <div id="topBtn" style="height:3em;width:30%;border-width:0.1em;cursor:pointer;border-color:#FF9900;color:#FF9900;border-style:solid;border-radius:19px;font-size:0.5em;margin-left:auto;margin-right:auto;margin-top:2%;" onmousemove="cover();" onmouseout="cout();" onclick="var pos = $('#v').offset().top;$('html,body').animate({ scrollTop: pos },300);">
+		   <div id="topBtn" style="height:3em;width:40%;border-width:0.1em;cursor:pointer;border-color:#FF9900;color:#FF9900;border-style:solid;border-radius:19px;font-size:0.5em;margin-left:auto;margin-right:auto;margin-top:2%;" onmousemove="cover();" onmouseout="cout();" onclick="var pos = $('#v').offset().top;$('html,body').animate({ scrollTop: pos },300);">
 		     <div style="padding-top:8%;">
 		        <span class="xsi" style="font-family:微软雅黑;">
 			      <strong>进入主题看看</strong>

@@ -56,5 +56,7 @@
         <property name="adAuthorityPage" ref="adaut"/>       
     </bean>
     -->
-<!-- end 页面转发相关配置 --> 	     
+<!-- end 页面转发相关配置 --> 
+	
+	<bean id="AcceptImageAction" class="com.scuthnweb.action.authority.AcceptImageAction"/>        
 </beans>

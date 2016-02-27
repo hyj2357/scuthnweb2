@@ -128,8 +128,8 @@
 			        	</td>
 			        	<td>
 				     		<select name="gender" style="width:45px;" class="inputTxt">
-		  						<option value ="boy" <% if(s.getGender().equals("boy")) out.print("select=\"selected\"");%>>男</option>
-		  						<option value ="girl" <% if(s.getGender().equals("girl")) out.print("select=\"selected\"");%>>女</option>
+		  						<option value ="boy" <% if(s.getGender().equals("boy")) out.print("selected=\"selected\"");%>>男</option>
+		  						<option value ="girl" <% if(s.getGender().equals("girl")) out.print("selected=\"selected\"");%>>女</option>
 							</select>			        	
 					    </td>
 			        </tr>
