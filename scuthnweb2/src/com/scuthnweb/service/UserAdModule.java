@@ -13,4 +13,6 @@ public interface UserAdModule {
 	public Account login(String account,String password);
 	
 	public Sy_user checkUserInfo(Integer id);
+	
+	public Sy_user modifyUserInfo(Integer uid,String account,String gender,String grade,String college,String major,String phone_number,String qq_number,String wechat_number);
 }

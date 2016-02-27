@@ -98,6 +98,24 @@ public class UserAdModuleImpl implements UserAdModule{
 		return (Sy_user)this.sy_userDao.findByUid(id).get(0);
 	}
 	
+	@Override
+	public Sy_user modifyUserInfo(Integer uid, String account, String gender, String grade, String college,String major,String phone_number,String qq_number,String wechat_number) {
+		Account ac = this.accountDao.get(uid);
+		ac.setAccount(account);
+		this.accountDao.update(ac);
+		
+		Sy_user s = (Sy_user)this.sy_userDao.findByUid(uid).get(0);
+		s.getAccount().setAccount(account);
+		s.setGender(gender);
+		s.setGrade(grade);
+		s.setMajor(major);
+		s.setPhone_number(phone_number);
+		s.setQq_number(qq_number);
+		s.setWechat_number(wechat_number);
+		this.sy_userDao.update(s);
+		
+		return s;
+	}
 	
 	public AccountDao getAccountDao() {
 		return accountDao;

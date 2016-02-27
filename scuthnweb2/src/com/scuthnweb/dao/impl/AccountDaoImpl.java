@@ -1,9 +1,13 @@
 package com.scuthnweb.dao.impl;
 
+import java.sql.SQLException;
 import java.util.List;
 
+import org.hibernate.FlushMode;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.ejb.HibernateQuery;
+import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.scuthnweb.dao.AccountDao;
@@ -32,8 +36,18 @@ public class AccountDaoImpl  extends HibernateDaoSupport implements AccountDao{
 	}
 
 	@Override
-	public boolean update(Account account) {
-		return false;
+	public boolean update(final Account account) {
+		this.getHibernateTemplate().execute(
+				new HibernateCallback() {
+					public Object doInHibernate(Session session) throws HibernateException,
+					SQLException {
+						session.setFlushMode(FlushMode.AUTO); 
+						session.update(account); 
+						session.flush(); 
+						return null; 
+					}
+				});
+		return true;
 	}
 
 	@Override

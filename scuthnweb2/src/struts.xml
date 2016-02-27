@@ -36,7 +36,16 @@
 	      <result name="error" type="redirect">pfs?p=login/login.jsp</result>
 	      <result name="success">/WEB-INF/jsp/UserManage/UserManage.jsp</result>
        </action>
-       
+       <action name="CheckUserInfoForModify" class="CheckUserInfoForModifyAction">
+	      <result name="error" type="redirect">pfs?p=login/login.jsp</result>
+	      <result name="success">/WEB-INF/jsp/UserManage/modifyInfo.jsp</result>
+       </action>
+       <action name="ModifyUserInfo" class="ModifyUserInfoAction">
+       	  <result name="error">/WEB-INF/jsp/UserManage/modifyInfo.jsp</result>
+	      <result name="NO_LOGIN" type="redirect">pfs?p=login/login.jsp</result>
+	      <result name="success" type="redirectAction">CheckUserInfo</result>
+       </action>
+              
        <!-- end -->
        
 <!-- WEB-INF下界面转发Action -->

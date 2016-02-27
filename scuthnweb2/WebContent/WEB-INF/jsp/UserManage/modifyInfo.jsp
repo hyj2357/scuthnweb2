@@ -1,12 +1,10 @@
-<%@ page import="com.scuthnweb.domain.Sy_user" language="java" contentType="text/html; charset=GBK" pageEncoding="UTF-8"%>
+<%@ page import="com.scuthnweb.domain.Sy_user,com.scuthnweb.domain.Account" language="java" contentType="text/html; charset=GBK" pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html  style="text-align:center;">
-
 <head>
   <link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon"/> 
   <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.4, user-scalable=no" />  <!-- 移动端用户不可缩放页面 -->
-  <title>华工xx同乡会</title>
+  <title>modifyInfo</title>
   <link rel="stylesheet" type="text/css" href="css/ActionHomePage/style.css" />
   <link rel="stylesheet" type="text/css" href="css/UserManage/UserManage.css" />
   <script src="js/public/jquery-2.1.4.min.js"></script>
@@ -46,7 +44,7 @@
   </script>
 </head>
 
-<body style="width:100%;height:100%;background-color:#00CCFF;">
+<body style="width:100%;height:100%;background-color:#00CCFF;text-align:center;">
    <div id="wrap" style="width:100%;margin-top:-8px;margin-left:-8px;height:100%;">
    	 <div class="blackC_t">
 	 </div>
@@ -72,8 +70,8 @@
 	           	else
 	           		out.print("<div class=\"barEl\" onmouseover=\"cc($(this))\" onmouseout=\"ccb($(this))\" onclick=\"window.location='CheckUserInfo';\" >"+i+"</div>&nbsp;&nbsp;&nbsp;"+
 	 	                      "<div class=\"barEl\" onmouseover=\"cc($(this))\" onmouseout=\"ccg($(this))\" onclick=\"window.location='LoginOut';\" style=\"color:#CCFF00;\">退出</div>&nbsp;&nbsp;&nbsp;");	            
-	 	    %>
-		   </div>
+	 	    %>         
+		 </div>
 	  </div>
      </div>
      <div id="top" style="background-color:#00CCFF;text-align:left;width:100%;">
@@ -96,138 +94,116 @@
      <div id="v" style="font-family:微软雅黑;background-color:#FFFFFF;width:100%;">
         <br/>
         <span style="color:#00CCFF;font-family:微软雅黑;font-size:2em;">
-           <strong>个人资料</strong>
+           <strong>修改个人资料</strong>
         </span><br/><br/><br/>
         <div>
            <div style="background-color:#FFFFFF;width:70%;display:inline-block;vertical-align:top;">
 	           <div style="text-align:left;display:inline-block;vertical-align:top;">
-		           <img style="width:129px;height:129px;border-radius:150px;box-shadow:0px 0px 8px 0px;" src="image/UserManage/u1.jpg"/>
+		           <img style="width:129px;height:129px;border-radius:150px;box-shadow:0px 0px 8px 0px;" src="image/UserManage/u1.jpg"/><br/>
+				   <input class="xbi" style="cursor:pointer;background-color:#FF9900;color:#FFFFFF;border-radius:6px;border:none;margin-top:10%;margin-left:7%" onmouseover="cbc($(this));ccr($(this));" onmouseout="cbcr($(this));cc($(this));" type="submit" value="上传头像"/>     		  		
                </div>
                <div style="display:inline-block;padding-left:8%;">
-	               <ul class="si" style="text-align:left;list-style:none;">
-		               <li>
-		                 <img style="width:10%;height:10%;vertical-align:middle;" src="image/UserManage/mf.png"/>               
-			           	 <span style="color:#00CCFF;">
-			           	 	<strong>用户名</strong>
-			           	 </span>:&nbsp;&nbsp;
-			           	 <span style="color:#CCFF00">
-			           	 	<strong><%
-			           	 	Sy_user s = (Sy_user)session.getAttribute("user_info");
-			           	 	out.print(session.getAttribute("user_account"));
-			           	  %></strong>
-			           	 </span>
-		               </li><br/>
-		               <li>
-		                 <img style="width:10%;height:10%;vertical-align:middle;" src="image/UserManage/truename.png"/>               
-			           	 <span style="color:#00CCFF;">
-			           	 	<strong>真实姓名</strong>
-			           	 </span>:&nbsp;&nbsp;
-			           	 <span style="color:#CCFF00">
-			           	 	<strong><%
-			           	 	out.print(s.getUser_name());
-			           	  %></strong>
-			           	 </span>	           	 	
-		               </li><br/>
-		               <li>
-		                 <img style="width:10%;height:10%;vertical-align:middle;" src="image/UserManage/gender.png"/>               
-			           	 <span style="color:#00CCFF;">
-			           	 	<strong>性别</strong>
-			           	 </span>:&nbsp;&nbsp;			           	 
-			           	 <span style="color:#CCFF00">
-			           	 	<strong><%
-			           	 	out.print(s.getGender().equals("boy")?"男":"女");
-			           	  %></strong>
-			           	 </span>
-		               </li><br/>
-		               <li>
-		                 <img style="width:10%;height:10%;vertical-align:middle;" src="image/UserManage/major.png"/>               
-		               	 <span style="color:#00CCFF;">
-			           	 	<strong>专业</strong>
-			           	 </span>:&nbsp;&nbsp;			           	 
-			           	 <span style="color:#CCFF00">
-			           	 	<strong><%
-			           	 	out.print(s.getMajor());
-			           	  %></strong>
-			           	 </span>         	  
-		               </li><br/>
-		               <li>
-		               	 <img style="width:10%;height:10%;vertical-align:middle;" src="image/UserManage/grade.png"/>               	               
-		               	 <span style="color:#00CCFF;">
-			           	 	<strong>年级</strong>
-			           	 </span>:&nbsp;&nbsp;			           	 
-			           	 <span style="color:#CCFF00">
-			           	 	<strong><%
-			           	 	out.print(s.getGrade());
-			           	  %></strong>
-			           	 </span> 
-		               </li><br/>
-		               <li>
-		                 <img style="width:10%;height:10%;vertical-align:middle;" src="image/UserManage/mail.png"/>
-		                 <span style="color:#00CCFF;">
-			           	 	<strong>邮箱</strong>
-			           	 </span>:&nbsp;&nbsp;			           	 
-			           	 <span style="color:#CCFF00">
-			           	 	<strong><%
-			           	 	out.print(s.getMail());
-			           	  %></strong>
-			           	 </span> 
-		               </li><br/>
-		               <li>
-		                 <img style="width:10%;height:10%;vertical-align:middle;" src="image/UserManage/phone_icon.png"/>
-		                 <span style="color:#00CCFF;">
-			           	 	<strong>电话号码</strong>
-			           	 </span>:&nbsp;&nbsp;			           	 
-			           	 <span style="color:#CCFF00">
-			           	 	<strong><%
-			           	 	out.print(s.getPhone_number()==null?"":s.getPhone_number());
-			           	  %></strong>
-			           	 </span> 		               
-		               </li><br/>
-		               <li>
-		               	 <img style="width:10%;height:10%;vertical-align:middle;" src="image/UserManage/wechat.png"/>     
-		                 <span style="color:#00CCFF;">
-			           	 	<strong>微信号</strong>
-			           	 </span>:&nbsp;&nbsp;			           	 
-			           	 <span style="color:#CCFF00">
-			           	 	<strong><%
-			           	 	out.print(s.getWechat_number()==null?"":s.getWechat_number());
-			           	  %></strong>
-			           	 </span> 
-		               </li><br/>
-		               <li>
-		                 <img style="width:10%;height:10%;vertical-align:middle;" src="image/UserManage/QQ.png"/>
-		                 <span style="color:#00CCFF;">
-			           	 	<strong>QQ号</strong>
-			           	 </span>:&nbsp;&nbsp;			           	 
-			           	 <span style="color:#CCFF00">
-			           	 	<strong><%
-			           	 	out.print(s.getQq_number()==null?"":s.getQq_number());
-			           	  %></strong>
-			           	 </span>		               
-		               </li><br/>
-		               <li>
-		               	 <img style="width:10%;height:10%;vertical-align:middle;" src="image/UserManage/mf.png"/>               		               
-		                 <span style="color:#00CCFF;">
-			           	 	<strong>身份认证</strong>
-			           	 </span>:&nbsp;&nbsp;			           	 
-			           	 <span style="color:#CCFF00">
-			           	 	<strong><%
-			           	 	Boolean auth = (Boolean)session.getAttribute("authority");			           	 
-			           	 	if(auth.booleanValue())
-			           	 		out.print("已认证");
-			           	 	else
-			           	 		out.print("未认证");
-			           	 	%></strong>
-			           	 </span>&nbsp;&nbsp;&nbsp;
-			           	 <%
-			           	 	if(!auth.booleanValue())
-			           	 		out.print("<a href=\"authenticateUserInfo.html\">点此进行认证</a>");
-			           
-			           	    session.removeAttribute("user_info");
-			           	    session.removeAttribute("authority");          	 	
-			           	  %>
-		               </li><br/>		               		               		               		               		               		               		               		              		               
-	               </ul>
+               	<%
+               		Sy_user s = (Sy_user)session.getAttribute("user_info");
+               	 %>
+               	<form action="ModifyUserInfo" method="post">
+               	   <table style="text-align:left;font-size:24px;" border="0">
+               	   	<tr>
+               	   		<td>
+		               	   	<img style="width:50px;height:50px;vertical-align:middle;" src="image/UserManage/mf.png"/>               
+					        <span style="color:#00CCFF;">
+					        	<strong>用户名</strong>
+					        </span>:
+			        	</td>
+			        	<td>
+					        <input class="inputTxt" name="account" style="width:60%;" value="<% out.print(s.getAccount().getAccount());%>"/>
+			        	</td>
+			        </tr>
+			        <tr>
+               	   		<td>
+		               	   	<img style="width:50px;height:50px;vertical-align:middle;" src="image/UserManage/gender.png"/>               
+					        <span style="color:#00CCFF;">
+					        	<strong>性别</strong>
+					        </span>:
+			        	</td>
+			        	<td>
+				     		<select name="gender" style="width:45px;" class="inputTxt">
+		  						<option value ="boy" <% if(s.getGender().equals("boy")) out.print("select=\"selected\"");%>>男</option>
+		  						<option value ="girl" <% if(s.getGender().equals("girl")) out.print("select=\"selected\"");%>>女</option>
+							</select>			        	
+					    </td>
+			        </tr>
+			        <tr>
+               	   		<td>
+		               	   	<img style="width:50px;height:50px;vertical-align:middle;" src="image/UserManage/major.png"/>               
+					        <span style="color:#00CCFF;">
+					        	<strong>专业</strong>
+					        </span>:
+			        	</td>
+			        	<td>
+					        <input class="inputTxt" name="major" style="width:60%;" value="<% out.print(s.getMajor());%>"/>
+			        	</td>
+			        </tr>
+			        <tr>
+               	   		<td>
+		               	   	<img style="width:50px;height:50px;vertical-align:middle;" src="image/UserManage/grade.png"/>               
+					        <span style="color:#00CCFF;">
+					        	<strong>年级</strong>
+					        </span>:
+			        	</td>
+			        	<td>
+					        <input class="inputTxt" name="grade" style="width:60%;"  value="<% out.print(s.getGrade());%>"/>
+			        	</td>
+			        </tr>
+			        <tr>
+               	   		<td>
+		               	   	<img style="width:50px;height:50px;vertical-align:middle;" src="image/UserManage/phone_icon.png"/>               
+					        <span style="color:#00CCFF;">
+					        	<strong>电话号码</strong>
+					        </span>:
+			        	</td>
+			        	<td>
+					        <input class="inputTxt" name="phone_number" style="width:60%;"  value="<% out.print(s.getPhone_number()==null?"":s.getPhone_number());%>"/>
+			        	</td>
+			        </tr>
+			        <tr>
+               	   		<td>
+		               	   	<img style="width:50px;height:50px;vertical-align:middle;" src="image/UserManage/wechat.png"/>               
+					        <span style="color:#00CCFF;">
+					        	<strong>微信号</strong>
+					        </span>:
+			        	</td>
+			        	<td>
+					        <input class="inputTxt" name="wechat_number" style="width:60%;"  value="<% out.print(s.getWechat_number()==null?"":s.getWechat_number());%>"/>
+			        	</td>
+			        </tr>
+			        <tr>
+               	   		<td>
+		               	   	<img style="width:50px;height:50px;vertical-align:middle;" src="image/UserManage/QQ.png"/>               
+					        <span style="color:#00CCFF;">
+					        	<strong>QQ号</strong>
+					        </span>:
+			        	</td>
+			        	<td>
+					        <input class="inputTxt" name="qq_number" style="width:60%;"  value="<% out.print(s.getQq_number()==null?"":s.getQq_number());%>"/>
+			        	</td>
+			        </tr>			        			        			        			        
+               	   </table>
+               	   	<%
+	     				String errMsg = (String)session.getAttribute("errMsg");
+	     				if(errMsg!=null){
+	     					out.print("<div style=\"color:#FF0000;font-family:微软雅黑;margin-left:25%;width:50%;background:#FF9900;border-radius:5px;\">"+
+	     					            "<span>"+
+	    					              "<strong>"+errMsg+"<br/></strong>"+
+	    				              	"</span>"+
+	    					          "</div><br/>");
+	     					session.removeAttribute("errMsg");
+	     				}
+	     			 %>
+	               <div style="text-align:center;margin-top:15%;">
+						<input class="si" style="cursor:pointer;background-color:#FF9900;color:#FFFFFF;border-radius:6px;border:none;" onmouseover="cbc($(this));ccr($(this));" onmouseout="cbcr($(this));cc($(this));" type="submit" value="确认修改"/>     		  		
+	               </div>
+				</form>
                </div>
            </div>
            <div style="box-shadow:0px 0px 8px 0px;border-radius:6px;background-color:#CCFF00;width:25%;display:inline-block;">
@@ -274,12 +250,8 @@
            	   	   </ul>
            	   </div>
            </div>
-        </div>  
-        <div style="cursor:pointer;background-color:#CCFF00;color:#666666;width:15%;border-radius:8px;margin-left:42.5%;" onmouseover="cbc($(this));ccg($(this));" onmouseout="cbcg($(this));ccG($(this));" onclick="window.location='CheckUserInfoForModify';">
-           <span style="font-size:1.5em;font-family:微软雅黑;">
-             <strong>修改信息</strong>
-           </span>
-        </div><br/><br/><br/><br/>  
+        </div>
+        <br/><br/>    
      </div>
      <div id="foot" style="font-family:微软雅黑;border-radius:6px;margin-top:-5%;box-shadow: 0px 0px 18px 0px;width:100%;height:30%;background-color:#CCCCCC;left:0px;bottom:0px;">   
        <div style="font-family:微软雅黑;margin-top:5%;">  

@@ -3,6 +3,7 @@
 <html  style="text-align:center;">
 
 <head>
+  <link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon"/> 
   <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.4, user-scalable=no" />  <!-- 移动端用户不可缩放页面 -->
   <title>登录</title>
@@ -85,7 +86,18 @@
 		     		<input name="user_password" class="inputTxt bi" style="border:none;" type="password"/><br/><br/>
 		     		<input name="" class="inputTxt bi" style="border:none;" type="text"/><br/><br/>
 	     		</div><br/> 
-     		</div>  
+     		</div>
+     		         <%
+	     				String errMsg = (String)session.getAttribute("errMsg");
+	     				if(errMsg!=null){
+	     					out.print("<div style=\"color:#FF0000;font-family:微软雅黑;margin-left:25%;width:50%;background:#FF9900;border-radius:5px;\">"+
+	     					            "<span>"+
+	    					              "<strong>"+errMsg+"<br/></strong>"+
+	    				              	"</span>"+
+	    					          "</div><br/>");
+	     					session.removeAttribute("errMsg");
+	     				}
+	     			 %>  
             <input class="bi" style="cursor:pointer;color:#FFFFFF;border-radius:6px;border-style:solid;border-width:2px;border-color:#FFFFFF;background-color:transparent;" onmouseover="cbc($(this));ccr($(this));" onmouseout="cbc_transparent($(this));cc($(this));" type="submit" value="登录"/><br/><br/><br/>      		  		
      	    <a class="si" style="text-decoration:none;color:#FFFFFF;" href="inviteRegister.html">忘记密码？点我...</a> 
      	    <br/><br/><br/>	    
