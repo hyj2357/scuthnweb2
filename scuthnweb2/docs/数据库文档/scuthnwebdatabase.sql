@@ -31,7 +31,6 @@ CREATE TABLE `account` (
 -- ----------------------------
 -- Records of account
 -- ----------------------------
-INSERT INTO `account` VALUES ('3', '', '0000-00-00 00:00:00', '');
 INSERT INTO `account` VALUES ('7', '黄奕君1996', '2016-02-23 16:04:19', '18976445506');
 INSERT INTO `account` VALUES ('8', '黄奕君1997', '2016-02-23 16:27:27', '18976445506');
 
