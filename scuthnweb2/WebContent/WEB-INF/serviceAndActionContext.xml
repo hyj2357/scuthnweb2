@@ -12,6 +12,7 @@
        <property name="accountDao" ref="accountDao"/>
        <property name="sy_userDao" ref="sy_userDao"/>
        <property name="roleDao" ref="roleDao"/>
+       <property name="login_sessionDao" ref="login_sessionDao"/>
 	</bean> 	
 	  	  
     <!-- 配置业务逻辑层组件  -->
@@ -20,6 +21,7 @@
        <property name="sy_userDao" ref="sy_userDao"/>
        <property name="roleDao" ref="roleDao"/>
        <property name="valid_codeDao" ref="valid_codeDao"/>
+       <property name="login_sessionDao" ref="login_sessionDao"/>
 	</bean> 
 	
 	<!-- 配置action -->
@@ -33,8 +35,10 @@
         <property name="queryValidateModule" ref="queryValidateModule"/>
 	 </bean> 
 	 <bean id="ActivateUserAction" class="com.scuthnweb.action.useradmodule.ActivateUserAction" parent="UserAdModuleTemplate"/>		
-	 <bean id="LoginAction" class="com.scuthnweb.action.useradmodule.LoginAction" parent="UserAdModuleTemplate"/>		
-	 <bean id="LoginOutAction" class="com.scuthnweb.action.useradmodule.LoginOutAction"/>	 
+	 <bean id="LoginAction" class="com.scuthnweb.action.useradmodule.LoginAction" parent="UserAdModuleTemplate">
+	    <property name="queryValidateModule" ref="queryValidateModule"/>
+	 </bean>		
+	 <bean id="LoginOutAction" class="com.scuthnweb.action.useradmodule.LoginOutAction" parent="UserAdModuleTemplate"/>	 
      <bean id="CheckUserInfoAction" class="com.scuthnweb.action.useradmodule.CheckUserInfoAction" parent="UserAdModuleTemplate">	 
         <property name="queryValidateModule" ref="queryValidateModule"/>
 	 </bean>

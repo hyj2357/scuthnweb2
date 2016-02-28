@@ -38,7 +38,8 @@
 				<value>com/scuthnweb/domain/Action.hbm.xml</value>				
 				<value>com/scuthnweb/domain/Album_pic.hbm.xml</value>				
 				<value>com/scuthnweb/domain/Album.hbm.xml</value>
-				<value>com/scuthnweb/domain/Invite_code.hbm.xml</value>								
+				<value>com/scuthnweb/domain/Invite_code.hbm.xml</value>
+				<value>com/scuthnweb/domain/Login_session.hbm.xml</value>								
 				<value>com/scuthnweb/domain/Message.hbm.xml</value>				
 				<value>com/scuthnweb/domain/New_pic.hbm.xml</value>				
 				<value>com/scuthnweb/domain/New.hbm.xml</value>			

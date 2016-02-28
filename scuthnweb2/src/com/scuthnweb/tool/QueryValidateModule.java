@@ -1,6 +1,7 @@
 package com.scuthnweb.tool;
 
 import com.scuthnweb.dao.AccountDao;
+import com.scuthnweb.dao.Login_sessionDao;
 import com.scuthnweb.dao.RoleDao;
 import com.scuthnweb.dao.Sy_userDao;
 import com.scuthnweb.domain.Role;
@@ -9,6 +10,7 @@ public class QueryValidateModule {
 	private AccountDao accountDao;
 	private Sy_userDao sy_userDao;
 	private RoleDao roleDao;
+	private Login_sessionDao login_sessionDao;
 	
 	/**
 	 * 检测用户名是否存在
@@ -56,6 +58,18 @@ public class QueryValidateModule {
 		return role.getRole_name();
 	}
 	
+	/**
+	 * 检测当前用户是否已经登录会话
+	 * @param uid
+	 * @return
+	 */
+	public boolean isLogin(String account){
+		if(this.login_sessionDao.findByAccount(account).size()>0)
+			return true;
+		else
+			return false;
+	}
+	
 	public AccountDao getAccountDao() {
 		return accountDao;
 	}
@@ -75,5 +89,13 @@ public class QueryValidateModule {
 
 	public void setRoleDao(RoleDao roleDao) {
 		this.roleDao = roleDao;
+	}
+
+	public Login_sessionDao getLogin_sessionDao() {
+		return login_sessionDao;
+	}
+
+	public void setLogin_sessionDao(Login_sessionDao login_sessionDao) {
+		this.login_sessionDao = login_sessionDao;
 	}
 }

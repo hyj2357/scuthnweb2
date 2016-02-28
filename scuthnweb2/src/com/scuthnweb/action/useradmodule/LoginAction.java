@@ -6,22 +6,31 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.scuthnweb.domain.Account;
 import com.scuthnweb.service.UserAdModule;
+import com.scuthnweb.tool.QueryValidateModule;
 
 public class LoginAction extends ActionSupport{
 	private String user_account;
 	private String user_password;
-	private UserAdModule userAdModule;
 	
+	private UserAdModule userAdModule;
+	private QueryValidateModule queryValidateModule;
 	private String errMsg;
 	
 	public String execute(){
-		 Account account = this.userAdModule.login(user_account, user_password);
+		
 		 ActionContext ctx = ActionContext.getContext();
+		 if(this.queryValidateModule.isLogin(this.user_account)){
+			 this.errMsg = "该用户已在其他计算机上或者你的计算机其他浏览器上登录.请退出账号后再登录或者稍后重试.<br/>";
+			 ctx.getSession().put("errMsg", errMsg);
+			 return ERROR;
+		 }
+		 
+		 Account account = this.userAdModule.login(user_account, user_password);
 		 if(account==null){
 			 this.errMsg = "用户名或密码错误.<br/>";
 			 ctx.getSession().put("errMsg", errMsg);
 			 return ERROR;
-		 }else{
+		 }else{ 
 			 ctx.getSession().put("user_account", account.getAccount());
 			 ctx.getSession().put("user_id", account.getId());
 			 return SUCCESS;
@@ -50,5 +59,13 @@ public class LoginAction extends ActionSupport{
 
 	public void setUserAdModule(UserAdModule userAdModule) {
 		this.userAdModule = userAdModule;
+	}
+
+	public QueryValidateModule getQueryValidateModule() {
+		return queryValidateModule;
+	}
+
+	public void setQueryValidateModule(QueryValidateModule queryValidateModule) {
+		this.queryValidateModule = queryValidateModule;
 	}
 }

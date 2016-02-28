@@ -5,10 +5,12 @@ import java.util.Date;
 import java.util.List;
 
 import com.scuthnweb.dao.AccountDao;
+import com.scuthnweb.dao.Login_sessionDao;
 import com.scuthnweb.dao.RoleDao;
 import com.scuthnweb.dao.Sy_userDao;
 import com.scuthnweb.dao.Valid_codeDao;
 import com.scuthnweb.domain.Account;
+import com.scuthnweb.domain.Login_session;
 import com.scuthnweb.domain.Role;
 import com.scuthnweb.domain.Sy_user;
 import com.scuthnweb.domain.Valid_code;
@@ -21,7 +23,9 @@ public class UserAdModuleImpl implements UserAdModule{
 	private Sy_userDao sy_userDao;
 	private RoleDao roleDao;
 	private Valid_codeDao valid_codeDao;
-	
+	private Login_sessionDao login_sessionDao;
+
+
 	@Override
 	public Sy_user register(String account, String name, String gender, String grade, String major, String mail, String password) {
 		/** 创建Account **/
@@ -86,8 +90,13 @@ public class UserAdModuleImpl implements UserAdModule{
 		if(ls.size()==0)
 			return null;
 		else{
-			_account.setId((int)((Object[])ls.get(0))[0]);
-			_account.setAccount((String)((Object[])ls.get(0))[1]);			
+			_account = this.accountDao.get((int)((Object[])ls.get(0))[0]);
+			//创建登录session记录
+			Login_session login_session = new Login_session();
+			login_session.setAccount(_account);
+			login_session.setLogin_time(new java.sql.Timestamp(System.currentTimeMillis()));
+			this.login_sessionDao.create(login_session);
+			
 			return _account;
 		}	
 	}
@@ -115,6 +124,12 @@ public class UserAdModuleImpl implements UserAdModule{
 		this.sy_userDao.update(s);
 		
 		return s;
+	}
+	
+	@Override
+	public void loginOut(Integer uid) {
+		Login_session login_session = (Login_session) this.login_sessionDao.findByUid(uid).get(0);
+		this.login_sessionDao.delete(login_session);
 	}
 	
 	public AccountDao getAccountDao() {
@@ -147,5 +162,13 @@ public class UserAdModuleImpl implements UserAdModule{
 
 	public void setValid_codeDao(Valid_codeDao valid_codeDao) {
 		this.valid_codeDao = valid_codeDao;
+	}
+	
+	public Login_sessionDao getLogin_sessionDao() {
+		return login_sessionDao;
+	}
+
+	public void setLogin_sessionDao(Login_sessionDao login_sessionDao) {
+		this.login_sessionDao = login_sessionDao;
 	}
 }

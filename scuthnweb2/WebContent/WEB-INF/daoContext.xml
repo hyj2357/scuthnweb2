@@ -13,5 +13,5 @@
     <bean id="roleDao" class="com.scuthnweb.dao.impl.RoleDaoImpl" parent="daoConfigTemplate"/>
     <bean id="sy_userDao" class="com.scuthnweb.dao.impl.Sy_userDaoImpl" parent="daoConfigTemplate"/>
     <bean id="valid_codeDao" class="com.scuthnweb.dao.impl.Valid_codeDaoImpl" parent="daoConfigTemplate"/>
-            
+    <bean id="login_sessionDao" class="com.scuthnweb.dao.impl.Login_sessionDaoImpl" parent="daoConfigTemplate"/>        
 </beans>
