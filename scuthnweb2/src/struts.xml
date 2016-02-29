@@ -71,6 +71,9 @@
        
        <action name="bqc" class="bqc">
        </action>
+       <action name="test" class="com.scuthnweb.action.authority.TestAction">
+       	  <result name="success" type="redirectAction">http://139.129.24.81:8082/scuthnweb2/AcceptImage</result>
+       </action>
     </package>
    
 </struts>
