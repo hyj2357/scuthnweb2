@@ -1,25 +1,24 @@
-package com.scuthnweb.listener;
+package com.scuthnweb.action.authority;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSessionEvent;
-import javax.servlet.http.HttpSessionListener;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
 
-public class LoginSessionListener implements HttpSessionListener{
+public class NewBrowerQuitCheckAction extends ActionSupport{
 	
-	@Override
-	public void sessionCreated(HttpSessionEvent event) {
-		System.out.println(event.getSession().getId()+" session create!");
-	}
-
-	@Override
-	public void sessionDestroyed(HttpSessionEvent event) {
-		//System.out.println("Have Listened session "+event.getSession().getId()+" destroyed\n");
-		HttpSession session = event.getSession();
+	public String execute(){
+		HttpServletRequest request = (HttpServletRequest) ActionContext.getContext().get(ServletActionContext.HTTP_REQUEST);		 
+        HttpSession session = request.getSession();
+        
 		Integer uid = (Integer)session.getAttribute("user_id");
 		if(uid!=null){
 			this.deleteLogin_session(uid);
@@ -28,9 +27,12 @@ public class LoginSessionListener implements HttpSessionListener{
 		}
 		else{
 			System.out.println("Session NO Login!");
-			return;
+			return null;
 		}
+		session.invalidate();   //Çå³ýµ±Ç°session
+		return null;
 	}
+	
 	
 	private void deleteLogin_session(Integer uid){
 		String driver = "com.mysql.jdbc.Driver";  

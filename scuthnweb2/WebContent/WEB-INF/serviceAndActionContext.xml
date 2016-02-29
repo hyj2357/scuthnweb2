@@ -62,5 +62,6 @@
     -->
 <!-- end 页面转发相关配置 --> 
 	
-	<bean id="AcceptImageAction" class="com.scuthnweb.action.authority.AcceptImageAction"/>        
+	<bean id="AcceptImageAction" class="com.scuthnweb.action.authority.AcceptImageAction"/> 
+	<bean id="bqc" class="com.scuthnweb.action.authority.NewBrowerQuitCheckAction"/> 	       
 </beans>

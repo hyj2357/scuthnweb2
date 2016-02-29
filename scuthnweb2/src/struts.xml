@@ -68,6 +68,9 @@
 		 </param>
 	  	</result>
        </action>
+       
+       <action name="bqc" class="bqc">
+       </action>
     </package>
    
 </struts>
