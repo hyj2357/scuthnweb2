@@ -1,5 +1,7 @@
 package com.scuthnweb.action.authority;
 
+import java.net.URLDecoder;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,7 +32,7 @@ public class Super_adminAuthorityInterceptor extends AbstractInterceptor impleme
 			//判断cookie中是否有登录信息
 			Cookie ck = CookieUtil.getCookieByNameFromCookieArray(request.getCookies(), "scuthn.user");
 			if(!(ck==null)){
-				String login_info[] = ck.getValue().split("&");
+				String login_info[] = URLDecoder.decode(ck.getValue(),"utf-8").split("&");
 				if(login_info.length!=2){	//如果cookie登录用户信息被外部修改
 					ck.setValue("");
 					HttpServletResponse response = (HttpServletResponse) ctx.get(ServletActionContext.HTTP_RESPONSE);		 
@@ -41,11 +43,11 @@ public class Super_adminAuthorityInterceptor extends AbstractInterceptor impleme
 					//用户是否为超级管理员角色
 					if(role.equals("super_admin")){
 						HttpSession session = request.getSession();
-						LoginSessionContainer.create(session); 	//将登录会话注入登录会话容器当中
 						this.userAdModule.autoLogin(uid, session.getId());  //持久化登录会话记录
 						//设置登录会话标识
 						ctx.getSession().put("user_account", login_info[0]);
 						ctx.getSession().put("user_id", new Integer(Integer.parseInt(login_info[1])));
+						LoginSessionContainer.create(session); 	//将登录会话注入登录会话容器当中
 					    return action.invoke();
 					}
 					else

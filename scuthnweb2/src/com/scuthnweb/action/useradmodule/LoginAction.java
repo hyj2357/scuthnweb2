@@ -1,5 +1,8 @@
 package com.scuthnweb.action.useradmodule;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,7 +27,7 @@ public class LoginAction extends ActionSupport{
 	
 	private String errMsg;
 	
-	public String execute(){
+	public String execute() throws UnsupportedEncodingException{
 		
 		 ActionContext ctx = ActionContext.getContext();
 		 HttpServletRequest request = (HttpServletRequest) ctx.get(ServletActionContext.HTTP_REQUEST);		 		 
@@ -38,7 +41,7 @@ public class LoginAction extends ActionSupport{
 		 }else{ 
 			 
 			 //添加或者修改客户端cookie
-			 Cookie ck = new Cookie("scuthn.user",account.getId()+"&"+account.getAccount());
+			 Cookie ck = new Cookie("scuthn.user",URLEncoder.encode(account.getId()+"&"+account.getAccount(),"utf-8"));
 			 ck.setMaxAge(60*60*14);  //一周有效期
 			 HttpServletResponse response = (HttpServletResponse) ctx.get(ServletActionContext.HTTP_RESPONSE);		 
 	         response.addCookie(ck);
