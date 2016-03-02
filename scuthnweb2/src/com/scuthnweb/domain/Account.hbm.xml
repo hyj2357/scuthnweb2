@@ -62,7 +62,7 @@
       </set> 
       <set name="login_sessions" inverse="true" cascade="all">
             <key column="uid"/>
-            <one-to-many class="login_session"/>
-      </set>                      
+            <one-to-many class="Login_session"/>
+      </set>                     
    </class>     
 </hibernate-mapping>

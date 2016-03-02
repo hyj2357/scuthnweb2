@@ -8,25 +8,22 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-public class SessionContainer{
-	private Map<Integer,List<HttpSession>> sessionMap = new HashMap<Integer,List<HttpSession>>();
+import com.scuthnweb.dao.Login_sessionDao;
+
+public class LoginSessionContainer{
+	private static Map<Integer,List<HttpSession>> sessionMap = new HashMap<Integer,List<HttpSession>>();
 
 	
-	public Map<Integer, List<HttpSession>> getSessionMap() {
-		return this.sessionMap;
+	public static Map<Integer, List<HttpSession>> getSessionMap() {
+		return sessionMap;
 	}
 
-	public void setSessionMap(Map<Integer, List<HttpSession>> sessionMap) {
-		this.sessionMap = sessionMap;
-	}
-
-	public void delete(HttpSession session) {
+	public static void delete(HttpSession session) {
 		Integer uid = (Integer) session.getAttribute("user_id");
 		if(uid==null)
 			return;
 		else{
-			List<HttpSession> ls = this.sessionMap.get(uid);
-			
+			List<HttpSession> ls = sessionMap.get(uid);		
 			String sid = session.getId();
 			Iterator<HttpSession> itr = ls.iterator();
 			while(itr.hasNext()){
@@ -39,7 +36,7 @@ public class SessionContainer{
 		}
 	}
 
-	public void create(HttpSession session) {
+	public static void create(HttpSession session) {
 		Integer uid = (Integer) session.getAttribute("user_id");
 		if(uid==null)
 			return;
@@ -48,15 +45,15 @@ public class SessionContainer{
 			if(ls==null){
 				List<HttpSession> _ls = new ArrayList<HttpSession>();
 				_ls.add(session);
-				this.sessionMap.put(uid, _ls);
+				sessionMap.put(uid, _ls);
 			}else{
 				ls.add(session);
 			}
 		}
 	}
 
-	public List<HttpSession> get(Integer uid) {		
-		return this.sessionMap.get(uid);
+	public static List<HttpSession> get(Integer uid) {		
+		return sessionMap.get(uid);
 	}
 	
 }

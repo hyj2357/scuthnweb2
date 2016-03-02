@@ -10,11 +10,13 @@ public interface UserAdModule {
 	
 	public Account activateUser(String valid_code);
 	
-	public Account login(String account,String password);
+	Account login(String account, String password, String sid);
 	
 	public Sy_user checkUserInfo(Integer id);
 	
 	public Sy_user modifyUserInfo(Integer uid,String account,String gender,String grade,String college,String major,String phone_number,String qq_number,String wechat_number);
 
-	public void loginOut(Integer uid);
+	public void loginOut(String sid);
+	
+	public void autoLogin(Integer uid,String sid);
 }

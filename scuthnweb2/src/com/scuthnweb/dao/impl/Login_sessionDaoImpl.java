@@ -70,4 +70,11 @@ public class Login_sessionDaoImpl extends HibernateDaoSupport implements Login_s
 		return ls;
 	}
 
+	@Override
+	public List findBySession_id(String session_id) {
+		String hql = "FROM Login_session l WHERE l.session_id=?";
+		List ls = this.getHibernateTemplate().find(hql,new Object[]{session_id});
+		return ls;
+	}
+
 }

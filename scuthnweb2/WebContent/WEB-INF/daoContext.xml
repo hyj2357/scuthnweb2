@@ -16,5 +16,5 @@
     <bean id="login_sessionDao" class="com.scuthnweb.dao.impl.Login_sessionDaoImpl" parent="daoConfigTemplate"/>  
     
     <!-- 配置Session管理容器-->
-    <bean id="sessionContainer" class="com.scuthnweb.listener.SessionContainer"/>      
+    <bean id="loginSessionContainer" class="com.scuthnweb.listener.LoginSessionContainer"/>      
 </beans>

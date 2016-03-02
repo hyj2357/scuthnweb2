@@ -84,7 +84,7 @@ public class UserAdModuleImpl implements UserAdModule{
 	}
 
 	@Override
-	public Account login(String account, String password) {
+	public Account login(String account, String password, String sid) {
 		Account _account = new Account();
 		List ls = this.accountDao.findByAccountAndPassword(account, password);
 		if(ls.size()==0)
@@ -95,6 +95,7 @@ public class UserAdModuleImpl implements UserAdModule{
 			Login_session login_session = new Login_session();
 			login_session.setAccount(_account);
 			login_session.setLogin_time(new java.sql.Timestamp(System.currentTimeMillis()));
+			login_session.setSession_id(sid);;
 			this.login_sessionDao.create(login_session);
 			
 			return _account;
@@ -127,9 +128,19 @@ public class UserAdModuleImpl implements UserAdModule{
 	}
 	
 	@Override
-	public void loginOut(Integer uid) {
-		Login_session login_session = (Login_session) this.login_sessionDao.findByUid(uid).get(0);
+	public void loginOut(String sid) {
+		Login_session login_session = (Login_session) this.login_sessionDao.findBySession_id(sid).get(0);
 		this.login_sessionDao.delete(login_session);
+	}
+	
+	@Override
+	public void autoLogin(Integer uid, String sid) {
+		Account account = this.accountDao.get(uid);
+		Login_session login_session = new Login_session();
+		login_session.setAccount(account);
+		login_session.setLogin_time(new java.sql.Timestamp(System.currentTimeMillis()));
+		login_session.setSession_id(sid);
+		this.login_sessionDao.create(login_session);
 	}
 	
 	public AccountDao getAccountDao() {

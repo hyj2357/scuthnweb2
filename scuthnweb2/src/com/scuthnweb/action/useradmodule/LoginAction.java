@@ -10,7 +10,7 @@ import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.scuthnweb.domain.Account;
-import com.scuthnweb.listener.SessionContainer;
+import com.scuthnweb.listener.LoginSessionContainer;
 import com.scuthnweb.service.UserAdModule;
 import com.scuthnweb.tool.QueryValidateModule;
 
@@ -20,35 +20,35 @@ public class LoginAction extends ActionSupport{
 	
 	private UserAdModule userAdModule;
 	private QueryValidateModule queryValidateModule;
-	private SessionContainer sessionContainer;
+	private LoginSessionContainer loginSessionContainer;
 	
 	private String errMsg;
 	
 	public String execute(){
 		
 		 ActionContext ctx = ActionContext.getContext();
-		 /**
-		 if(this.queryValidateModule.isLogin(this.user_account)){
-			 this.errMsg = "该用户已在其他计算机上或者你的计算机其他浏览器上登录.请退出账号后再登录或者稍后重试.<br/>";
-			 ctx.getSession().put("errMsg", errMsg);
-			 return ERROR;
-		 } **/
 		 HttpServletRequest request = (HttpServletRequest) ctx.get(ServletActionContext.HTTP_REQUEST);		 		 
 		 HttpSession session = request.getSession();
          
-		 Account account = this.userAdModule.login(user_account, user_password);
+		 Account account = this.userAdModule.login(user_account, user_password, session.getId()); //验证登录并持久化登录会话记录
 		 if(account==null){
 			 this.errMsg = "用户名或密码错误.<br/>";
 			 session.setAttribute("errMsg", errMsg);
 			 return ERROR;
 		 }else{ 
+			 
 			 //添加或者修改客户端cookie
-			 Cookie ck = new Cookie("scuthn.user",account.getId()+":"+account.getAccount());
+			 Cookie ck = new Cookie("scuthn.user",account.getId()+"&"+account.getAccount());
+			 ck.setMaxAge(60*60*14);  //一周有效期
 			 HttpServletResponse response = (HttpServletResponse) ctx.get(ServletActionContext.HTTP_RESPONSE);		 
 	         response.addCookie(ck);
+	         
 	         //设置当前会话登录标识
 			 session.setAttribute("user_account", account.getAccount());
 			 session.setAttribute("user_id", account.getId());
+			 
+			 //添加登录会话到登录会话容器
+	         LoginSessionContainer.create(session);
 			 return SUCCESS;
 		 }			 
 	}
@@ -85,11 +85,11 @@ public class LoginAction extends ActionSupport{
 		this.queryValidateModule = queryValidateModule;
 	}
 
-	public SessionContainer getSessionContainer() {
-		return sessionContainer;
+	public LoginSessionContainer getLoginSessionContainer() {
+		return loginSessionContainer;
 	}
 
-	public void setSessionContainer(SessionContainer sessionContainer) {
-		this.sessionContainer = sessionContainer;
+	public void setLoginSessionContainer(LoginSessionContainer loginSessionContainer) {
+		this.loginSessionContainer = loginSessionContainer;
 	}
 }

@@ -21,10 +21,15 @@ public class LoginSessionListener implements HttpSessionListener{
 		//System.out.println("Have Listened session "+event.getSession().getId()+" destroyed\n");
 		HttpSession session = event.getSession();
 		Integer uid = (Integer)session.getAttribute("user_id");
+		String sid = session.getId();
+
 		if(uid!=null){
-			this.deleteLogin_session(uid);
+			//从登录会话容器中清除会话
+			LoginSessionContainer.delete(session);
+			//清除持久化登录会话记录
+			this.deleteLogin_session(sid);
 		    session.removeAttribute("user_id");
-			session.removeAttribute("user_account");			
+			session.removeAttribute("user_account");
 		}
 		else{
 			System.out.println("Session NO Login!");
@@ -32,7 +37,7 @@ public class LoginSessionListener implements HttpSessionListener{
 		}
 	}
 	
-	private void deleteLogin_session(Integer uid){
+	private void deleteLogin_session(String sid){
 		String driver = "com.mysql.jdbc.Driver";  
         String url = "jdbc:mysql://127.0.0.1:3306/scuthnwebdatabase";  
         String user = "root";  
@@ -45,7 +50,7 @@ public class LoginSessionListener implements HttpSessionListener{
                 //执行sql语句对象  
                 Statement statement = (Statement) connect.createStatement();  
                 //Sql语句  
-                String sql = "DELETE FROM log_session l WHERE l.uid="+uid+";";  
+                String sql = "DELETE FROM log_session l WHERE l.session_id="+sid+";";  
                 ResultSet rs = statement.executeQuery(sql);  
                 System.out.println("--------------------------");  
                 System.out.println("------执行结果如下-------");  

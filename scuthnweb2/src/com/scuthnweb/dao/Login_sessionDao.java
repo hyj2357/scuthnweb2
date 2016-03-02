@@ -22,6 +22,13 @@ public interface Login_sessionDao {
 	
 	/**
 	 * 
+	 * @param session_id
+	 * @return
+	 */
+	public List findBySession_id(String session_id);
+	
+	/**
+	 * 
 	 * @param account
 	 * @return
 	 */

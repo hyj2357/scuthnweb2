@@ -48,6 +48,7 @@ public class QueryValidateModule {
 		return role.getAuthority()==1?true:false;
 	}
 	
+	
 	/**
 	 * ÓÃ»§½ÇÉ«
 	 * @param id

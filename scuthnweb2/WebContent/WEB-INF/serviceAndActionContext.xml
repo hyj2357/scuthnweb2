@@ -31,22 +31,32 @@
      <bean id="UserAdModuleTemplate" abstract="true" lazy-init="true">
         <property name="userAdModule" ref="userAdModule"/>
      </bean>
+     
 	 <bean id="RegisterAction" class="com.scuthnweb.action.useradmodule.RegisterAction" parent="UserAdModuleTemplate">
         <property name="queryValidateModule" ref="queryValidateModule"/>
 	 </bean> 
-	 <bean id="ActivateUserAction" class="com.scuthnweb.action.useradmodule.ActivateUserAction" parent="UserAdModuleTemplate"/>		
+	 
+	 <bean id="ActivateUserAction" class="com.scuthnweb.action.useradmodule.ActivateUserAction" parent="UserAdModuleTemplate"/>
+	 		
 	 <bean id="LoginAction" class="com.scuthnweb.action.useradmodule.LoginAction" parent="UserAdModuleTemplate">
 	    <property name="queryValidateModule" ref="queryValidateModule"/>
-	 </bean>		
-	 <bean id="LoginOutAction" class="com.scuthnweb.action.useradmodule.LoginOutAction" parent="UserAdModuleTemplate"/>	 
+	    <property name="loginSessionContainer" ref="loginSessionContainer"/>	    
+	 </bean>	
+	 	
+	 <bean id="LoginOutAction" class="com.scuthnweb.action.useradmodule.LoginOutAction" parent="UserAdModuleTemplate">
+	    <property name="loginSessionContainer" ref="loginSessionContainer"/>
+	 </bean>
+	 	 	 
      <bean id="CheckUserInfoAction" class="com.scuthnweb.action.useradmodule.CheckUserInfoAction" parent="UserAdModuleTemplate">	 
         <property name="queryValidateModule" ref="queryValidateModule"/>
-        <property name="sessionContainer" ref="sessionContainer"/>
 	 </bean>
-	 <bean id="CheckUserInfoForModifyAction" class="com.scuthnweb.action.useradmodule.CheckUserInfoForModifyAction" parent="UserAdModuleTemplate"/>			  	
+	 
+	 <bean id="CheckUserInfoForModifyAction" class="com.scuthnweb.action.useradmodule.CheckUserInfoForModifyAction" parent="UserAdModuleTemplate"/>
+	 			  	
 	 <bean id="ModifyUserInfoAction" class="com.scuthnweb.action.useradmodule.ModifyUserInfoAction" parent="UserAdModuleTemplate">
 	    <property name="queryValidateModule" ref="queryValidateModule"/>
-	 </bean>			  	
+	 </bean>
+	 			  	
 <!--  actModule -->
     <!-- 配置 actModule 的 action 配置模板 -->
 	
@@ -64,5 +74,7 @@
 <!-- end 页面转发相关配置 --> 
 	
 	<bean id="AcceptImageAction" class="com.scuthnweb.action.authority.AcceptImageAction"/> 
-	<bean id="bqc" class="com.scuthnweb.action.authority.NewBrowerQuitCheckAction"/> 	       
+	<bean id="nusInterceptor" class="com.scuthnweb.action.authority.NormalUserAuthorityInterceptor"  parent="UserAdModuleTemplate"/> 
+	<bean id="adminInterceptor" class="com.scuthnweb.action.authority.AdminAuthorityInterceptor"  parent="UserAdModuleTemplate"/> 
+	<bean id="sadminInterceptor" class="com.scuthnweb.action.authority.Super_adminAuthorityInterceptor"  parent="UserAdModuleTemplate"/> 	       
 </beans>
