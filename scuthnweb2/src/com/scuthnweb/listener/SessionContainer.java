@@ -1,4 +1,4 @@
-package com.scuthnweb.dao.impl;
+package com.scuthnweb.listener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,23 +8,18 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import com.scuthnweb.dao.SessionContainerDao;
-
-public class SessionContainerDaoImpl implements SessionContainerDao{
+public class SessionContainer{
 	private Map<Integer,List<HttpSession>> sessionMap = new HashMap<Integer,List<HttpSession>>();
 
 	
-	@Override
 	public Map<Integer, List<HttpSession>> getSessionMap() {
 		return this.sessionMap;
 	}
 
-	@Override
 	public void setSessionMap(Map<Integer, List<HttpSession>> sessionMap) {
 		this.sessionMap = sessionMap;
 	}
 
-	@Override
 	public void delete(HttpSession session) {
 		Integer uid = (Integer) session.getAttribute("user_id");
 		if(uid==null)
@@ -44,7 +39,6 @@ public class SessionContainerDaoImpl implements SessionContainerDao{
 		}
 	}
 
-	@Override
 	public void create(HttpSession session) {
 		Integer uid = (Integer) session.getAttribute("user_id");
 		if(uid==null)
@@ -61,7 +55,6 @@ public class SessionContainerDaoImpl implements SessionContainerDao{
 		}
 	}
 
-	@Override
 	public List<HttpSession> get(Integer uid) {		
 		return this.sessionMap.get(uid);
 	}

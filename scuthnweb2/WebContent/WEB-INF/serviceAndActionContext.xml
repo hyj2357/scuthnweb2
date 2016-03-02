@@ -41,6 +41,7 @@
 	 <bean id="LoginOutAction" class="com.scuthnweb.action.useradmodule.LoginOutAction" parent="UserAdModuleTemplate"/>	 
      <bean id="CheckUserInfoAction" class="com.scuthnweb.action.useradmodule.CheckUserInfoAction" parent="UserAdModuleTemplate">	 
         <property name="queryValidateModule" ref="queryValidateModule"/>
+        <property name="sessionContainer" ref="sessionContainer"/>
 	 </bean>
 	 <bean id="CheckUserInfoForModifyAction" class="com.scuthnweb.action.useradmodule.CheckUserInfoForModifyAction" parent="UserAdModuleTemplate"/>			  	
 	 <bean id="ModifyUserInfoAction" class="com.scuthnweb.action.useradmodule.ModifyUserInfoAction" parent="UserAdModuleTemplate">

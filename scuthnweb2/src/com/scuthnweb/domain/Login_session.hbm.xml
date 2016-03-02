@@ -12,7 +12,8 @@
             <generator class="identity"/>
       </id>  
       <property name="login_time" type="java.sql.Timestamp"/>
+      <property name="session_id" type="string"/>
    
-      <many-to-one name="account" cascade="all" unique="true" class="Account" column="uid"/>                     
+      <many-to-one name="account" cascade="all" class="Account" column="uid"/>                     
    </class>     
 </hibernate-mapping>

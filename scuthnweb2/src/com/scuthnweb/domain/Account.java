@@ -19,6 +19,7 @@ public class Account {
     private Set<User_req_deal> user_req_deals;
     private Set<Invite_code> invite_codes;
     private Set<Share_link_comment> share_link_comments;
+    private Set<Login_session> login_sessions;
     
 	public Set<User_req_deal> getUser_req_deals() {
 		return user_req_deals;
@@ -109,6 +110,12 @@ public class Account {
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	public Set<Login_session> getLogin_sessions() {
+		return login_sessions;
+	}
+	public void setLogin_sessions(Set<Login_session> login_sessions) {
+		this.login_sessions = login_sessions;
 	}
 
 }

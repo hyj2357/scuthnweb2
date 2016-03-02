@@ -3,6 +3,8 @@ package com.scuthnweb.domain;
 public class Login_session {
 	private Integer id;
 	private java.sql.Timestamp login_time;
+	private String session_id;
+	
 	private Account account;
 	
 	public Integer getId() {
@@ -22,5 +24,11 @@ public class Login_session {
 	}
 	public void setAccount(Account account) {
 		this.account = account;
+	}
+	public String getSession_id() {
+		return session_id;
+	}
+	public void setSession_id(String session_id) {
+		this.session_id = session_id;
 	}
 }
