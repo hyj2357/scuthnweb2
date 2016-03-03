@@ -55,5 +55,11 @@ public class LoginSessionContainer{
 	public static List<HttpSession> get(Integer uid) {		
 		return sessionMap.get(uid);
 	}
+		
+	public static HttpSession findLoginSessionByUidAndSid(Integer uid,String sid){
+		List<HttpSession> ls = LoginSessionContainer.get(uid);
+		.LoginSessionContainer.
+		return null;
+	}
 	
 }

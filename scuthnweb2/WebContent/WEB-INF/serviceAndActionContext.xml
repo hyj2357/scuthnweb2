@@ -62,18 +62,14 @@
 	
 
 <!-- 页面转发相关配置 -->
-    <!-- <bean id="csaut" class="com.scuthnweb.action.authority.CsPageAuthority"/> 
-    <bean id="adaut" class="com.scuthnweb.action.authority.AdPageAuthority"/>     
-    -->
+
     <bean id="pfs" class="com.scuthnweb.action.authority.PageForwardServlet" scope="prototype"/> 
-    <!-- <bean id="pageInterceptor" class="com.scuthnweb.action.authority.PageInterceptor" scope="prototype">
-        <property name="csAuthorityPage" ref="csaut"/>
-        <property name="adAuthorityPage" ref="adaut"/>       
-    </bean>
-    -->
+
 <!-- end 页面转发相关配置 --> 
 	
-	<bean id="AcceptImageAction" class="com.scuthnweb.action.authority.AcceptImageAction"/> 
+	<bean id="AcceptImageAction" class="com.scuthnweb.action.authority.AcceptImageAction"/>
+	<bean id="OnlineAction" class="com.scuthnweb.action.authority.OnlineAction"/>
+	 
 	<bean id="nusInterceptor" class="com.scuthnweb.action.authority.NormalUserAuthorityInterceptor"  parent="UserAdModuleTemplate"/> 
 	<bean id="adminInterceptor" class="com.scuthnweb.action.authority.AdminAuthorityInterceptor"  parent="UserAdModuleTemplate"/> 
 	<bean id="sadminInterceptor" class="com.scuthnweb.action.authority.Super_adminAuthorityInterceptor"  parent="UserAdModuleTemplate"/> 	       

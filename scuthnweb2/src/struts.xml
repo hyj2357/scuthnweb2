@@ -99,6 +99,19 @@
 		 </param>
 	  	</result>
        </action>
+       
+       <action name="Online" class="OnlineAction">
+      	<result name="success" type="json">
+		 <param name="includeProperties">
+			 ^isLogin
+		 </param>
+	  	</result>
+	  	<result name="error" type="json">
+		 <param name="includeProperties">
+			 ^isLogin
+		 </param>
+	  	</result>
+       </action>
     </package>
    
 </struts>

@@ -64,11 +64,21 @@ public class QueryValidateModule {
 	 * @param uid
 	 * @return
 	 */
-	public boolean isLogin(String account){
-		if(this.login_sessionDao.findByAccount(account).size()>0)
+	public boolean isLogin(Integer uid){
+		if(this.login_sessionDao.findByAccount(uid).size()>0)
 			return true;
 		else
 			return false;
+	}
+	
+	/**
+	 * 检测当前会话是否登录
+	 * @param uid
+	 * @param sid
+	 * @return
+	 */
+	public boolean isSessionLogin(Integer uid,String sid){
+		
 	}
 	
 	public AccountDao getAccountDao() {

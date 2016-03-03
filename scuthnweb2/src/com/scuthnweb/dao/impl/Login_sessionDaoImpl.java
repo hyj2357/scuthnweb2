@@ -64,9 +64,9 @@ public class Login_sessionDaoImpl extends HibernateDaoSupport implements Login_s
 	}
 
 	@Override
-	public List findByAccount(String account) {
-		String hql = "FROM Login_session l WHERE l.account.account=?";
-		List ls = this.getHibernateTemplate().find(hql,new Object[]{account});
+	public List findByAccount(Integer uid) {
+		String hql = "FROM Login_session l WHERE l.uid=?";
+		List ls = this.getHibernateTemplate().find(hql,new Object[]{uid});
 		return ls;
 	}
 

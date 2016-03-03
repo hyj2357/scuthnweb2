@@ -32,6 +32,6 @@ public interface Login_sessionDao {
 	 * @param account
 	 * @return
 	 */
-	public List findByAccount(String account);
+	public List findByAccount(Integer uid);
 	
 }
