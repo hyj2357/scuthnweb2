@@ -58,8 +58,16 @@ public class LoginSessionContainer{
 		
 	public static HttpSession findLoginSessionByUidAndSid(Integer uid,String sid){
 		List<HttpSession> ls = LoginSessionContainer.get(uid);
-		.LoginSessionContainer.
-		return null;
+		HttpSession session = null;
+		Iterator<HttpSession> itr = ls.iterator();
+		while(itr.hasNext()){
+			HttpSession s = itr.next();
+			if(s.getId().equals(sid)){
+				session = s;
+				break;
+			}
+		}			
+		return session;
 	}
 	
 }

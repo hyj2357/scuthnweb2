@@ -5,6 +5,7 @@ import com.scuthnweb.dao.Login_sessionDao;
 import com.scuthnweb.dao.RoleDao;
 import com.scuthnweb.dao.Sy_userDao;
 import com.scuthnweb.domain.Role;
+import com.scuthnweb.listener.LoginSessionContainer;
 
 public class QueryValidateModule {
 	private AccountDao accountDao;
@@ -78,8 +79,12 @@ public class QueryValidateModule {
 	 * @return
 	 */
 	public boolean isSessionLogin(Integer uid,String sid){
-		
+		if(LoginSessionContainer.findLoginSessionByUidAndSid(uid, sid)==null)
+			return false;
+		else
+			return true;
 	}
+	
 	
 	public AccountDao getAccountDao() {
 		return accountDao;

@@ -6,7 +6,6 @@ import com.scuthnweb.service.UserAdModule;
 import com.scuthnweb.tool.QueryValidateModule;
 
 public class OnlineAction extends ActionSupport{
-	
 	private QueryValidateModule queryValidateModule;
 	private Integer vid;
 	private String sid;
