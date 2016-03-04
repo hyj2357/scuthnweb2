@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    
+    <bean id="daoConfigTemplate" abstract="true" lazy-init="true">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>  
+    <!-- 配置Dao层组件  -->
+    <bean id="accountDao" class="com.scuthnweb.dao.impl.AccountDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="action_join_infoDao" class="com.scuthnweb.dao.impl.Action_join_infoDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="action_picDao" class="com.scuthnweb.dao.impl.Action_picDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="action_summaryDao" class="com.scuthnweb.dao.impl.Action_summaryDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="actionDao" class="com.scuthnweb.dao.impl.ActionDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="album_picDao" class="com.scuthnweb.dao.impl.Album_picDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="albumDao" class="com.scuthnweb.dao.impl.AlbumDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="invite_codeDao" class="com.scuthnweb.dao.impl.Invite_codeDaoImpl" parent="daoConfigTemplate"/>    
+    <bean id="login_sessionDao" class="com.scuthnweb.dao.impl.Login_sessionDaoImpl" parent="daoConfigTemplate"/>  
+    <bean id="messageDao" class="com.scuthnweb.dao.impl.MessageDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="new_picDao" class="com.scuthnweb.dao.impl.New_picDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="newDao" class="com.scuthnweb.dao.impl.NewDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="noteDao" class="com.scuthnweb.dao.impl.NoteDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="roleDao" class="com.scuthnweb.dao.impl.RoleDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="share_link_commentDao" class="com.scuthnweb.dao.impl.Share_link_commentDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="share_linkDao" class="com.scuthnweb.dao.impl.Share_linkDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="sy_user_picDao" class="com.scuthnweb.dao.impl.Sy_user_picDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="sy_userDao" class="com.scuthnweb.dao.impl.Sy_userDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="user_req_dealDao" class="com.scuthnweb.dao.impl.User_req_dealDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="user_reqDao" class="com.scuthnweb.dao.impl.User_reqDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="valid_codeDao" class="com.scuthnweb.dao.impl.Valid_codeDaoImpl" parent="daoConfigTemplate"/>
+    
+    <!-- 配置Session管理容器-->
+    <bean id="loginSessionContainer" class="com.scuthnweb.listener.LoginSessionContainer"/>      
+</beans>
