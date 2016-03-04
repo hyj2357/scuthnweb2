@@ -22,9 +22,9 @@ public class AcceptImageAction extends ActionSupport{
 	public String execute(){
 		if(this.queryValidateModule.isSessionLogin(uid, sid)){
 			System.out.println(type+" "+uid+" "+path+"\n");
-			if(type.equals(USER_ICON)){
-				
-			}else if(type.equals(ALBUM_PIC)){
+			if(type.equals(USER_ICON))
+				this.userAdModule.uploadUserIcon(uid, path);
+			else if(type.equals(ALBUM_PIC)){
 				
 			}else if(type.equals(NEW_PIC)){
 				
