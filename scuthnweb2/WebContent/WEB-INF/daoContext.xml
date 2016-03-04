@@ -10,6 +10,11 @@
     
     <!-- 配置Dao层组件  -->
     <bean id="accountDao" class="com.scuthnweb.dao.impl.AccountDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="action_join_infoDao" class="com.scuthnweb.dao.impl.Action_join_infoDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="action_picDao" class="com.scuthnweb.dao.impl.Action_picDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="action_summaryDao" class="com.scuthnweb.dao.impl.Action_summaryDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="actionDao" class="com.scuthnweb.dao.impl.ActionDaoImpl" parent="daoConfigTemplate"/>
+    <bean id="actionDao" class="com.scuthnweb.dao.impl.ActionDaoImpl" parent="daoConfigTemplate"/>
     <bean id="roleDao" class="com.scuthnweb.dao.impl.RoleDaoImpl" parent="daoConfigTemplate"/>
     <bean id="sy_userDao" class="com.scuthnweb.dao.impl.Sy_userDaoImpl" parent="daoConfigTemplate"/>
     <bean id="valid_codeDao" class="com.scuthnweb.dao.impl.Valid_codeDaoImpl" parent="daoConfigTemplate"/>
