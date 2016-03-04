@@ -8,11 +8,13 @@ import com.scuthnweb.dao.AccountDao;
 import com.scuthnweb.dao.Login_sessionDao;
 import com.scuthnweb.dao.RoleDao;
 import com.scuthnweb.dao.Sy_userDao;
+import com.scuthnweb.dao.Sy_user_picDao;
 import com.scuthnweb.dao.Valid_codeDao;
 import com.scuthnweb.domain.Account;
 import com.scuthnweb.domain.Login_session;
 import com.scuthnweb.domain.Role;
 import com.scuthnweb.domain.Sy_user;
+import com.scuthnweb.domain.Sy_user_pic;
 import com.scuthnweb.domain.Valid_code;
 import com.scuthnweb.service.UserAdModule;
 import com.scuthnweb.tool.MD5Util;
@@ -24,7 +26,7 @@ public class UserAdModuleImpl implements UserAdModule{
 	private RoleDao roleDao;
 	private Valid_codeDao valid_codeDao;
 	private Login_sessionDao login_sessionDao;
-
+	private Sy_user_picDao sy_user_picDao;
 
 	@Override
 	public Sy_user register(String account, String name, String gender, String grade, String major, String mail, String password) {
@@ -45,6 +47,11 @@ public class UserAdModuleImpl implements UserAdModule{
 	    sy_user.setGrade(grade);
 	    sy_user.setAccount(_account);	    
 	    this.sy_userDao.create(sy_user);
+	    
+		Sy_user_pic sy_user_pic = new Sy_user_pic();
+		sy_user_pic.setAccount(_account);
+		sy_user_pic.setUrl("image/default/default-user-icon.png");
+		this.sy_user_picDao.create(sy_user_pic);	
 	    
 	    /** 生成激活码 **/
 	    Valid_code valid_code = new Valid_code();
@@ -143,6 +150,27 @@ public class UserAdModuleImpl implements UserAdModule{
 		this.login_sessionDao.create(login_session);
 	}
 	
+	
+	@Override
+	public void uploadUserIcon(Integer uid, String path) {
+		Sy_user_pic sy_user_pic = null;
+		Account account = this.accountDao.get(uid);
+		List ls = this.sy_user_picDao.findByUid(account.getId());
+		//如果当前用户已经上传，更新图片url
+		if(ls.size()==1){
+			sy_user_pic = (Sy_user_pic)ls.get(0);
+			sy_user_pic.setUrl(path);
+			this.sy_user_picDao.update(sy_user_pic);
+		}else if(ls.size()==0){//未上传则创建新纪录
+			sy_user_pic = new Sy_user_pic();
+			sy_user_pic.setAccount(account);
+			sy_user_pic.setUrl(path);
+			this.sy_user_picDao.create(sy_user_pic);			
+		}else{
+			return;
+		}
+	}
+	
 	public AccountDao getAccountDao() {
 		return accountDao;
 	}
@@ -181,5 +209,13 @@ public class UserAdModuleImpl implements UserAdModule{
 
 	public void setLogin_sessionDao(Login_sessionDao login_sessionDao) {
 		this.login_sessionDao = login_sessionDao;
+	}
+
+	public Sy_user_picDao getSy_user_picDao() {
+		return sy_user_picDao;
+	}
+
+	public void setSy_user_picDao(Sy_user_picDao sy_user_picDao) {
+		this.sy_user_picDao = sy_user_picDao;
 	}
 }
