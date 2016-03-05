@@ -9,6 +9,11 @@ import javax.servlet.http.HttpSessionListener;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class LoginSessionListener implements HttpSessionListener{
 	
 	@Override
@@ -50,12 +55,12 @@ public class LoginSessionListener implements HttpSessionListener{
                 //执行sql语句对象  
                 Statement statement = (Statement) connect.createStatement();  
                 //Sql语句  
-                String sql = "DELETE FROM log_session l WHERE l.session_id="+sid+";";  
-                ResultSet rs = statement.executeQuery(sql);  
+                String sql = "DELETE FROM login_session WHERE session_id='"+sid+"';";
+                System.out.println(sql);
+                int rs = statement.executeUpdate(sql);  
                 System.out.println("--------------------------");  
                 System.out.println("------执行结果如下-------");  
                 System.out.println("--------------------------");  
-                rs.close();  
                 connect.close();  
             }  
         }catch(Exception e){}    

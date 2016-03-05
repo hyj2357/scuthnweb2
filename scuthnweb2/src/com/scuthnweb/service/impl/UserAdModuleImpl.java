@@ -18,8 +18,14 @@ import com.scuthnweb.domain.Sy_user_pic;
 import com.scuthnweb.domain.Valid_code;
 import com.scuthnweb.service.UserAdModule;
 import com.scuthnweb.tool.MD5Util;
+import com.scuthnweb.tool.OtherUtil;
 import com.scuthnweb.tool.SMTPUtil;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class UserAdModuleImpl implements UserAdModule{
 	private AccountDao accountDao;
 	private Sy_userDao sy_userDao;
@@ -48,9 +54,10 @@ public class UserAdModuleImpl implements UserAdModule{
 	    sy_user.setAccount(_account);	    
 	    this.sy_userDao.create(sy_user);
 	    
+	    /** 创建用户默认头像 **/
 		Sy_user_pic sy_user_pic = new Sy_user_pic();
 		sy_user_pic.setAccount(_account);
-		sy_user_pic.setUrl("image/default/default-user-icon.png");
+		sy_user_pic.setUrl("image/default/"+"ui"+OtherUtil.ramdom(3)+".png");
 		this.sy_user_picDao.create(sy_user_pic);	
 	    
 	    /** 生成激活码 **/
@@ -111,8 +118,11 @@ public class UserAdModuleImpl implements UserAdModule{
 	
 
 	@Override
-	public Sy_user checkUserInfo(Integer id) {
-		return (Sy_user)this.sy_userDao.findByUid(id).get(0);
+	public Object[] checkUserInfo(Integer id) {
+		Object[] userInfo = new Object[2];
+		userInfo[0] = (Sy_user_pic)this.sy_user_picDao.findByUid(id).get(0);
+		userInfo[1] = (Sy_user)this.sy_userDao.findByUid(id).get(0);
+		return userInfo;
 	}
 	
 	@Override

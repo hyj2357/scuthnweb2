@@ -17,6 +17,11 @@ import com.scuthnweb.listener.LoginSessionContainer;
 import com.scuthnweb.service.UserAdModule;
 import com.scuthnweb.tool.QueryValidateModule;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class LoginAction extends ActionSupport{
 	private String user_account;
 	private String user_password;

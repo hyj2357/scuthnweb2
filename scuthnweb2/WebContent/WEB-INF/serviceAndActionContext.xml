@@ -12,13 +12,15 @@
        <property name="accountDao" ref="accountDao"/>
        <property name="sy_userDao" ref="sy_userDao"/>
        <property name="roleDao" ref="roleDao"/>
-       <property name="login_sessionDao" ref="login_sessionDao"/>
+       <property name="login_sessionDao" ref="login_sessionDao"/>      
+       <property name="loginSessionContainer" ref="loginSessionContainer"/>
 	</bean> 	
 	  	  
     <!-- 配置业务逻辑层组件  -->
 	<bean id="userAdModule" class="com.scuthnweb.service.impl.UserAdModuleImpl">
        <property name="accountDao" ref="accountDao"/>
        <property name="sy_userDao" ref="sy_userDao"/>
+       <property name="sy_user_picDao" ref="sy_user_picDao"/>
        <property name="roleDao" ref="roleDao"/>
        <property name="valid_codeDao" ref="valid_codeDao"/>
        <property name="login_sessionDao" ref="login_sessionDao"/>
@@ -59,16 +61,15 @@
 	 			  	
 <!--  actModule -->
     <!-- 配置 actModule 的 action 配置模板 -->
-	
-
+    
 <!-- 页面转发相关配置 -->
-
     <bean id="pfs" class="com.scuthnweb.action.authority.PageForwardServlet" scope="prototype"/> 
-
 <!-- end 页面转发相关配置 --> 
 	
 	<bean id="AcceptImageAction" class="com.scuthnweb.action.authority.AcceptImageAction"/>
-	<bean id="OnlineAction" class="com.scuthnweb.action.authority.OnlineAction"/>
+	<bean id="OnlineAction" class="com.scuthnweb.action.authority.OnlineAction">
+		<property name="queryValidateModule" ref="queryValidateModule"/>
+	</bean>
 	 
 	<bean id="nusInterceptor" class="com.scuthnweb.action.authority.NormalUserAuthorityInterceptor"  parent="UserAdModuleTemplate"/> 
 	<bean id="adminInterceptor" class="com.scuthnweb.action.authority.AdminAuthorityInterceptor"  parent="UserAdModuleTemplate"/> 

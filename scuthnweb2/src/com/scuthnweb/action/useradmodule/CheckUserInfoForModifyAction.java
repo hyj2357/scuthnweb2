@@ -4,6 +4,11 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.scuthnweb.service.UserAdModule;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class CheckUserInfoForModifyAction extends ActionSupport{
 	private UserAdModule userAdModule;
 	

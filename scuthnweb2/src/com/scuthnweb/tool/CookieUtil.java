@@ -2,6 +2,11 @@ package com.scuthnweb.tool;
 
 import javax.servlet.http.Cookie;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class CookieUtil {
 	/**
 	 * 返回对应的cookie
@@ -12,6 +17,8 @@ public class CookieUtil {
 	 */
 	public static Cookie getCookieFromCookieArray(Cookie[] cookies,String name,String value){
 		Cookie ck = null;
+		if(cookies==null)
+			return null;
 		for(int i=0;i<cookies.length;i++){
 			if(cookies[i].getName().equals(name)&&cookies[i].getValue().equals(value)){
 				ck = cookies[i];
@@ -29,6 +36,8 @@ public class CookieUtil {
 	 */
 	public static Cookie getCookieByNameFromCookieArray(Cookie[] cookies,String name){
 		Cookie ck = null;
+		if(cookies==null)
+			return null;
 		for(int i=0;i<cookies.length;i++){
 			System.out.println(cookies[i].getValue());
 			if(cookies[i].getName().equals(name)&&!cookies[i].getValue().equals("")){

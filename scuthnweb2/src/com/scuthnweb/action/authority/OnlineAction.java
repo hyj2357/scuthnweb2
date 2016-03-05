@@ -5,16 +5,21 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.scuthnweb.service.UserAdModule;
 import com.scuthnweb.tool.QueryValidateModule;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class OnlineAction extends ActionSupport{
 	private QueryValidateModule queryValidateModule;
-	private Integer vid;
+	private Integer uid;
 	private String sid;
 	private String isLogin = "false";
 	
 	public String execute(){
 		ActionContext ctx = ActionContext.getContext();
-		Integer uid  = (Integer)ctx.getSession().get("user_id");
-		if(this.queryValidateModule.isLogin(uid)){
+		System.out.println(uid+":"+sid);
+		if(this.queryValidateModule.isSessionLogin(uid,sid)){
 			this.isLogin = "true";
 			return SUCCESS;
 		}
@@ -33,13 +38,13 @@ public class OnlineAction extends ActionSupport{
 	}
 
 
-	public Integer getVid() {
-		return vid;
+	public Integer getUid() {
+		return uid;
 	}
 
 
-	public void setVid(Integer vid) {
-		this.vid = vid;
+	public void setUid(Integer uid) {
+		this.uid = uid;
 	}
 
 

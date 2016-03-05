@@ -4,6 +4,11 @@ import java.util.List;
 
 import com.scuthnweb.domain.Account;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public interface AccountDao {
 	public void create(Account account);
 	public boolean update(Account account);

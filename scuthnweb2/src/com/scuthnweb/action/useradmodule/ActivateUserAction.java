@@ -5,6 +5,11 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.scuthnweb.domain.Account;
 import com.scuthnweb.service.UserAdModule;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class ActivateUserAction extends ActionSupport{
 	private String code;
 	private UserAdModule userAdModule;

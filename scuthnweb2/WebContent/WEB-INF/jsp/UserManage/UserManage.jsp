@@ -1,4 +1,4 @@
-<%@ page import="com.scuthnweb.domain.Sy_user" language="java" contentType="text/html; charset=GBK" pageEncoding="UTF-8"%>
+<%@ page import="com.scuthnweb.domain.Sy_user,com.scuthnweb.domain.Sy_user_pic" language="java" contentType="text/html; charset=GBK" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html  style="text-align:center;">
 
@@ -98,10 +98,14 @@
         <span style="color:#00CCFF;font-family:微软雅黑;font-size:2em;">
            <strong>个人资料</strong>
         </span><br/><br/><br/>
+        <%
+			           	 	Sy_user_pic sp = (Sy_user_pic)(((Object[])session.getAttribute("user_info"))[0]);   //获取session数据
+			           	 	Sy_user s = (Sy_user)(((Object[])session.getAttribute("user_info"))[1]);
+	 	 %>
         <div>
            <div style="background-color:#FFFFFF;width:70%;display:inline-block;vertical-align:top;">
 	           <div style="text-align:left;display:inline-block;vertical-align:top;">
-		           <img style="width:129px;height:129px;border-radius:150px;box-shadow:0px 0px 8px 0px;" src="image/UserManage/u1.jpg"/>
+		           <img style="width:129px;height:129px;border-radius:150px;box-shadow:0px 0px 8px 0px;" src="<% out.print(sp.getUrl());%>"/>
                </div>
                <div style="display:inline-block;padding-left:8%;">
 	               <ul class="si" style="text-align:left;list-style:none;">
@@ -112,7 +116,6 @@
 			           	 </span>:&nbsp;&nbsp;
 			           	 <span style="color:#CCFF00">
 			           	 	<strong><%
-			           	 	Sy_user s = (Sy_user)session.getAttribute("user_info");
 			           	 	out.print(session.getAttribute("user_account"));
 			           	  %></strong>
 			           	 </span>

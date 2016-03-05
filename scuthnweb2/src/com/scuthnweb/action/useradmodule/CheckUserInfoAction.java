@@ -5,6 +5,11 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.scuthnweb.service.UserAdModule;
 import com.scuthnweb.tool.QueryValidateModule;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class CheckUserInfoAction extends ActionSupport{
 	private UserAdModule userAdModule;
 	private QueryValidateModule queryValidateModule;

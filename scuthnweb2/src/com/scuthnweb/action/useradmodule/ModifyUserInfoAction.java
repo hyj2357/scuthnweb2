@@ -8,6 +8,11 @@ import com.scuthnweb.domain.Sy_user;
 import com.scuthnweb.service.UserAdModule;
 import com.scuthnweb.tool.QueryValidateModule;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class ModifyUserInfoAction extends ActionSupport{
 	private String account;
 	private String gender;

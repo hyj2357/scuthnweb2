@@ -59,6 +59,10 @@
       <set name="share_link_comments" inverse="true" cascade="all">
             <key column="uid"/>
             <one-to-many class="Share_link_comment"/>
-      </set>                       
+      </set> 
+      <set name="login_sessions" inverse="true" cascade="all">
+            <key column="uid"/>
+            <one-to-many class="Login_session"/>
+      </set>                     
    </class>     
 </hibernate-mapping>

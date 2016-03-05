@@ -6,6 +6,11 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.scuthnweb.service.UserAdModule;
 import com.scuthnweb.tool.QueryValidateModule;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class InviteRegisterAction extends ActionSupport{
 	private String user_account;
 	private String user_password;

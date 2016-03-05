@@ -17,6 +17,11 @@ import com.scuthnweb.service.UserAdModule;
 import com.scuthnweb.tool.CookieUtil;
 import com.scuthnweb.tool.QueryValidateModule;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class NormalUserAuthorityInterceptor extends AbstractInterceptor  implements ErrorCode{
 	private QueryValidateModule queryValidateModule;
 	private UserAdModule userAdModule;
@@ -47,10 +52,12 @@ public class NormalUserAuthorityInterceptor extends AbstractInterceptor  impleme
 					returnActionInvoke = false;
 				}else{
 					HttpSession session = request.getSession();
+					uid = Integer.parseInt(login_info[0]);
+					account = login_info[1];
 					this.userAdModule.autoLogin(uid, session.getId());  //持久化登录会话记录
 					//设置登录会话标识
-					ctx.getSession().put("user_account", login_info[0]);
-					ctx.getSession().put("user_id", new Integer(Integer.parseInt(login_info[1])));
+					ctx.getSession().put("user_account", account);
+					ctx.getSession().put("user_id", uid);
 					LoginSessionContainer.create(session); 	//将登录会话注入登录会话容器当中
 					returnActionInvoke = true;
 				    return action.invoke();

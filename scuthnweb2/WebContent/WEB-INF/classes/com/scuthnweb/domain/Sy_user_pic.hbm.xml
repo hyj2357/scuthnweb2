@@ -14,6 +14,6 @@
       <property name="url" type="string">
           <column  name="url" sql-type="text" />
       </property>
-      <many-to-one name="account" class="Account" column="uid"/>                     
+      <many-to-one name="account" class="Account" unique="true" column="uid"/>                     
    </class>     
 </hibernate-mapping>

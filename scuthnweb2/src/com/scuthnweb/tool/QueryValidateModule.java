@@ -4,14 +4,22 @@ import com.scuthnweb.dao.AccountDao;
 import com.scuthnweb.dao.Login_sessionDao;
 import com.scuthnweb.dao.RoleDao;
 import com.scuthnweb.dao.Sy_userDao;
+import com.scuthnweb.dao.Sy_user_picDao;
 import com.scuthnweb.domain.Role;
+import com.scuthnweb.domain.Sy_user_pic;
 import com.scuthnweb.listener.LoginSessionContainer;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class QueryValidateModule {
 	private AccountDao accountDao;
 	private Sy_userDao sy_userDao;
 	private RoleDao roleDao;
 	private Login_sessionDao login_sessionDao;
+	private LoginSessionContainer loginSessionContainer;
 	
 	/**
 	 * 检测用户名是否存在
@@ -85,7 +93,6 @@ public class QueryValidateModule {
 			return true;
 	}
 	
-	
 	public AccountDao getAccountDao() {
 		return accountDao;
 	}
@@ -113,5 +120,13 @@ public class QueryValidateModule {
 
 	public void setLogin_sessionDao(Login_sessionDao login_sessionDao) {
 		this.login_sessionDao = login_sessionDao;
+	}
+
+	public LoginSessionContainer getLoginSessionContainer() {
+		return loginSessionContainer;
+	}
+
+	public void setLoginSessionContainer(LoginSessionContainer loginSessionContainer) {
+		this.loginSessionContainer = loginSessionContainer;
 	}
 }

@@ -14,6 +14,11 @@ import com.scuthnweb.dao.AccountDao;
 import com.scuthnweb.domain.Account;
 import com.scuthnweb.domain.Valid_code;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class AccountDaoImpl  extends HibernateDaoSupport implements AccountDao{
 
 	@Override

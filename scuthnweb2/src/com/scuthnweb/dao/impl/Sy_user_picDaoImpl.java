@@ -61,7 +61,7 @@ public class Sy_user_picDaoImpl extends HibernateDaoSupport implements Sy_user_p
 
 	@Override
 	public List findByUid(Integer uid) {
-		String hql = "FROM Sy_user_pic s WHERE Sy_user_pic.account.uid=?";
+		String hql = "FROM Sy_user_pic s WHERE s.account.id=?";
 		List ls = this.getHibernateTemplate().find(hql,new Object[]{uid});
 		return ls;
 	}

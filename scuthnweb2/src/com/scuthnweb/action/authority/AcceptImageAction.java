@@ -4,6 +4,11 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.scuthnweb.service.UserAdModule;
 import com.scuthnweb.tool.QueryValidateModule;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class AcceptImageAction extends ActionSupport{
 	private String type;
 	private Integer uid;

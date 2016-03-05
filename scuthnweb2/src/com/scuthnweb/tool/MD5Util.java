@@ -3,6 +3,11 @@ package com.scuthnweb.tool;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class MD5Util {
 	/**
 	 * 将字符串进行MD5转换

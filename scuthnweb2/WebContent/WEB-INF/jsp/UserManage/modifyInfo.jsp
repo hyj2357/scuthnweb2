@@ -1,6 +1,13 @@
-<%@ page import="com.scuthnweb.domain.Sy_user,com.scuthnweb.domain.Account" language="java" contentType="text/html; charset=GBK" pageEncoding="utf-8"%>
+<%@ page import="com.scuthnweb.domain.Sy_user,com.scuthnweb.domain.Account,com.scuthnweb.domain.Sy_user_pic" language="java" contentType="text/html; charset=GBK" pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <head>
+  <%
+         	 	Sy_user_pic sp = (Sy_user_pic)(((Object[])session.getAttribute("user_info"))[0]);   //获取session数据
+         	 	Sy_user s = (Sy_user)(((Object[])session.getAttribute("user_info"))[1]);
+         	 	Integer uid = (Integer)session.getAttribute("user_id");
+         	 	String  sid = (String)session.getId();
+         	 	
+  %>
   <link rel="icon" href="favicon.ico" mce_href="favicon.ico" type="image/x-icon"/> 
   <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.4, user-scalable=no" />  <!-- 移动端用户不可缩放页面 -->
@@ -40,6 +47,25 @@
          $("#tbar").css("width",_w+"px");
          $("#tbar").css("height",(_w*0.1)+"px");
       }
+  }
+  
+  function sendUserIcon(){
+	  var formData = new FormData($( "#uploadForm" )[0]);
+	  $.ajax({
+	    url:  'http://imagescuthn.applinzi.com/image/upUserIcon.php?uid=&sid=' ,
+	    type: 'POST',
+	    data: formData,
+	    async: false,
+	    cache: false,
+	    contentType: false,
+	    processData: false,<%out.print(uid);%><%out.print(sid);%>
+	    success: function (returndata) {
+	        alert(returndata);
+	    },
+	    error: function (returndata) {
+	        alert(returndata);
+	    }
+	  });
   }
   </script>
 </head>
@@ -99,13 +125,15 @@
         <div>
            <div style="background-color:#FFFFFF;width:70%;display:inline-block;vertical-align:top;">
 	           <div style="text-align:left;display:inline-block;vertical-align:top;">
-		           <img style="width:129px;height:129px;border-radius:150px;box-shadow:0px 0px 8px 0px;" src="image/UserManage/u1.jpg"/><br/>
-				   <input class="xbi" style="cursor:pointer;background-color:#FF9900;color:#FFFFFF;border-radius:6px;border:none;margin-top:10%;margin-left:7%" onmouseover="cbc($(this));ccr($(this));" onmouseout="cbcr($(this));cc($(this));" type="submit" value="上传头像"/>     		  		
+	           	<form  method="post" enctype="multipart/form-data" style="width:150px;text-align:center;">
+		           <img style="width:129px;height:129px;border-radius:150px;box-shadow:0px 0px 8px 0px;" src="<% out.print(sp.getUrl());%>"/><br/><br/>	           
+		           <input type="file" name="file" id="file" style="width:150px;color:#ff9900;font-family:微软雅黑;"/>		           
+				   <div class="xbi" style="cursor:pointer;background-color:#FF9900;color:#FFFFFF;border-radius:6px;border:none;margin-top:10%;margin-left:7%" onmouseover="cbc($(this));ccr($(this));" onmouseout="cbcr($(this));cc($(this));">
+				   	上传头像
+				   </div>     		  		
+               	</form>
                </div>
                <div style="display:inline-block;padding-left:8%;">
-               	<%
-               		Sy_user s = (Sy_user)session.getAttribute("user_info");
-               	 %>
                	<form action="ModifyUserInfo" method="post">
                	   <table style="text-align:left;font-size:24px;" border="0">
                	   	<tr>
@@ -197,6 +225,7 @@
 	    					              "<strong>"+errMsg+"<br/></strong>"+
 	    				              	"</span>"+
 	    					          "</div><br/>");
+			           	    session.removeAttribute("user_info");
 	     					session.removeAttribute("errMsg");
 	     				}
 	     			 %>

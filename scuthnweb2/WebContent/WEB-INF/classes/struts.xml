@@ -15,6 +15,28 @@
     <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
     
     <package name="scuthnweb"  extends="struts-default,json-default"  namespace="/">
+    
+       <interceptors>      
+          <!-- À¹½ØÆ÷ÅäÖÃ -->          
+          <interceptor name="nusInterceptor" class="nusInterceptor"/>
+          <interceptor name="adminInterceptor" class="adminInterceptor"/>             
+          <interceptor name="sadminInterceptor" class="sadminInterceptor"/>                                    
+                    
+          <!-- À¹½ØÆ÷Õ»ÅäÖÃ -->          
+          <interceptor-stack name="nusInterceptors">
+             <interceptor-ref name="nusInterceptor"/>
+             <interceptor-ref name="defaultStack"/>
+          </interceptor-stack>
+          <interceptor-stack name="adminInterceptors">
+             <interceptor-ref name="adminInterceptor"/>
+             <interceptor-ref name="defaultStack"/>
+          </interceptor-stack>
+          <interceptor-stack name="sadminInterceptors">
+             <interceptor-ref name="sadminInterceptor"/>
+             <interceptor-ref name="defaultStack"/>
+          </interceptor-stack>          
+       </interceptors>   
+          
        <!-- userAdModule -->
        <action name="Register" class="RegisterAction">
 	      <result name="error" type="redirect">pfs?p=register/register.jsp</result>
@@ -25,6 +47,8 @@
 	      <result name="success" type="redirect">pfs?p=homepage/homepage.jsp</result>
        </action>
        <action name="LoginOut" class="LoginOutAction">
+          <interceptor-ref name="nusInterceptors"/>  
+	      <result name="no_login" type="redirect">pfs?p=login/login.jsp</result>   
 	      <result name="error" type="redirect">pfs?p=homepage/homepage.jsp</result>
 	      <result name="success" type="redirect">pfs?p=homepage/homepage.jsp</result>
        </action>
@@ -33,16 +57,21 @@
 	      <result name="success" type="redirect">pfs?p=homepage/homepage.jsp</result>
        </action>
        <action name="CheckUserInfo" class="CheckUserInfoAction">
+          <interceptor-ref name="nusInterceptors"/>  
+	      <result name="no_login" type="redirect">pfs?p=login/login.jsp</result>   
 	      <result name="error" type="redirect">pfs?p=login/login.jsp</result>
 	      <result name="success">/WEB-INF/jsp/UserManage/UserManage.jsp</result>
        </action>
        <action name="CheckUserInfoForModify" class="CheckUserInfoForModifyAction">
+          <interceptor-ref name="nusInterceptors"/>  
+	      <result name="no_login" type="redirect">pfs?p=login/login.jsp</result>                
 	      <result name="error" type="redirect">pfs?p=login/login.jsp</result>
 	      <result name="success">/WEB-INF/jsp/UserManage/modifyInfo.jsp</result>
        </action>
        <action name="ModifyUserInfo" class="ModifyUserInfoAction">
+          <interceptor-ref name="nusInterceptors"/> 
        	  <result name="error">/WEB-INF/jsp/UserManage/modifyInfo.jsp</result>
-	      <result name="NO_LOGIN" type="redirect">pfs?p=login/login.jsp</result>
+	      <result name="no_login" type="redirect">pfs?p=login/login.jsp</result>
 	      <result name="success" type="redirectAction">CheckUserInfo</result>
        </action>
               
@@ -50,10 +79,12 @@
        
 <!-- WEB-INFÏÂ½çÃæ×ª·¢Action -->
        <action name="pfs" class="pfs">
+          <interceptor-ref name="nusInterceptors"/>              	  
 	      <result name="/WEB-INF/jsp/homepage/homepage.jsp">/WEB-INF/jsp/homepage/homepage.jsp</result>
 	      <result name="/WEB-INF/jsp/register/register.jsp">/WEB-INF/jsp/register/register.jsp</result>
 	      <result name="/WEB-INF/jsp/login/login.jsp">/WEB-INF/jsp/login/login.jsp</result>
 	      <result name="/WEB-INF/jsp/ActionHomePage/actionHomePage.jsp">/WEB-INF/jsp/ActionHomePage/actionHomePage.jsp</result>
+	      <result name="error" type="redirect">/index.jsp</result>
        </action>
        
        <action name="AcceptImage" class="AcceptImageAction">
@@ -65,6 +96,19 @@
 	  	<result name="error" type="json">
 		 <param name="includeProperties">
 			 ^accept
+		 </param>
+	  	</result>
+       </action>
+       
+       <action name="Online" class="OnlineAction">
+      	<result name="success" type="json">
+		 <param name="includeProperties">
+			 ^isLogin
+		 </param>
+	  	</result>
+	  	<result name="error" type="json">
+		 <param name="includeProperties">
+			 ^isLogin
 		 </param>
 	  	</result>
        </action>

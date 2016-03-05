@@ -15,6 +15,11 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class SMTPUtil {
 	/**
 	 * 使用smtp协议发送邮件

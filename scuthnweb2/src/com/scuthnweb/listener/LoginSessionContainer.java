@@ -10,6 +10,11 @@ import javax.servlet.http.HttpSession;
 
 import com.scuthnweb.dao.Login_sessionDao;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class LoginSessionContainer{
 	private static Map<Integer,List<HttpSession>> sessionMap = new HashMap<Integer,List<HttpSession>>();
 
@@ -58,6 +63,8 @@ public class LoginSessionContainer{
 		
 	public static HttpSession findLoginSessionByUidAndSid(Integer uid,String sid){
 		List<HttpSession> ls = LoginSessionContainer.get(uid);
+		if(ls==null)
+			return null;
 		HttpSession session = null;
 		Iterator<HttpSession> itr = ls.iterator();
 		while(itr.hasNext()){

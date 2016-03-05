@@ -14,6 +14,11 @@ import com.scuthnweb.listener.LoginSessionContainer;
 import com.scuthnweb.service.UserAdModule;
 import com.scuthnweb.tool.CookieUtil;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class LoginOutAction extends ActionSupport{
 	private LoginSessionContainer loginSessionContainer;
 	private UserAdModule userAdModule;	

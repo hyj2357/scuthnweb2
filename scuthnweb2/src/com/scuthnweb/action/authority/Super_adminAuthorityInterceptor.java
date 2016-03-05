@@ -17,6 +17,11 @@ import com.scuthnweb.service.UserAdModule;
 import com.scuthnweb.tool.CookieUtil;
 import com.scuthnweb.tool.QueryValidateModule;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class Super_adminAuthorityInterceptor extends AbstractInterceptor implements ErrorCode{
 	private UserAdModule userAdModule;
 	private QueryValidateModule queryValidateModule;
