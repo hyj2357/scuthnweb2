@@ -26,6 +26,7 @@ public class AcceptImageAction extends ActionSupport{
 	
 	public String execute(){
 		System.out.println("*************************** Accept Image **************************************");
+		System.out.println(this.uid+":"+this.sid+" "+this.path);
 		if(this.queryValidateModule.isSessionLogin(uid, sid)){
 			System.out.println(type+" "+uid+" "+path+"\n");
 			if(type.equals(USER_ICON))
