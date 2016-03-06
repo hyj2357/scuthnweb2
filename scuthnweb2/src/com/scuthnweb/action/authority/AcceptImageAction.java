@@ -16,6 +16,7 @@ public class AcceptImageAction extends ActionSupport{
 	private String path;
 	
 	private String accept;
+	
 	private UserAdModule userAdModule;
 	private QueryValidateModule queryValidateModule;
 	

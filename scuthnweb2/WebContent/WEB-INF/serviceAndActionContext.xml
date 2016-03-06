@@ -66,7 +66,9 @@
     <bean id="pfs" class="com.scuthnweb.action.authority.PageForwardServlet" scope="prototype"/> 
 <!-- end 页面转发相关配置 --> 
 	
-	<bean id="AcceptImageAction" class="com.scuthnweb.action.authority.AcceptImageAction"/>
+	<bean id="AcceptImageAction" class="com.scuthnweb.action.authority.AcceptImageAction" parent="UserAdModuleTemplate">
+	    <property name="queryValidateModule" ref="queryValidateModule"/>
+	</bean>
 	<bean id="OnlineAction" class="com.scuthnweb.action.authority.OnlineAction">
 		<property name="queryValidateModule" ref="queryValidateModule"/>
 	</bean>
