@@ -87,7 +87,7 @@ public class QueryValidateModule {
 	 * @return
 	 */
 	public boolean isSessionLogin(Integer uid,String sid){
-		if(LoginSessionContainer.findLoginSessionByUidAndSid(uid, sid)==null)
+		if(this.login_sessionDao.findByUidAndSid(uid, sid).size()==0)
 			return false;
 		else
 			return true;

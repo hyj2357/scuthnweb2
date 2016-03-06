@@ -77,4 +77,11 @@ public class Login_sessionDaoImpl extends HibernateDaoSupport implements Login_s
 		return ls;
 	}
 
+	@Override
+	public List findByUidAndSid(Integer uid, String sid) {
+		String hql = "FROM Login_session l WHERE l.account.id=? AND l.session_id=?";
+		List ls = this.getHibernateTemplate().find(hql,new Object[]{uid,sid});		
+		return ls;
+	}
+
 }

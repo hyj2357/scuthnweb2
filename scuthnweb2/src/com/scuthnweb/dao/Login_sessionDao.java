@@ -34,4 +34,12 @@ public interface Login_sessionDao {
 	 */
 	public List findByAccount(Integer uid);
 	
+	/**
+	 * 
+	 * @param uid
+	 * @param sid
+	 * @return
+	 */
+	public List findByUidAndSid(Integer uid,String sid);
+	
 }
