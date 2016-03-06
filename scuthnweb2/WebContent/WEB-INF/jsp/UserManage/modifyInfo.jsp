@@ -130,7 +130,7 @@
 	           	<form  id="uploadForm" method="post" enctype="multipart/form-data" style="width:150px;text-align:center;">
 		           <img style="width:129px;height:129px;border-radius:150px;box-shadow:0px 0px 8px 0px;" src="<% out.print(sp.getUrl());%>"/><br/><br/>	           
 		           <input type="file" name="file" id="file" style="width:150px;color:#ff9900;font-family:微软雅黑;"/>		           
-				   <div class="xbi" style="cursor:pointer;background-color:#FF9900;color:#FFFFFF;border-radius:6px;border:none;margin-top:10%;margin-left:7%" onmouseover="cbc($(this));ccr($(this));" onmouseout="cbcr($(this));cc($(this));">
+				   <div class="xbi" style="cursor:pointer;background-color:#FF9900;color:#FFFFFF;border-radius:6px;border:none;margin-top:10%;margin-left:7%" onmouseover="cbc($(this));ccr($(this));" onmouseout="cbcr($(this));cc($(this));" onclick="sendUserIcon();">
 				   	上传头像
 				   </div>     		  		
                	</form>
