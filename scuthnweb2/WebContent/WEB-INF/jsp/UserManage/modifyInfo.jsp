@@ -55,6 +55,7 @@
 	    url:  'http://imagescuthn.applinzi.com/image/upUserIcon.php?uid=<%out.print(uid);%>&sid=<%out.print(sid);%>',
 	    type: 'POST',
 	    data: formData,
+	    dataType: 'json',
 	    async: false,
 	    cache: false,
 	    contentType: false,
