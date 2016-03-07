@@ -62,7 +62,8 @@
 	    processData: false,
 	    success: function (returndata) {
 	    	console.info(returndata);
-	        //alert(returndata);
+	    	var rd = eval(returndata);
+	    	console.info(rd.url);	
 	    },
 	    error: function (returndata) {
 	    	console.info(returndata);
