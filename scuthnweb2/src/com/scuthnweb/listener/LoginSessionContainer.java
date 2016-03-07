@@ -28,16 +28,20 @@ public class LoginSessionContainer{
 		if(uid==null)
 			return;
 		else{
-			List<HttpSession> ls = sessionMap.get(uid);		
-			String sid = session.getId();
-			Iterator<HttpSession> itr = ls.iterator();
-			while(itr.hasNext()){
-				HttpSession s = itr.next();
-				if(s.getId().equals(sid)){
-					ls.remove(s);
-					return;
-				}
-			}	
+			List<HttpSession> ls = sessionMap.get(uid);	
+			if(ls==null){
+				String sid = session.getId();
+				Iterator<HttpSession> itr = ls.iterator();
+				while(itr.hasNext()){
+					HttpSession s = itr.next();
+					if(s.getId().equals(sid)){
+						ls.remove(s);
+						return;
+					}
+				}	
+			}else{
+				return;
+			}
 		}
 	}
 
