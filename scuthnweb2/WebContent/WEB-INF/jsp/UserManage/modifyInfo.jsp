@@ -63,7 +63,8 @@
 	    success: function (returndata) {
 	    	console.info(returndata);
 	    	var rd = eval(returndata);
-	    	console.info(rd.url);	
+	    	console.info(rd.url);
+	    	$("#profile").attr("src",rd.url);
 	    },
 	    error: function (returndata) {
 	    	console.info(returndata);
@@ -130,7 +131,7 @@
            <div style="background-color:#FFFFFF;width:70%;display:inline-block;vertical-align:top;">
 	           <div style="text-align:left;display:inline-block;vertical-align:top;">
 	           	<form  id="uploadForm" method="post" enctype="multipart/form-data" style="width:150px;text-align:center;">
-		           <img style="width:129px;height:129px;border-radius:150px;box-shadow:0px 0px 8px 0px;" src="<% out.print(sp.getUrl());%>"/><br/><br/>	           
+		           <img id="profile" style="width:129px;height:129px;border-radius:150px;box-shadow:0px 0px 8px 0px;" src="<% out.print(sp.getUrl());%>"/><br/><br/>	           
 		           <input type="file" name="file" id="file" style="width:150px;color:#ff9900;font-family:微软雅黑;"/>		           
 				   <div class="xbi" style="cursor:pointer;background-color:#FF9900;color:#FFFFFF;border-radius:6px;border:none;margin-top:10%;margin-left:7%" onmouseover="cbc($(this));ccr($(this));" onmouseout="cbcr($(this));cc($(this));" onclick="sendUserIcon();">
 				   	上传头像
