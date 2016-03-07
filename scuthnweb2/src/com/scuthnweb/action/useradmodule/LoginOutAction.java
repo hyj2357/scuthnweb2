@@ -31,7 +31,8 @@ public class LoginOutAction extends ActionSupport{
 		//“∆≥˝œ‡πÿcookie÷µ
 		String value = (Integer)session.getAttribute("user_id")+":"+(String)session.getAttribute("user_account");
 		Cookie ck = CookieUtil.getCookieByNameFromCookieArray(request.getCookies(),"scuthn.user");
-	    ck.setValue("");
+		if(ck!=null)
+			ck.setValue("");
 		HttpServletResponse response = (HttpServletResponse) ctx.get(ServletActionContext.HTTP_RESPONSE);		 
         response.addCookie(ck);
 		

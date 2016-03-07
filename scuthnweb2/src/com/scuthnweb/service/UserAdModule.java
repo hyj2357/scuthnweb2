@@ -20,5 +20,5 @@ public interface UserAdModule {
 	
 	public void autoLogin(Integer uid,String sid);
 	
-	public void uploadUserIcon(Integer uid,String path);
+	public String uploadUserIcon(Integer uid,String path);
 }

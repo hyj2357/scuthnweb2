@@ -90,12 +90,14 @@
        <action name="AcceptImage" class="AcceptImageAction">
       	<result name="success" type="json">
 		 <param name="includeProperties">
-			 ^accept
+			 ^accept,
+			 ^lastUrl
 		 </param>
 	  	</result>
 	  	<result name="error" type="json">
 		 <param name="includeProperties">
-			 ^accept
+			 ^accept,
+			 ^lastUrl
 		 </param>
 	  	</result>
        </action>

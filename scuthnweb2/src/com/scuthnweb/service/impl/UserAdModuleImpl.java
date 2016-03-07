@@ -162,13 +162,15 @@ public class UserAdModuleImpl implements UserAdModule{
 	
 	
 	@Override
-	public void uploadUserIcon(Integer uid, String path) {
+	public String uploadUserIcon(Integer uid, String path) {
 		Sy_user_pic sy_user_pic = null;
 		Account account = this.accountDao.get(uid);
+		String lastUrl = "";
 		List ls = this.sy_user_picDao.findByUid(account.getId());
 		//如果当前用户已经上传，更新图片url
 		if(ls.size()==1){
 			sy_user_pic = (Sy_user_pic)ls.get(0);
+			lastUrl = sy_user_pic.getUrl();  //获取上一个图片url
 			sy_user_pic.setUrl(path);
 			this.sy_user_picDao.update(sy_user_pic);
 		}else if(ls.size()==0){//未上传则创建新纪录
@@ -176,9 +178,8 @@ public class UserAdModuleImpl implements UserAdModule{
 			sy_user_pic.setAccount(account);
 			sy_user_pic.setUrl(path);
 			this.sy_user_picDao.create(sy_user_pic);			
-		}else{
-			return;
 		}
+		return lastUrl;
 	}
 	
 	public AccountDao getAccountDao() {

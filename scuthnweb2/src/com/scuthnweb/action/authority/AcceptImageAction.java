@@ -16,6 +16,7 @@ public class AcceptImageAction extends ActionSupport{
 	private String path;
 	
 	private String accept;
+	private String lastUrl;
 	
 	private UserAdModule userAdModule;
 	private QueryValidateModule queryValidateModule;
@@ -32,8 +33,10 @@ public class AcceptImageAction extends ActionSupport{
 		System.out.println(is);
 		if(is){
 			System.out.println(type+" "+uid+" "+path+"\n");
-			if(type.equals(USER_ICON))
-				this.userAdModule.uploadUserIcon(uid, path);
+			if(type.equals(USER_ICON)){
+				this.lastUrl = this.userAdModule.uploadUserIcon(uid, path);
+				System.out.println("last url:"+this.lastUrl);
+			}
 			else if(type.equals(ALBUM_PIC)){
 				
 			}else if(type.equals(NEW_PIC)){
@@ -106,5 +109,13 @@ public class AcceptImageAction extends ActionSupport{
 
 	public void setSid(String sid) {
 		this.sid = sid;
+	}
+
+	public String getLastUrl() {
+		return lastUrl;
+	}
+
+	public void setLastUrl(String lastUrl) {
+		this.lastUrl = lastUrl;
 	}	
 }
