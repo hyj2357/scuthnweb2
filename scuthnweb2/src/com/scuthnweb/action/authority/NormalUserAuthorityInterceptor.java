@@ -64,8 +64,7 @@ public class NormalUserAuthorityInterceptor extends AbstractInterceptor  impleme
 				}
 			}else
 				returnActionInvoke = false;
-		}
-		else
+		}else
 			returnActionInvoke = true;
 		
 		if(returnActionInvoke){
