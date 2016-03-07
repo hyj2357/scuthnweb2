@@ -31,11 +31,11 @@ public class LoginOutAction extends ActionSupport{
 		//移除相关cookie值
 		String value = (Integer)session.getAttribute("user_id")+":"+(String)session.getAttribute("user_account");
 		Cookie ck = CookieUtil.getCookieByNameFromCookieArray(request.getCookies(),"scuthn.user");
-		if(ck!=null)
+		if(ck!=null){
 			ck.setValue("");
-		HttpServletResponse response = (HttpServletResponse) ctx.get(ServletActionContext.HTTP_RESPONSE);		 
-        response.addCookie(ck);
-		
+			HttpServletResponse response = (HttpServletResponse) ctx.get(ServletActionContext.HTTP_RESPONSE);		 
+	        response.addCookie(ck);
+		}
 		//移除持久化的登录会话记录
 		String sid = session.getId();
 		this.userAdModule.loginOut(sid);
