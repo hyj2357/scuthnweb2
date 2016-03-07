@@ -28,7 +28,7 @@ public class Login_sessionDaoImpl extends HibernateDaoSupport implements Login_s
 					public Object doInHibernate(Session session) throws HibernateException, SQLException {
 						session.setFlushMode(FlushMode.AUTO);
 						session.beginTransaction();
-						Query query = session.createSQLQuery("DELETE FROM Login_session WHERE id=?")
+						Query query = session.createSQLQuery("DELETE FROM login_session WHERE id=?")
 								.setInteger(0, login_session.getId() );
 						query.executeUpdate();					
 						session.getTransaction().commit();

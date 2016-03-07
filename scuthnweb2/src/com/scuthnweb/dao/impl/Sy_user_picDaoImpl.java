@@ -31,7 +31,7 @@ public class Sy_user_picDaoImpl extends HibernateDaoSupport implements Sy_user_p
 					public Object doInHibernate(Session session) throws HibernateException, SQLException {
 						session.setFlushMode(FlushMode.AUTO);
 						session.beginTransaction();
-						Query query = session.createSQLQuery("DELETE FROM Sy_user_pic WHERE id=?")
+						Query query = session.createSQLQuery("DELETE FROM sy_user_pic WHERE id=?")
 								.setInteger(0, sy_user_pic.getId() );
 						query.executeUpdate();					
 						session.getTransaction().commit();
