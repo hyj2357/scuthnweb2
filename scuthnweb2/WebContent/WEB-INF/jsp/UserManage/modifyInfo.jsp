@@ -64,7 +64,8 @@
 	    	console.info(returndata);
 	    	var rd = eval(returndata);
 	    	console.info(rd.url);
-	    	$("#profile").attr("src",rd.url);
+	    	if(!rd.url=="")
+	    		$("#profile").attr("src",rd.url);
 	    },
 	    error: function (returndata) {
 	    	console.info(returndata);
