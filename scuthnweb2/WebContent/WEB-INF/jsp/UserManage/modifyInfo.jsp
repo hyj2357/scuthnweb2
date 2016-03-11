@@ -52,7 +52,7 @@
   function sendUserIcon(){
 	  var formData = new FormData($( "#uploadForm" )[0]);
 	  $.ajax({
-	    url:  'http://imagescuthn.applinzi.com/image/upUserIcon.php?uid=<%out.print(uid);%>&sid=<%out.print(sid);%>',
+	    url:  'http://139.129.24.81:8083/image_scuthn/upUserIcon.php?uid=<%out.print(uid);%>&sid=<%out.print(sid);%>',
 	    type: 'POST',
 	    data: formData,
 	    dataType: 'json',
