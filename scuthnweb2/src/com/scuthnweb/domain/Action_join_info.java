@@ -1,5 +1,9 @@
 package com.scuthnweb.domain;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class Action_join_info {
 	 private Integer id;
      private java.sql.Timestamp join_time,end_join_time,start_time,end_time;

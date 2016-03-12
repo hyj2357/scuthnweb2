@@ -1,5 +1,9 @@
 package com.scuthnweb.domain;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class Action_pic {
 	private Integer id;
 	private String url;

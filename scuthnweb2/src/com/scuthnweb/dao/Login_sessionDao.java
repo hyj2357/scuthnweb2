@@ -3,7 +3,11 @@ package com.scuthnweb.dao;
 import java.util.List;
 
 import com.scuthnweb.domain.Login_session;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public interface Login_sessionDao {
 	public void create(Login_session login_session);
 	

@@ -1,5 +1,9 @@
 package com.scuthnweb.domain;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class Role {
 	private Integer id;
     private String role_name;

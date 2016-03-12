@@ -15,7 +15,11 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.scuthnweb.dao.Sy_user_picDao;
 import com.scuthnweb.domain.Sy_user_pic;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class Sy_user_picDaoImpl extends HibernateDaoSupport implements Sy_user_picDao{
 
 	@Override

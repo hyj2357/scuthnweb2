@@ -1,5 +1,9 @@
 package com.scuthnweb.domain;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class Login_session {
 	private Integer id;
 	private java.sql.Timestamp login_time;

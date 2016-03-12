@@ -1,7 +1,11 @@
 package com.scuthnweb.domain;
 
 import java.util.Set;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class New {
 	private Integer id;
 	private String title;

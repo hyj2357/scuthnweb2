@@ -11,7 +11,11 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.scuthnweb.dao.Sy_userDao;
 import com.scuthnweb.domain.Sy_user;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class Sy_userDaoImpl extends HibernateDaoSupport implements Sy_userDao{
 
 	@Override

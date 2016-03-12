@@ -4,6 +4,11 @@ import java.util.List;
 
 import com.scuthnweb.domain.Sy_user;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public interface Sy_userDao {
 	public void create(Sy_user sy_user);
 	public void update(Sy_user sy_user);

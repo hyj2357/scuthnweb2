@@ -1,7 +1,11 @@
 package com.scuthnweb.domain;
 
 import java.util.Set;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class Share_link {
     private Integer id;
     private String link_name;

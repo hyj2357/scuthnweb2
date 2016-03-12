@@ -4,6 +4,11 @@ import java.util.List;
 
 import com.scuthnweb.domain.Sy_user_pic;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public interface Sy_user_picDao {
 	public Sy_user_pic get(Integer id);
 	

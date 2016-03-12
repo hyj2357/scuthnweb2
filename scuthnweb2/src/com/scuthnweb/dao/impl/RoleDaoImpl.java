@@ -13,7 +13,11 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import com.scuthnweb.dao.RoleDao;
 import com.scuthnweb.domain.Role;
 import com.scuthnweb.domain.Valid_code;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class RoleDaoImpl  extends HibernateDaoSupport implements RoleDao{
 
 	@Override

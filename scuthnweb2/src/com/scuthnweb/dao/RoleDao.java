@@ -4,6 +4,11 @@ import java.util.List;
 
 import com.scuthnweb.domain.Role;
 
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public interface RoleDao {
 	public void create(Role role);
 	public boolean delete(final Role role);

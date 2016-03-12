@@ -12,7 +12,11 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.scuthnweb.dao.Login_sessionDao;
 import com.scuthnweb.domain.Login_session;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class Login_sessionDaoImpl extends HibernateDaoSupport implements Login_sessionDao{
 
 	@Override

@@ -1,7 +1,11 @@
 package com.scuthnweb.domain;
 
 import java.util.Set;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class Action {
 	private Integer id;
 	private String action_name;

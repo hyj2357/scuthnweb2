@@ -2,7 +2,11 @@ package com.scuthnweb.domain;
 
 import java.sql.Timestamp;
 import java.util.Set;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class Account {
 	private Integer id;
     private String account;

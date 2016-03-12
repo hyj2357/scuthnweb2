@@ -2,7 +2,11 @@ package com.scuthnweb.service;
 
 import com.scuthnweb.domain.Account;
 import com.scuthnweb.domain.Sy_user;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public interface UserAdModule {
 	public Sy_user register(String account,String name,String gender,String grade,String major,String mail,String password);
 	

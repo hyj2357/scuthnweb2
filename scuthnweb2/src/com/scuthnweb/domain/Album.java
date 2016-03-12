@@ -1,7 +1,11 @@
 package com.scuthnweb.domain;
 
 import java.util.Set;
-
+/**
+ * 
+ * @author YJ.Huang
+ *
+ */
 public class Album {
 	private Integer id;
 	private String album_name,introduction;
