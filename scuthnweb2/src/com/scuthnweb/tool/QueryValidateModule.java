@@ -57,6 +57,14 @@ public class QueryValidateModule {
 		return role.getAuthority()==1?true:false;
 	}
 	
+	/**
+	 * 获取用户角色
+	 * @return
+	 */
+	public Role userWholeRole(Integer uid){
+		Role role = (Role)this.roleDao.findByUid(uid).get(0);
+		return role;
+	}
 	
 	/**
 	 * 用户角色

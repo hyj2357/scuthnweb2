@@ -105,12 +105,16 @@
        <action name="Online" class="OnlineAction">
       	<result name="success" type="json">
 		 <param name="includeProperties">
-			 ^isLogin
+			 ^isLogin,
+			 ^roleName,
+			 ^authority
 		 </param>
 	  	</result>
 	  	<result name="error" type="json">
 		 <param name="includeProperties">
-			 ^isLogin
+			 ^isLogin,
+			 ^roleName,
+			 ^authority
 		 </param>
 	  	</result>
        </action>
