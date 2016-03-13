@@ -36,6 +36,21 @@
              <interceptor-ref name="defaultStack"/>
           </interceptor-stack>          
        </interceptors>   
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
           
        <!-- userAdModule -->
        <action name="Register" class="RegisterAction">
@@ -76,6 +91,31 @@
        </action>
               
        <!-- end -->
+       
+       <!-- resLinkModule -->
+       <action name="CreateResLink" class="CreateResLinkAction">
+          <interceptor-ref name="nusInterceptors"/> 
+       	  <result name="error">/WEB-INF/jsp/UserManage/modifyInfo.jsp</result>
+	      <result name="no_login" type="redirect">pfs?p=login/login.jsp</result>
+	      <result name="success" type="redirectAction">CheckUserInfo</result>
+       </action>
+       
+       <!-- end -->
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
        
 <!-- WEB-INF下界面转发Action -->
        <action name="pfs" class="pfs">

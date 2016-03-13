@@ -1,5 +1,7 @@
 package com.scuthnweb.dao;
 
-public interface Share_linkDao {
+import com.scuthnweb.domain.Share_link;
 
+public interface Share_linkDao {
+	public void create(Share_link share_link);
 }

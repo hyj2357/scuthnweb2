@@ -26,6 +26,11 @@
        <property name="login_sessionDao" ref="login_sessionDao"/>
 	</bean> 
 	
+	<bean id="resLinkModule" class="com.scuthnweb.service.impl.ResLinkModuleImpl">
+       <property name="accountDao" ref="accountDao"/>
+       <property name="share_linkDao" ref="share_linkDao"/>
+	</bean>	
+	
 	<!-- 配置action -->
 
 <!--  UserAdModule -->
@@ -58,7 +63,13 @@
 	 <bean id="ModifyUserInfoAction" class="com.scuthnweb.action.useradmodule.ModifyUserInfoAction" parent="UserAdModuleTemplate">
 	    <property name="queryValidateModule" ref="queryValidateModule"/>
 	 </bean>
-	 			  	
+	 			
+<!--  resLinkModule -->
+    <!-- 配置 resLinkModule 的 action 配置模板 -->
+     <bean id="ResLinkModuleTemplate" abstract="true" lazy-init="true">
+        <property name="resLinkModule" ref="resLinkModule"/>
+     </bean>   
+	 <bean id="CreateResLinkAction" class="com.scuthnweb.action.reslinkmodule.CreateResLinkAction" parent="ResLinkModuleTemplate"/>	 			
 <!--  actModule -->
     <!-- 配置 actModule 的 action 配置模板 -->
     
